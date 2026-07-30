@@ -37,6 +37,34 @@ const nextConfig = {
         destination: '/aboutus',
         permanent: true,
       },
+      // Old typo'd package slugs ("pakages") -> corrected slugs.
+      // Keep these permanent redirects indefinitely; the old URLs may still be
+      // indexed/linked externally (e.g. rajahmundry-papikondalu-pakages ranking on Google).
+      {
+        source: '/packages/papikondalu-pakages',
+        destination: '/packages/papikondalu-packages',
+        permanent: true,
+      },
+      {
+        source: '/packages/bhadradrachalam-papikondalu-pakages',
+        destination: '/packages/bhadrachalam-papikondalu-packages',
+        permanent: true,
+      },
+      {
+        source: '/packages/maredumilli-pakages',
+        destination: '/packages/maredumilli-packages',
+        permanent: true,
+      },
+      {
+        source: '/packages/rajahmundry-papikondalu-pakages',
+        destination: '/packages/rajahmundry-papikondalu-packages',
+        permanent: true,
+      },
+      {
+        source: '/packages/parnasala-pakages',
+        destination: '/packages/parnasala-packages',
+        permanent: true,
+      },
     ]
   },
   headers: async () => [

@@ -10,15 +10,9 @@ import PerformanceOptimizer from './components/PerformanceOptimizer'
 import MobileOptimizer from './components/MobileOptimizer'
 import CriticalPerformance from './components/CriticalPerformance'
 import ViewportOptimizer from './components/ViewportOptimizer'
-import SEOEnhancer from './components/SEOEnhancer'
-import ContentOptimizer from './components/ContentOptimizer'
-import SEOMetadata from './components/SEOMetadata'
-import TitleOptimizer from './components/TitleOptimizer'
-import SEOAudit from './components/SEOAudit'
-import WordCountOptimizer from './components/WordCountOptimizer'
-import HeadingOptimizer from './components/HeadingOptimizer'
 import Script from 'next/script'
 import { SpeedInsights } from '@vercel/speed-insights/next'
+import { businessInfo } from './lib/businessInfo'
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -28,29 +22,21 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://bhadradripapikondalu.com'),
+  metadataBase: new URL(businessInfo.domain),
   title: {
-    default: 'Papikondalu Tours | Best Tourism Operator',
+    default: 'Papikondalu Tours | Book Boat Tours from Rajahmundry & Bhadrachalam',
     template: '%s | Papikondalu Tourism'
   },
   icons: {
-    icon: 'https://res.cloudinary.com/dnz1dmnmb/image/upload/v1755418849/AG_LOGO_2_xfznol.png',
-    shortcut: 'https://res.cloudinary.com/dnz1dmnmb/image/upload/v1755418849/AG_LOGO_2_xfznol.png',
-    apple: 'https://res.cloudinary.com/dnz1dmnmb/image/upload/v1755418849/AG_LOGO_2_xfznol.png',
+    icon: businessInfo.logo,
+    shortcut: businessInfo.logo,
+    apple: businessInfo.logo,
   },
-  description: 'Book top-rated Papikondalu tours with India\'s #1 operator. Explore Bhadradri temples & adventure packages.',
-  keywords: [
-    'Papikondalu', 'Papikondalu tours', 'Papikondalu boat tours', 'Papikondalu hills', 'Papikondalu tourism',
-    'best Papikondalu tours', 'Papikondalu packages', 'Papikondalu cruise', 'Papikondalu hills tourism', 'Papikondalu operator',
-    'Papikondalu river cruise', 'Papikondalu boat ride', 'Papikondalu Godavari', 'Papikondalu Andhra Pradesh', 'Papikondalu booking',
-    'Papikondalu Rajahmundry', 'Papikondalu travel', 'Papikondalu adventure', 'Papikondalu experience', 'Papikondalu destination',
-    'Papikondalu scenic', 'Papikondalu nature', 'Papikondalu family tours', 'Papikondalu honeymoon', 'Papikondalu weekend',
-    'Papikondalu day tour', 'Papikondalu overnight', 'Papikondalu premium', 'Papikondalu luxury', 'Papikondalu budget'
-  ],
-  authors: [{ name: 'Papikondalu Tourism', url: 'https://bhadradripapikondalu.com' }],
-  creator: 'Papikondalu Tourism',
-  publisher: 'Papikondalu Tourism',
-  applicationName: 'Papikondalu Tourism',
+  description: `Book Papikondalu boat tours from Rajahmundry & Bhadrachalam. Call ${businessInfo.phone} — trusted operator serving Godavari river cruises for 20+ years.`,
+  authors: [{ name: businessInfo.name, url: businessInfo.domain }],
+  creator: businessInfo.name,
+  publisher: businessInfo.name,
+  applicationName: businessInfo.name,
   referrer: 'origin-when-cross-origin',
   formatDetection: {
     email: false,
@@ -60,25 +46,23 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://bhadradripapikondalu.com',
-    siteName: 'Papikondalu Tourism - Best River Cruise Experience',
-    title: 'Papikondalu Tours | Bhadradri Temple Tours',
-    description: 'Book top-rated Papikondalu tours with India\'s #1 operator. Explore Bhadradri temples & adventure packages.',
+    url: businessInfo.domain,
+    siteName: 'Papikondalu Tourism - Godavari River Cruise',
+    title: 'Papikondalu Tours | Book Boat Tours from Rajahmundry & Bhadrachalam',
+    description: `Book Papikondalu boat tours from Rajahmundry & Bhadrachalam. Call ${businessInfo.phone} — trusted operator serving Godavari river cruises for 20+ years.`,
     images: [{
-      url: 'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_scale,w_1200,h_630,q_auto,f_auto/v1755401093/papihills1_hmfpkr.jpg',
+      url: businessInfo.heroImage,
       width: 1200,
       height: 630,
-      alt: 'Papikondalu Hills Boat Tours - Best River Cruise Experience in Andhra Pradesh',
+      alt: 'Papikondalu Hills Boat Tours - Godavari River Cruise in Andhra Pradesh',
       type: 'image/jpeg'
     }],
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@papikondalutourism',
-    creator: '@papikondalutourism',
-    title: 'Papikondalu Tours | Bhadradri Temple Tours',
-    description: 'Book top-rated Papikondalu tours with India\'s #1 operator. Explore Bhadradri temples & adventure packages.',
-    images: ['https://res.cloudinary.com/dnz1dmnmb/image/upload/c_scale,w_1200,h_630,q_auto,f_auto/v1755401093/papihills1_hmfpkr.jpg'],
+    title: 'Papikondalu Tours | Book Boat Tours from Rajahmundry & Bhadrachalam',
+    description: `Book Papikondalu boat tours from Rajahmundry & Bhadrachalam. Call ${businessInfo.phone}.`,
+    images: [businessInfo.heroImage],
   },
   robots: {
     index: true,
@@ -95,12 +79,10 @@ export const metadata: Metadata = {
   },
   verification: {
     google: 'VTniYMmiV4j622S8nRf2la5x52w-Oj0SqPvSzaiR0zA',
-    yandex: 'your-yandex-verification-code',
-    yahoo: 'your-yahoo-verification-code',
   },
   alternates: {
     types: {
-      'application/rss+xml': 'https://bhadradripapikondalu.com/feed.xml'
+      'application/rss+xml': `${businessInfo.domain}/feed.xml`
     }
   },
   category: 'tourism',
@@ -116,7 +98,7 @@ export const metadata: Metadata = {
     'DC.description': 'Premium boat tours and river cruise experiences in Papikondalu Hills',
     'DC.publisher': 'Papikondalu Tourism',
     'DC.contributor': 'Papikondalu Tourism Team',
-    'DC.date': '2024-01-01T00:00:00.000Z',
+    'DC.date': `${businessInfo.foundedYear}-01-01T00:00:00.000Z`,
     'DC.type': 'Service',
     'DC.format': 'text/html',
     'DC.identifier': 'https://bhadradripapikondalu.com',
@@ -131,71 +113,71 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const orgId = `${businessInfo.domain}/#organization`
+
   const structuredData = {
     '@context': 'https://schema.org',
     '@graph': [
       {
-        '@type': 'TravelAgency',
-        '@id': 'https://bhadradripapikondalu.com/#organization',
-        'name': 'Papikondalu Tourism',
-        'alternateName': 'Best Papikondalu Tours Operator',
-        'description': 'India\'s #1 Papikondalu tourism company with 20+ years of experience in Papikondalu tours serving 7+ lakh customers',
-        'url': 'https://bhadradripapikondalu.com',
+        '@type': ['TravelAgency', 'LocalBusiness'],
+        '@id': orgId,
+        'name': businessInfo.name,
+        'description': `Papikondalu boat tour operator based in ${businessInfo.address.addressLocality}, Andhra Pradesh, running Godavari river cruises and temple tour packages for 20+ years.`,
+        'url': businessInfo.domain,
         'logo': {
           '@type': 'ImageObject',
-          'url': 'https://res.cloudinary.com/dnz1dmnmb/image/upload/v1755418849/AG_LOGO_2_xfznol.png',
+          'url': businessInfo.logo,
           'width': 512,
           'height': 512
         },
-        'image': 'https://res.cloudinary.com/dnz1dmnmb/image/upload/v1755401093/papihills1_hmfpkr.jpg',
-        'telephone': '+91-9848323488',
-        'email': 'info@papikondalutourism.com',
+        'image': businessInfo.heroImage,
+        'telephone': businessInfo.phone,
+        'email': businessInfo.email,
         'address': {
           '@type': 'PostalAddress',
-          'streetAddress': 'Rajahmundry',
-          'addressLocality': 'Rajahmundry',
-          'addressRegion': 'Andhra Pradesh',
-          'postalCode': '533101',
-          'addressCountry': 'IN'
+          ...(businessInfo.address.streetAddress ? { streetAddress: businessInfo.address.streetAddress } : {}),
+          'addressLocality': businessInfo.address.addressLocality,
+          'addressRegion': businessInfo.address.addressRegion,
+          'postalCode': businessInfo.address.postalCode,
+          'addressCountry': businessInfo.address.addressCountry
         },
         'geo': {
           '@type': 'GeoCoordinates',
-          'latitude': 17.0005,
-          'longitude': 81.8040
+          'latitude': businessInfo.geo.latitude,
+          'longitude': businessInfo.geo.longitude
         },
-        'foundingDate': '2004',
+        'foundingDate': String(businessInfo.foundedYear),
         'areaServed': {
           '@type': 'State',
           'name': 'Andhra Pradesh'
         },
-        'serviceType': ['Papikondalu Tours', 'Papikondalu Boat Tours', 'Papikondalu Tourism', 'Papikondalu Packages'],
-        'aggregateRating': {
-          '@type': 'AggregateRating',
-          'ratingValue': '4.8',
-          'reviewCount': '2500',
-          'bestRating': '5',
-          'worstRating': '1'
-        },
+        'serviceType': ['Papikondalu Boat Tours', 'Godavari River Cruise', 'Bhadrachalam Temple Tours'],
+        // Only publish aggregateRating once a verified Google Business Profile rating/count is confirmed —
+        // fabricated review numbers are a Google spam-policy violation.
+        ...(businessInfo.googleRating && businessInfo.googleReviewCount ? {
+          aggregateRating: {
+            '@type': 'AggregateRating',
+            ratingValue: businessInfo.googleRating,
+            reviewCount: businessInfo.googleReviewCount,
+            bestRating: '5',
+            worstRating: '1'
+          }
+        } : {}),
         'priceRange': '₹₹',
         'currenciesAccepted': 'INR',
         'paymentAccepted': 'Cash, Card, UPI',
         'openingHours': 'Mo-Su 06:00-20:00',
-        'sameAs': [
-          'https://www.facebook.com/papikondalutourism',
-          'https://www.instagram.com/papikondalutourism',
-          'https://www.youtube.com/papikondalutourism',
-          'https://twitter.com/papikondalutourism'
-        ]
+        'sameAs': Object.values(businessInfo.socialLinks)
       },
       {
         '@type': 'TouristAttraction',
-        '@id': 'https://bhadradripapikondalu.com/#attraction',
-        'name': 'Papikondalu Hills Tourism',
-        'description': 'Best Papikondalu tours destination offering premium Papikondalu boat tours and authentic Papikondalu experiences along the scenic Godavari River',
-        'url': 'https://bhadradripapikondalu.com/attractions/papikondalu-hills',
+        '@id': `${businessInfo.domain}/#attraction`,
+        'name': 'Papikondalu Hills',
+        'description': 'Forested hill range along the Godavari River between Rajahmundry and Bhadrachalam, reached by scenic boat cruise and popular for river tourism in Andhra Pradesh.',
+        'url': `${businessInfo.domain}/attractions/papikondalu`,
         'image': {
           '@type': 'ImageObject',
-          'url': 'https://res.cloudinary.com/dnz1dmnmb/image/upload/v1755401093/papihills1_hmfpkr.jpg',
+          'url': businessInfo.heroImage,
           'width': 1200,
           'height': 800
         },
@@ -207,52 +189,44 @@ export default function RootLayout({
         },
         'geo': {
           '@type': 'GeoCoordinates',
-          'latitude': 17.0005,
-          'longitude': 81.8040
+          'latitude': businessInfo.geo.latitude,
+          'longitude': businessInfo.geo.longitude
         },
         'touristType': ['Family', 'Adventure', 'Nature Lovers', 'Pilgrims'],
         'availableLanguage': ['English', 'Telugu', 'Hindi']
       },
       {
         '@type': 'WebSite',
-        '@id': 'https://bhadradripapikondalu.com/#website',
-        'url': 'https://bhadradripapikondalu.com',
-        'name': 'Best Papikondalu Tours | Papikondalu Tourism',
-        'description': 'India\'s #1 Papikondalu tourism website offering the best Papikondalu tours, Papikondalu boat tours, and premium Papikondalu packages',
+        '@id': `${businessInfo.domain}/#website`,
+        'url': businessInfo.domain,
+        'name': 'Papikondalu Tourism',
+        'description': 'Book Papikondalu boat tours, Godavari river cruises, and Bhadrachalam temple tour packages.',
         'publisher': {
-          '@id': 'https://bhadradripapikondalu.com/#organization'
-        },
-        'potentialAction': {
-          '@type': 'SearchAction',
-          'target': {
-            '@type': 'EntryPoint',
-            'urlTemplate': 'https://bhadradripapikondalu.com/search?q={search_term_string}'
-          },
-          'query-input': 'required name=search_term_string'
+          '@id': orgId
         },
         'inLanguage': 'en-US'
       },
       {
         '@type': 'BreadcrumbList',
-        '@id': 'https://bhadradripapikondalu.com/#breadcrumb',
+        '@id': `${businessInfo.domain}/#breadcrumb`,
         'itemListElement': [
           {
             '@type': 'ListItem',
             'position': 1,
             'name': 'Home',
-            'item': 'https://bhadradripapikondalu.com'
+            'item': businessInfo.domain
           },
           {
             '@type': 'ListItem',
             'position': 2,
             'name': 'Packages',
-            'item': 'https://bhadradripapikondalu.com/packages'
+            'item': `${businessInfo.domain}/packages`
           },
           {
             '@type': 'ListItem',
             'position': 3,
             'name': 'Attractions',
-            'item': 'https://bhadradripapikondalu.com/attractions'
+            'item': `${businessInfo.domain}/attractions`
           }
         ]
       }
@@ -280,11 +254,9 @@ export default function RootLayout({
         <meta name="mobile-web-app-capable" content="yes" />
       </head>
       <body className="font-sans antialiased" suppressHydrationWarning>
-        <SEOMetadata />
-        <TitleOptimizer />
-        <SEOAudit />
-        <HeadingOptimizer />
-        <SEOEnhancer />
+        <a href="#main-content" className="skip-nav sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary-600 text-white px-4 py-2 rounded z-50">
+          Skip to main content
+        </a>
         <ViewportOptimizer />
         <CriticalPerformance />
         <MobileOptimizer />
@@ -293,9 +265,7 @@ export default function RootLayout({
         <PerformanceOptimizer />
         <Header />
         <FloatingActionButton />
-        <main className="relative" role="main">{children}</main>
-        <ContentOptimizer />
-        <WordCountOptimizer />
+        <main className="relative" role="main" id="main-content">{children}</main>
         <Footer />
         <LazyMultiAgentWidget />
         <SpeedInsights />

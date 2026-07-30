@@ -109,30 +109,30 @@ export const packagesData = [
   },
   {
     id: 5,
-    name: 'Rajahmundry Papikondalu Day Tour Package',
-    title: 'Rajahmundry Papikondalu Day Tour Package – Family Special',
-    metaDescription: 'Join top-rated day tours from Rajahmundry to Papikondalu hills. Ideal for families, with sightseeing, meals, and safe return.',
-    shortDescription: 'Join top-rated day tours from Rajahmundry to Papikondalu hills, ideal for families.',
-    description: 'Join top-rated day tours from Rajahmundry to Papikondalu hills. Ideal for families, with sightseeing, meals, and safe return.',
-    image: 'https://res.cloudinary.com/dnz1dmnmb/image/upload/v1755979074/sirivaka-bamboo-huts-papikondalu_sgrm4p.jpg',
+    name: 'Rajahmundry to Papikondalu Day Tour',
+    title: 'Rajahmundry to Papikondalu Day Tour – Boat Ride & Perantalapalli Stop',
+    metaDescription: 'Day boat tour from Rajahmundry through the Papikondalu hills with a stop at Perantalapalli. Lunch, guide, and same-day return included.',
+    shortDescription: 'Day boat tour from Rajahmundry through the Papikondalu hills, with a stop at Perantalapalli and same-day return.',
+    description: 'Board at Rajahmundry and cruise up the Godavari through the Papikondalu hills, with a stop at Perantalapalli before heading back the same evening. This is our most-booked day tour for families and groups who want the Papikondalu boat ride without an overnight stay.',
+    image: 'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_scale,w_600,q_auto,f_auto/v1756003757/rajamundry_v2aufm.jpg',
     gallery: [
-      'https://res.cloudinary.com/dnz1dmnmb/image/upload/v1755979074/sirivaka-bamboo-huts-papikondalu_sgrm4p.jpg',
-      'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_scale,w_600,q_auto,f_auto/v1756003855/sirivaka_fdzsuf.avif'
+      'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_scale,w_600,q_auto,f_auto/v1756003757/rajamundry_v2aufm.jpg',
+      'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_600,q_auto,f_auto/v1755980788/PAPI-KONDALU_wswdud.jpg'
     ],
-    capacity: '30 People',
-    departure: 'Bhadrachalam',
-    rating: 4.6,
-    reviews: 98,
-    features: ['Camping experience', 'Bonfire night', 'Nature walks', 'Adventure activities'],
+    capacity: '100 People',
+    departure: 'Rajahmundry',
+    rating: 4.9,
+    reviews: 189,
+    features: ['Same-day return', 'Perantalapalli stop', 'Onboard lunch', 'Photography stops'],
     itinerary: [
-      'Journey to Sirivaka and camp setup',
-      'Evening bonfire and stargazing',
-      'Nature activities and return journey'
+      'Morning departure from Rajahmundry by boat',
+      'Cruise through the Papikondalu hills with photo stops, stop at Perantalapalli',
+      'Onboard lunch, then evening return to Rajahmundry'
     ],
     bestTime: 'October to March',
-    inclusions: ['Camping equipment', 'Meals', 'Bonfire setup', 'Guide services', 'Safety equipment'],
-    highlights: ['Overnight camping', 'Stargazing', 'Bonfire experience', 'Nature immersion'],
-    tips: ['Carry warm clothes', 'Bring personal items', 'Follow safety guidelines', 'No alcohol policy']
+    inclusions: ['Boat ride', 'Life jackets', 'Guide services', 'Lunch', 'Return journey'],
+    highlights: ['Papikondalu hills cruise', 'Perantalapalli stop', 'River photography', 'Family-friendly day trip'],
+    tips: ['Carry sun protection and a hat', 'Wear comfortable, non-slip footwear', 'Carry a camera or phone for the hills stretch', 'Book a day ahead in peak season (Nov–Feb)']
   },
   {
     id: 6,

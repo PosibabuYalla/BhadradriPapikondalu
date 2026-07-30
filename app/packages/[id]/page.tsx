@@ -50,6 +50,10 @@ export default async function PackageDetailPage({ params }: { params: Promise<{ 
     notFound()
   }
 
+  // No aggregateRating or offers.price here: packageData.rating/reviews are
+  // placeholder numbers, not a verified Google/review-platform figure, and there's
+  // no real per-package price yet. Publishing fabricated rating or price schema
+  // is a Google spam-policy violation — add these back once real numbers exist.
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Product',
@@ -57,18 +61,6 @@ export default async function PackageDetailPage({ params }: { params: Promise<{ 
     'description': packageData.description,
     'image': packageData.image,
     'url': `https://bhadradripapikondalu.com/packages/${id}`,
-    'aggregateRating': {
-      '@type': 'AggregateRating',
-      'ratingValue': packageData.rating,
-      'reviewCount': packageData.reviews
-    },
-    'offers': {
-      '@type': 'Offer',
-      'priceCurrency': 'INR',
-      'price': '2500', // Estimated starting price
-      'availability': 'https://schema.org/InStock',
-      'url': `https://bhadradripapikondalu.com/packages/${id}`
-    }
   }
 
   return (

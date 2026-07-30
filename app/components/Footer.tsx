@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Twitter, Youtube, ArrowUp, Award, Shield, Heart, Linkedin } from 'lucide-react'
+import { businessInfo } from '../lib/businessInfo'
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -10,9 +11,9 @@ const Footer = () => {
   }
 
   const socialLinks = [
-    { icon: Facebook, href: 'https://www.facebook.com/profile.php?id=61579935625167', label: 'Facebook' },
-    { icon: Instagram, href: 'https://www.instagram.com/aswinigodavari_travel/', label: 'Instagram' },
-    { icon: Youtube, href: 'https://www.youtube.com/channel/UCzqJxEIGKQyIi9-EkCfR5ng', label: 'YouTube' }
+    { icon: Facebook, href: businessInfo.socialLinks.facebook, label: 'Facebook' },
+    { icon: Instagram, href: businessInfo.socialLinks.instagram, label: 'Instagram' },
+    { icon: Youtube, href: businessInfo.socialLinks.youtube, label: 'YouTube' }
   ]
 
   const quickLinks = [
@@ -33,11 +34,14 @@ const Footer = () => {
     'Custom Itineraries'
   ]
 
+  const currentYear = new Date().getFullYear()
+  const yearsInBusiness = currentYear - businessInfo.foundedYear
+
+  // Only real, verifiable credentials render here — no fabricated "certified" badges.
   const certifications = [
-    { icon: Award, text: 'Tourism Board Certified' },
-    { icon: Shield, text: 'Safe Travel Approved' },
-    { icon: Heart, text: 'Customer Satisfaction Guaranteed' }
-  ]
+    businessInfo.gstNumber ? { icon: Shield, text: `GST Registered: ${businessInfo.gstNumber}` } : null,
+    businessInfo.associationMembership ? { icon: Award, text: businessInfo.associationMembership } : null,
+  ].filter((c): c is { icon: typeof Shield; text: string } => c !== null)
 
   return (
     <footer className="bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-900 text-white relative overflow-hidden">
@@ -54,52 +58,64 @@ const Footer = () => {
             <div className="flex items-center mb-6">
               <div className="relative">
                 <Image
-                  src="https://res.cloudinary.com/dnz1dmnmb/image/upload/v1755418849/AG_LOGO_2_xfznol.png"
-                  alt="Papikondalu Tourism"
+                  src={businessInfo.logo}
+                  alt={businessInfo.name}
                   width={60}
                   height={60}
                   className="object-contain"
                 />
               </div>
               <div className="ml-4">
-                <span className="text-2xl font-bold gradient-text">Papikondalu Tourism</span>
-                <div className="text-sm text-neutral-400">Experience Excellence Since 2000</div>
+                <span className="text-2xl font-bold gradient-text">{businessInfo.name}</span>
+                <div className="text-sm text-neutral-400">Serving Godavari river tours since {businessInfo.foundedYear}</div>
               </div>
             </div>
-            
+
             <p className="text-neutral-300 mb-6 leading-relaxed text-lg">
-              Experience the best boat tours Papikondalu with 20+ years of expertise. 
-              We&apos;ve served 7+ lakh happy customers with unforgettable Godavari river cruise 
-              adventures and temple visits along the scenic Godavari River.
+              {yearsInBusiness}+ years running Papikondalu boat tours and Godavari river cruises,
+              including Bhadrachalam temple tour packages, out of {businessInfo.address.addressLocality}.
             </p>
-            
+
             <div className="space-y-4 mb-8">
               <div className="flex items-center group">
                 <div className="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center mr-4 group-hover:bg-primary-500 transition-colors">
                   <Phone size={18} className="text-white" />
                 </div>
                 <div>
-                  <div className="font-semibold">+91 9848323488</div>
-                  <div className="text-sm text-neutral-400">24/7 Customer Support</div>
+                  <a href={businessInfo.phoneHref} className="font-semibold hover:text-primary-300 transition-colors">{businessInfo.phone}</a>
+                  <div className="text-sm text-neutral-400">Call or WhatsApp for bookings</div>
                 </div>
               </div>
-              
+
+              <div className="flex items-center group">
+                <div className="w-10 h-10 bg-green-600 rounded-lg flex items-center justify-center mr-4 group-hover:bg-green-500 transition-colors">
+                  <Phone size={18} className="text-white" />
+                </div>
+                <div>
+                  <a href={businessInfo.whatsappHref} target="_blank" rel="noopener noreferrer" className="font-semibold hover:text-primary-300 transition-colors">Chat on WhatsApp</a>
+                  <div className="text-sm text-neutral-400">Quick booking replies</div>
+                </div>
+              </div>
+
               <div className="flex items-center group">
                 <div className="w-10 h-10 bg-secondary-600 rounded-lg flex items-center justify-center mr-4 group-hover:bg-secondary-500 transition-colors">
                   <Mail size={18} className="text-white" />
                 </div>
                 <div>
-                  <div className="font-semibold">aswinigodavari@gmail.com</div>
+                  <a href={`mailto:${businessInfo.email}`} className="font-semibold hover:text-primary-300 transition-colors">{businessInfo.email}</a>
                   <div className="text-sm text-neutral-400">Quick Response Guaranteed</div>
                 </div>
               </div>
-              
+
               <div className="flex items-center group">
                 <div className="w-10 h-10 bg-accent-600 rounded-lg flex items-center justify-center mr-4 group-hover:bg-accent-500 transition-colors">
                   <MapPin size={18} className="text-white" />
                 </div>
                 <div>
-                  <div className="font-semibold">Rajahmundry, Andhra Pradesh</div>
+                  <div className="font-semibold">
+                    {businessInfo.address.streetAddress ? `${businessInfo.address.streetAddress}, ` : ''}
+                    {businessInfo.address.addressLocality}, {businessInfo.address.addressRegion} {businessInfo.address.postalCode}
+                  </div>
                   <div className="text-sm text-neutral-400">Visit Our Office</div>
                 </div>
               </div>
@@ -163,25 +179,27 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Certifications */}
-        <div className="border-t border-neutral-700 mt-12 pt-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            {certifications.map((cert, index) => {
-              const Icon = cert.icon
-              return (
-                <div key={index} className="flex items-center justify-center md:justify-start">
-                  <Icon className="text-primary-400 mr-3" size={20} />
-                  <span className="text-neutral-300 text-sm">{cert.text}</span>
-                </div>
-              )
-            })}
+        {/* Certifications - only shown once real credentials are on file */}
+        {certifications.length > 0 && (
+          <div className="border-t border-neutral-700 mt-12 pt-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              {certifications.map((cert, index) => {
+                const Icon = cert.icon
+                return (
+                  <div key={index} className="flex items-center justify-center md:justify-start">
+                    <Icon className="text-primary-400 mr-3" size={20} />
+                    <span className="text-neutral-300 text-sm">{cert.text}</span>
+                  </div>
+                )
+              })}
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Bottom Bar */}
         <div className="border-t border-neutral-700 pt-8 flex flex-col md:flex-row justify-between items-center">
           <div className="text-neutral-400 text-sm mb-4 md:mb-0">
-            <p>&copy; 2024 Papikondalu Tourism. All rights reserved.</p>
+            <p>&copy; {currentYear} {businessInfo.name}. All rights reserved.</p>
             <p className="mt-1">Made with <Heart className="inline w-4 h-4 text-red-500 mx-1" /> for travelers by <a href="https://www.linkedin.com/in/posibabu-yalla-a05746305/" target="_blank" rel="noopener noreferrer" className="text-primary-400 hover:text-primary-300 transition-colors">Posibabu Yalla</a></p>
           </div>
           

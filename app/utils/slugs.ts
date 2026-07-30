@@ -12,15 +12,25 @@ export const attractionSlugs = {
 }
 
 export const packageSlugs = {
-  1: 'papikondalu-pakages',
-  2: 'bhadradrachalam-papikondalu-pakages',
-  3: 'maredumilli-pakages',
+  1: 'papikondalu-packages',
+  2: 'bhadrachalam-papikondalu-packages',
+  3: 'maredumilli-packages',
   4: 'rampachodavaram-waterfalls-tour-package',
-  5: 'rajahmundry-papikondalu-pakages',
+  5: 'rajahmundry-papikondalu-packages',
   6: 'sirivaka-night-stay-package',
-  7: 'parnasala-pakages',
+  7: 'parnasala-packages',
   8: 'gudisa-packages',
   9: 'perantalapalli-packages'
+}
+
+// Old typo'd slugs ("pakages") kept only so next.config.js can 301-redirect
+// them to the corrected slug above without losing the ranking history.
+export const legacyPackageSlugRedirects: Record<string, string> = {
+  'papikondalu-pakages': 'papikondalu-packages',
+  'bhadradrachalam-papikondalu-pakages': 'bhadrachalam-papikondalu-packages',
+  'maredumilli-pakages': 'maredumilli-packages',
+  'rajahmundry-papikondalu-pakages': 'rajahmundry-papikondalu-packages',
+  'parnasala-pakages': 'parnasala-packages',
 }
 
 // Reverse mapping for slug to ID conversion

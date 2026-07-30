@@ -5,10 +5,9 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { ArrowRight, Star, Users, Calendar, Award, MapPin, Play } from 'lucide-react'
 import { useState, useEffect, memo } from 'react'
+import { businessInfo } from '../lib/businessInfo'
 
 const Hero = () => {
-  // Force rebuild for hydration fix
-  const [isVideoOpen, setIsVideoOpen] = useState(false)
   const [isMounted, setIsMounted] = useState(false)
 
   useEffect(() => {
@@ -74,16 +73,16 @@ const Hero = () => {
               </motion.div>
 
               <h1 className="text-2xl md:text-4xl font-bold text-white leading-tight">
-                Best <span className="text-yellow-400">Papikondalu Tours</span> | #1 Papikondalu Tourism Operator
+                <span className="text-yellow-400">Papikondalu Boat Tours</span>
                 <span className="block">
                   <span className="bg-gradient-to-r from-secondary-400 to-secondary-600 bg-clip-text text-transparent">
-                    Premium Papikondalu Hills Experience
+                    Authentic Godavari River Cruises
                   </span>
                 </span>
               </h1>
 
               <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-                Book top-rated <span className="font-bold text-secondary-400">Papikondalu</span> tours and <span className="font-bold text-blue-400">East Godavari</span> river cruises with the No.1 operator. Explore <span className="font-bold text-yellow-400">Bhadradri</span> temples, <span className="font-bold text-green-400">Maredumalli</span> waterfalls, heritage sites, and adventure packages—trusted by 7 lakh customers for 20+ years. Reserve your ultimate tour today!
+                Boat departures from Rajahmundry and Bhadrachalam through the Papikondalu hills, with stops at Perantalapalli and Bhadrachalam temple. Running these tours for 20+ years.
               </p>
             </div>
 
@@ -119,18 +118,24 @@ const Hero = () => {
               transition={{ duration: 0.4, delay: 0.4 }}
               className="flex flex-col sm:flex-row gap-4 justify-center items-center"
             >
-              <Link href="/packages" className="btn-primary group text-lg px-8 py-4">
-                Explore Packages
+              <a href={businessInfo.whatsappHref} target="_blank" rel="noopener noreferrer" className="btn-primary group text-lg px-8 py-4 bg-green-600 hover:bg-green-700 border-green-600">
+                Book Now on WhatsApp
                 <ArrowRight className="ml-2 transition-transform group-hover:translate-x-1" size={20} />
+              </a>
+
+              <Link href="/packages" className="btn-outline group bg-white/10 backdrop-blur-md border-white/30 text-white hover:bg-white hover:text-neutral-900 text-lg px-8 py-4">
+                View Packages &amp; Pricing
               </Link>
 
-              <button
-                onClick={() => setIsVideoOpen(true)}
+              <a
+                href={businessInfo.socialLinks.youtube}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-outline group bg-white/10 backdrop-blur-md border-white/30 text-white hover:bg-white hover:text-neutral-900 text-lg px-8 py-4"
               >
                 <Play className="mr-2 transition-transform group-hover:scale-110" size={20} />
                 Watch Video
-              </button>
+              </a>
             </motion.div>
 
             {/* Trust Indicators */}
@@ -140,8 +145,8 @@ const Hero = () => {
               transition={{ duration: 0.4, delay: 0.5 }}
               className="flex flex-wrap justify-center items-center gap-8 pt-8 text-white/80"
             >
-              <div className="text-sm">✓ Certified by Tourism Board</div>
-              <div className="text-sm">✓ 24/7 Customer Support</div>
+              <a href={businessInfo.phoneHref} className="text-sm hover:text-white transition-colors">📞 {businessInfo.phone}</a>
+              <div className="text-sm">✓ Running Papikondalu tours since {businessInfo.foundedYear}</div>
             </motion.div>
           </motion.div>
         ) : (
@@ -154,10 +159,10 @@ const Hero = () => {
               </div>
 
               <h1 className="text-2xl md:text-4xl font-bold text-white leading-tight">
-                Best Papikondalu Tours | #1 Papikondalu Tourism
+                <span className="text-yellow-400">Papikondalu Boat Tours</span>
                 <span className="block">
                   <span className="bg-gradient-to-r from-secondary-400 to-secondary-600 bg-clip-text text-transparent">
-                    Premium Papikondalu Hills Experience
+                    Authentic Godavari River Cruises
                   </span>
                 </span>
               </h1>
