@@ -22,10 +22,10 @@ export const attractionsData = [
     metaDescription: 'Perantalapalli, the riverside Shiva temple and village in the Papikondalu hills, reached by boat on the Godavari. Best time, activities and visitor tips.',
     name: 'Perantalapalli',
     shortDescription: 'A sacred seat of Lord Shiva with ancient temple surrounded by pristine Papikondalu landscapes.',
-    description: 'Perantalapalli Shiva Temple is believed to be a sacred seat of Lord Shiva, where devotees have worshipped for centuries amidst the tranquil hills of Papikondalu. Many consider the temple a place of spiritual purification, where prayers offered to the Godavari and Lord Shiva bring peace, prosperity, and divine blessings. Located deep within the Papikondalu hills on the banks of the Godavari, Perantalapalli is surrounded by dense forests, waterfalls, and pristine landscapes. The temple is accessible mainly by boat, making it both a geographical wonder and a serene stopover in the Godavari tourism circuit.',
-    image: 'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_limit,w_1200,q_auto,f_auto/v1755978650/perantalapalli_ansers.jpg',
+    description: 'Perantalapalli is a small riverside village deep inside the Papikondalu hills, reached only by boat on the Godavari. The Shiva temple here has been a place of worship for centuries. Devotees come to offer prayers and seek blessings beside the river. The village sits among dense forests and is one of the stops on the Rajahmundry to Papikondalu day tour. It gives visitors a glimpse of life inside the gorge, away from the main towns.',
+    image: 'https://res.cloudinary.com/dnz1dmnmb/image/upload/v1790789295/copy_of_perantalapalli_ansers.webp',
     gallery: [
-      'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_limit,w_1200,q_auto,f_auto/v1755978650/perantalapalli_ansers.jpg'
+      'https://res.cloudinary.com/dnz1dmnmb/image/upload/v1790789295/copy_of_perantalapalli_ansers.webp'
     ],
     highlights: ['Village life experience', 'Local culture', 'River views', 'Traditional crafts'],
     bestTime: 'November to February',
@@ -39,7 +39,7 @@ export const attractionsData = [
     metaDescription: 'Gandipochamma Temple on the Godavari in the Papikondalu region: spiritual significance, visitor facilities, dress code and tips for your temple visit.',
     name: 'Gandipochamma Temple',
     shortDescription: 'A sacred temple with deep spiritual significance and traditional South Indian architecture.',
-    description: 'Spiritual History: A sacred temple with deep spiritual significance, Perantalapalli Shiva Temple has long been a place where devotees seek peace, blessings, and divine connection. The temple architecture reflects traditional South Indian style, creating a serene space for worship, meditation, and spiritual contemplation along the holy banks of the Godavari. Geographical History: Situated in the heart of the Papikondalu hills, the temple is surrounded by lush forests, waterfalls, and the flowing Godavari River. Accessible mainly by boat, Perantalapalli stands as both a geographical marvel and a spiritual retreat, blending natural beauty with centuries of devotion.',
+    description: 'Gandipochamma Temple sits on the banks of the Godavari in the Papikondalu region. The temple is dedicated to Goddess Gandipochamma and is visited by local devotees and pilgrims travelling through the gorge. The architecture follows traditional South Indian style. The setting — surrounded by forested hills and the flowing river — makes it a peaceful place to stop and offer prayers. Ask us when booking whether your boat tour route includes this temple.',
     image: 'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_scale,w_600,q_auto,f_auto/v1755978109/gandi_pza3wk.jpg',
     gallery: [
       'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_600,q_auto,f_auto/v1755980906/BhadrachalamTemple-1068x421_heh1o2.png',
@@ -57,7 +57,7 @@ export const attractionsData = [
     metaDescription: 'Bhadrachalam Sri Rama temple, known for Sri Rama Navami: temple facilities, visiting tips, and how to combine darshan with a Papikondalu boat tour.',
     name: 'Bhadrachalam Temple',
     shortDescription: 'One of the most revered temples dedicated to Lord Rama with grand architecture.',
-    description: 'Spiritual History: One of the most revered temples dedicated to Lord Rama, this sacred shrine holds immense spiritual significance and draws thousands of devotees every year. The temple is especially known for its Rama Navami celebrations, where rituals, chanting, and cultural festivities fill the atmosphere with divine devotion. Geographical History: Renowned for its grand South Indian architecture, the temple stands as a symbol of faith and heritage. Its location amidst the cultural heartland makes it not only a center of worship but also an architectural landmark admired by pilgrims and travelers alike.',
+    description: 'Bhadrachalam temple is one of the most important Sri Rama temples in South India. It stands on the banks of the Godavari in Bhadrachalam town, Telangana, and draws pilgrims throughout the year. The temple is especially busy during Sri Rama Navami, when thousands gather for the celestial wedding ceremony. The architecture is grand South Indian style, with tall gopurams visible from the riverbank. For Papikondalu visitors, Bhadrachalam is the upstream starting point of the two day boat tour. Most groups visit the temple in the morning before boarding the boat.',
     image: 'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_600,q_auto,f_auto/v1755980907/Bhadrachalam_Temple_yg8met.jpg',
     gallery: [
       'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_600,q_auto,f_auto/v1755980907/Bhadrachalam_Temple_yg8met.jpg'
@@ -74,7 +74,7 @@ export const attractionsData = [
     metaDescription: 'Sirivaka night stay in the Papikondalu hills: riverside camping, campfire, stargazing and nature walks. What to carry and the best time to go.',
     name: 'Sirivaka Night Stay',
     shortDescription: 'Experience overnight camping in nature with campfires and stargazing.',
-    description: 'Spiritual / Experiential History: Experience the magic of staying overnight in the heart of nature at Sirivaka, where the calm surroundings offer peace, reflection, and a deeper connection with the natural world. Campfires, stargazing, and the soothing sounds of the forest create a meditative atmosphere that refreshes both mind and soul. Geographical History: Nestled within the lush Papikondalu region along the Godavari River, Sirivaka is surrounded by dense forests, rolling hills, and serene landscapes. This unique eco-stay offers visitors an authentic riverside experience, blending rustic charm with the untouched beauty of the Eastern Ghats.',
+    description: 'Sirivaka is a riverside campsite inside the Papikondalu hills, reached by boat from Rajahmundry. It sits among dense forest on the banks of the Godavari, with the hills rising on both sides. An overnight stay here includes a campfire, stargazing, nature walks and meals. The sounds of the forest and the river make it a very different experience from a hotel stay. Best time to go is October to March, when the weather is cool and the river is calm. Carry warm clothes for the evenings.',
     image: 'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_limit,w_1200,q_auto,f_auto/v1755979074/sirivaka-bamboo-huts-papikondalu_sgrm4p.jpg',
     gallery: [
       'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_limit,w_1200,q_auto,f_auto/v1755979074/sirivaka-bamboo-huts-papikondalu_sgrm4p.jpg',
@@ -92,7 +92,7 @@ export const attractionsData = [
     metaDescription: 'Maredumilli forest and waterfalls in the Eastern Ghats: trekking, wildlife spotting, best time to visit (June to February) and safety tips.',
     name: 'Maredumilli',
     shortDescription: 'A pristine forest area with stunning waterfalls and rich biodiversity.',
-    description: 'Spiritual / Experiential History: A pristine forest area blessed with stunning waterfalls and untouched natural charm, this destination is a paradise for those seeking peace and renewal in the lap of nature. The calmness of the flowing streams and the songs of birds create a meditative atmosphere, offering travelers a spiritual escape into the wilderness. Geographical History: Rich in biodiversity, this forest region is home to rare flora and fauna, making it ideal for trekking, photography, and wildlife spotting. With scenic trails, cascading waterfalls, and dense greenery, it offers adventure enthusiasts and nature lovers an unforgettable journey into the wild beauty of the Eastern Ghats.',
+    description: 'Maredumilli is a forest area in the Eastern Ghats, about 100 km from Rajahmundry. It is known for its waterfalls, dense tree cover and wildlife. The main draws are the Jalatarangini and Amruthadhara waterfalls, which are best visited between June and February when the water flow is strong. Trekking trails run through the forest, and the area is home to birds, butterflies and occasional wildlife. Our Maredumilli day tour departs from Rajahmundry and includes transport, a guide, lunch and refreshments.',
     image: 'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_scale,w_600,q_auto,f_auto/v1755978648/maredumilli_lqndyb.webp',
     gallery: [
       'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_scale,w_600,q_auto,f_auto/v1755978648/maredumilli_lqndyb.webp',
@@ -110,7 +110,7 @@ export const attractionsData = [
     metaDescription: 'Parnasala, where Lord Rama, Sita and Lakshmana are believed to have stayed in exile. History, what to see, best time to visit and visitor tips.',
     name: 'Parnasala',
     shortDescription: 'A place of mythological significance where Lord Rama stayed during exile.',
-    description: 'Spiritual / Mythological History: A place of deep historical and mythological importance, this sacred site is believed to be where Lord Rama, Sita, and Lakshmana stayed during their exile. The region is revered by devotees as a living reminder of the Ramayana, offering pilgrims a chance to walk in the footsteps of the divine and experience the essence of ancient Indian spirituality. Geographical / Cultural History: Set amidst serene landscapes of hills and rivers, the area blends natural beauty with cultural heritage. Temples, sacred groves, and age-old traditions preserve its significance, allowing visitors not only to admire its scenic charm but also to connect with stories and practices passed down through generations.',
+    description: 'Parnasala is a heritage site near Bhadrachalam, on the banks of the Godavari. It is believed to be the place where Lord Rama, Sita and Lakshmana stayed during their years of exile, as described in the Ramayana. The site has a replica of the forest hut, statues of Rama, Sita and Lakshmana, and a small temple. A guide explains the stories connected to each part of the site. Many visitors combine Parnasala with a Bhadrachalam temple visit on the same day. The best time to visit is October to March.',
     image: 'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_scale,w_600,q_auto,f_auto/v1755979312/dev_parnasala_pfvan7.jpg',
     gallery: [
       'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_scale,w_600,q_auto,f_auto/v1755979312/dev_parnasala_pfvan7.jpg'

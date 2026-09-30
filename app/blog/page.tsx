@@ -32,7 +32,7 @@ export default function Blog() {
             Travel Blog
           </h1>
           <p className="text-xl text-white/90 max-w-3xl mx-auto">
-            Travel guides for Papikondalu, Bhadrachalam temple and the Godavari region, written by the team that runs the boat tours.
+            Travel guides for Papikondalu, Bhadrachalam and the Godavari region. Written by the team that runs the boat tours.
           </p>
           <p className="text-white/90 max-w-3xl mx-auto mt-4">
             Planning a trip now? Start with the{' '}

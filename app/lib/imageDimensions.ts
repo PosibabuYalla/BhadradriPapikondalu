@@ -60,7 +60,7 @@ export const imageDimensions: Record<string, [number, number]> = {
   'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_fill,w_96,h_96,q_auto,f_auto/v1756177667/laxaman_rao_cshydd.jpg': [96, 96],
   'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_fill,w_96,h_96,q_auto,f_auto/v1756177679/daniel_psd7do.jpg': [96, 96],
   'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_fill,w_96,h_96,q_auto,f_auto/v1756177697/janu_t64fm3.jpg': [96, 96],
-  'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_limit,w_1200,q_auto,f_auto/v1755978650/perantalapalli_ansers.jpg': [840, 570],
+  'https://res.cloudinary.com/dnz1dmnmb/image/upload/v1790789295/copy_of_perantalapalli_ansers.webp': [840, 570],
   'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_limit,w_1200,q_auto,f_auto/v1755979074/sirivaka-bamboo-huts-papikondalu_sgrm4p.jpg': [950, 250],
   'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_scale,w_1200,h_630,q_auto,f_auto/v1755401093/papihills1_hmfpkr.jpg': [1200, 630],
   'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_scale,w_1280,h_720,q_auto,f_auto/v1755401093/papihills1_hmfpkr.jpg': [1280, 720],

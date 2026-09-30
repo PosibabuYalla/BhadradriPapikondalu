@@ -44,16 +44,16 @@ export default function PrivacyPage() {
 
             <h2 className="text-3xl font-bold mb-6">Information Protection</h2>
             <p className="mb-8">
-              We implement appropriate security measures to protect your personal information against 
-              unauthorized access, alteration, disclosure, or destruction. Your payment information 
-              is processed through secure payment gateways.
+              We use appropriate security measures to protect your personal information.
+              This includes protection against unauthorised access, alteration, disclosure or destruction.
+              Payment information is processed through secure payment gateways.
             </p>
 
             <h2 className="text-3xl font-bold mb-6">Information Sharing</h2>
             <p className="mb-8">
-              We do not sell, trade, or rent your personal information to third parties. We may share 
-              information with trusted service providers who assist us in operating our business, 
-              conducting tours, or servicing you.
+              We do not sell, trade or rent your personal information to third parties.
+              We may share information with trusted service providers who help us operate our business,
+              run tours or serve you.
             </p>
 
             <h2 className="text-3xl font-bold mb-6">Your Rights</h2>

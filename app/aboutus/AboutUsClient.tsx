@@ -68,20 +68,17 @@ export default function AboutUsClient() {
               
               <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
                 <p>
-                  For over <strong className="text-primary-600">two decades</strong>, Papikondalu Tourism has been the 
-                  <strong className="text-secondary-600">leading name</strong> in river tourism along the scenic Godavari River. 
-                  What started as a passionate family venture has evolved into Andhra Pradesh most 
-                  <strong className="text-primary-600">trusted tourism brand</strong>.
+                  Papikondalu Tourism has been running Godavari boat tours since 2004.
+                  Over <strong className="text-primary-600">two decades</strong>, we have grown from a small family venture into
+                  one of Andhra Pradesh&apos;s most <strong className="text-primary-600">trusted tourism operators</strong>.
                 </p>
                 <p>
-                  We have successfully served more than <strong className="text-secondary-600">7 lakh happy customers</strong>, 
-                  creating unforgettable memories through our carefully crafted boat tours, temple visits, 
-                  and adventure packages in the breathtaking Papikondalu region.
+                  We have served more than <strong className="text-secondary-600">7 lakh customers</strong> on our boat tours,
+                  temple visits and adventure packages in the Papikondalu region.
                 </p>
                 <p>
-                  Our unwavering commitment to <strong className="text-primary-600">excellence, safety, and customer satisfaction</strong> 
-                  has made us the preferred choice for tourists seeking authentic experiences in one of the 
-                  most scenic destinations in India.
+                  Safety, reliability and genuine local knowledge are what we are known for.
+                  Our team lives and works in this region, and that shows in every trip we run.
                 </p>
               </div>
 

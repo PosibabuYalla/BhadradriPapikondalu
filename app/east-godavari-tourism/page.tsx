@@ -32,7 +32,7 @@ export default function EastGodavariTourismPage() {
             <span className="text-green-400">East Godavari Tourism</span>
           </h1>
           <p className="text-xl md:text-2xl mb-8">
-            Hills, river gorges, forests and temples along the Godavari, with Papikondalu at the centre.
+            Hills, river gorges, forests and temples along the Godavari. Papikondalu is at the centre.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/packages" className="bg-green-500 text-black px-8 py-3 rounded-lg font-semibold hover:bg-green-400 transition-colors">
@@ -52,8 +52,8 @@ export default function EastGodavariTourismPage() {
               <span className="text-green-600">Best Tourist Places</span> in East Godavari
             </h2>
             <p className="text-xl text-gray-700 max-w-4xl mx-auto">
-              The places below are the ones most visitors combine with a Godavari boat trip. Bhadrachalam and Parnasala are
-              just across the state border in Telangana but sit on the same river route.
+              The places below are the ones most visitors combine with a Godavari boat trip.
+              Bhadrachalam and Parnasala are just across the state border in Telangana but sit on the same river route.
             </p>
           </div>
 
@@ -69,7 +69,7 @@ export default function EastGodavariTourismPage() {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Papikondalu Hills</h3>
                 <p className="text-gray-700 mb-4">
-                  Crown jewel of <strong>East Godavari tourism</strong> with scenic boat rides and breathtaking hill views.
+                  The Papikondalu hills rise on both sides of the Godavari. The boat ride through the gorge is the main draw for most visitors.
                 </p>
                 <Link href="/papikondalu-tours" className="text-green-600 font-semibold hover:text-green-700">
                   Papikondalu tour guide →
@@ -88,7 +88,7 @@ export default function EastGodavariTourismPage() {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Bhadrachalam Temple</h3>
                 <p className="text-gray-700 mb-4">
-                  Revered Lord Rama temple on the Godavari, and the upstream start of the Papikondalu boat route.
+                  One of the most important Sri Rama temples in South India. It is also the upstream start of the Papikondalu boat route.
                 </p>
                 <Link href="/badrachalam-temple-tours" className="text-orange-600 font-semibold hover:text-orange-700">
                   Bhadrachalam temple tours →
@@ -107,7 +107,7 @@ export default function EastGodavariTourismPage() {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Maredumilli Forests</h3>
                 <p className="text-gray-700 mb-4">
-                  Pristine forest area with waterfalls, perfect for eco-tourism and adventure activities.
+                  Forest area with waterfalls and trekking trails. Good for a day trip from Rajahmundry.
                 </p>
                 <Link href="/attractions/maredumilli" className="text-emerald-600 font-semibold hover:text-emerald-700">
                   Maredumilli travel guide →
@@ -126,7 +126,7 @@ export default function EastGodavariTourismPage() {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Rajahmundry City</h3>
                 <p className="text-gray-700 mb-4">
-                  The main starting point for one day Papikondalu boat tours, with rail and air connections.
+                  The main starting point for one day Papikondalu boat tours. Well connected by rail and air.
                 </p>
                 <Link href="/packages/rajahmundry-papikondalu-packages" className="text-blue-600 font-semibold hover:text-blue-700">
                   Rajahmundry to Papikondalu tour →
@@ -145,7 +145,7 @@ export default function EastGodavariTourismPage() {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Parnasala</h3>
                 <p className="text-gray-700 mb-4">
-                  Mythological site where Lord Rama stayed during exile, rich in cultural heritage.
+                  Believed to be where Lord Rama, Sita and Lakshmana stayed during their exile. A short drive from Bhadrachalam.
                 </p>
                 <Link href="/attractions/parnasala" className="text-purple-600 font-semibold hover:text-purple-700">
                   About Parnasala →
@@ -164,7 +164,7 @@ export default function EastGodavariTourismPage() {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Sirivaka Camping</h3>
                 <p className="text-gray-700 mb-4">
-                  Unique overnight camping experience in nature, perfect for adventure tourism.
+                  Riverside campsite in the Papikondalu hills. Reached by boat. Good for an overnight stay with a campfire.
                 </p>
                 <Link href="/attractions/sirivaka-night-stay-camping" className="text-indigo-600 font-semibold hover:text-indigo-700">
                   Sirivaka night stay →
@@ -192,7 +192,7 @@ export default function EastGodavariTourismPage() {
               Plan Your <span className="text-yellow-300">Godavari Trip</span>
             </h2>
             <p className="text-xl mb-6">
-              Tell us which places you want to cover and how many days you have, and we&apos;ll put together a route.
+              Tell us which places you want to cover and how many days you have. We will put together a route.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/packages" className="bg-yellow-500 text-black px-8 py-3 rounded-lg font-semibold hover:bg-yellow-400 transition-colors">

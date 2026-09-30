@@ -85,9 +85,9 @@ export default function BlogPost() {
             {/* Introduction */}
             <div className="bg-white rounded-2xl shadow-lg p-8 mb-12">
               <p className="text-lg leading-relaxed text-gray-700">
-                If you&apos;re looking for a breathtaking getaway filled with natural wonders, spiritual experiences, and cultural richness, 
-                Papikondalu and Bhadradri are your perfect destinations. Nestled in the heart of East Godavari, Andhra Pradesh, 
-                this region offers stunning river cruises, majestic hills, sacred temples, and tranquil waterfalls.
+                Papikondalu and Bhadradri (Bhadrachalam) are two of the most visited destinations along the Godavari.
+                One offers a river cruise through dramatic hills. The other is one of the most important Sri Rama temples in South India.
+                Together, they make a natural two or three day trip from Rajahmundry.
               </p>
             </div>
 
@@ -107,9 +107,9 @@ export default function BlogPost() {
                     Explore the Scenic Papikondalu Hills
                   </h2>
                   <p className="text-lg text-gray-700 leading-relaxed">
-                    Experience the serene beauty of the Papikondalu hills by cruising along the Godavari River. 
-                    The lush green hills and the peaceful river landscape create a perfect backdrop for travelers 
-                    seeking both adventure and relaxation. Our{' '}
+                    The Papikondalu hills rise on both sides of the Godavari, forming a narrow gorge that the boat passes through.
+                    The scenery changes constantly as you move upriver. Green slopes, rocky outcrops and small villages appear around each bend.
+                    Our{' '}
                     <Link href="/papikondalu-tours" className="text-blue-600 hover:underline">Papikondalu tour guide</Link>{' '}
                     covers the boat routes from Rajahmundry and Bhadrachalam.
                   </p>
@@ -133,9 +133,10 @@ export default function BlogPost() {
                     Sacred Bhadradri Temple: A Spiritual Haven
                   </h2>
                   <p className="text-lg text-gray-700 leading-relaxed">
-                    Visit the ancient Bhadradri temple, a place of worship dedicated to Lord Rama. 
-                    This temple is renowned for its architectural grandeur and festive celebrations like Rama Navami, 
-                    where thousands gather to seek blessings. Read more about{' '}
+                    Bhadrachalam temple is dedicated to Lord Rama and sits on the banks of the Godavari.
+                    It is one of the most visited pilgrimage sites in South India.
+                    The temple is especially busy during Sri Rama Navami, when thousands gather for the celebrations.
+                    Read more about{' '}
                     <Link href="/attractions/bhadrachalam" className="text-blue-600 hover:underline">visiting Bhadrachalam temple</Link>.
                   </p>
                 </div>
@@ -158,8 +159,10 @@ export default function BlogPost() {
                     Adventure at Maredumilli Waterfalls
                   </h2>
                   <p className="text-lg text-gray-700 leading-relaxed">
-                    If you love nature and adventure, Maredumilli Waterfalls should be on your list. 
-                    Trek through dense forests, enjoy the misty spray of the waterfalls, and embrace the serenity of untouched nature. See our{' '}
+                    Maredumilli is a forest area in the Eastern Ghats with several waterfalls.
+                    The Jalatarangini and Amruthadhara falls are the most visited.
+                    Trekking trails run through the forest, and the area is good for bird watching and photography.
+                    See our{' '}
                     <Link href="/attractions/maredumilli" className="text-blue-600 hover:underline">Maredumilli travel guide</Link>.
                   </p>
                 </div>
@@ -194,8 +197,8 @@ export default function BlogPost() {
                   When to Visit
                 </h2>
                 <p className="text-lg text-amber-800 leading-relaxed">
-                  The best time to explore Papikondalu and Bhadradri is from <strong>October to March</strong>. 
-                  The weather is pleasant, perfect for river cruises, temple tours, and nature outings.
+                  The best time to visit is <strong>October to March</strong>.
+                  The weather is cool and dry, which makes river cruises, temple visits and forest walks comfortable.
                 </p>
               </div>
             </section>
@@ -207,8 +210,8 @@ export default function BlogPost() {
                   Plan Your Tour with Trust and Comfort
                 </h2>
                 <p className="text-lg text-gray-700 mb-8 max-w-3xl mx-auto">
-                  Choose from a variety of customizable tour packages including day tours, overnight stays, and multi-day adventures. 
-                  Our expert guides and 24/7 customer support ensure that you have an unforgettable and safe journey.
+                  We offer day tours, overnight stays and multi-day packages.
+                  Our guides know the region well, and we handle transport, meals and bookings.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link 
@@ -228,12 +231,12 @@ export default function BlogPost() {
             </section>
 
             {/* Final CTA */}
-            <div className="bg-gradient-to-r from-green-600 to-blue-600 rounded-2xl p-8 text-center text-white">
+              <div className="bg-gradient-to-r from-green-600 to-blue-600 rounded-2xl p-8 text-center text-white">
               <p className="text-xl md:text-2xl font-bold mb-4">
-                Book your adventure today and immerse yourself in the natural and spiritual wonders of East Godavari!
+                Ready to plan your Godavari trip?
               </p>
               <p className="text-lg opacity-90">
-                Let us help you create memories that last a lifetime.
+                Call us or use the contact form and we will help you choose the right package.
               </p>
             </div>
           </article>
