@@ -6,7 +6,7 @@ import { pageMetadata, breadcrumbSchema } from '../lib/seo'
 
 export const metadata: Metadata = pageMetadata({
   title: 'About Papikondalu Tourism | Godavari Boat Tours Since 2004',
-  description: 'Papikondalu Tourism has run Godavari boat tours from Rajahmundry since 2004. Meet our boats and team, and see how we plan Papikondalu and temple trips.',
+  description: 'Papikondalu Tourism has operated Godavari boat tours from Rajahmundry since 2004. Meet our team and explore our Papikondalu tours.',
   path: '/aboutus',
   image: 'https://res.cloudinary.com/dnz1dmnmb/image/upload/v1756004871/aboutus_papikonalu_mjtxyo.jpg',
   imageAlt: 'Papikondalu Tourism boats on the Godavari'

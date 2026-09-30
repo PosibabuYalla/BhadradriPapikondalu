@@ -286,7 +286,7 @@ export default function PackageDetailClient({ packageData }: PackageDetailClient
                   {agents.slice(0, 2).map((agent) => (
                     <div key={agent.id} className="flex gap-2">
                       <a
-                        href={`https://wa.me/${agent.whatsapp}?text=Hi, I&apos;m interested in ${packageData.name} package. Can you help me?`}
+                        href={`https://wa.me/${agent.whatsapp}?text=${encodeURIComponent(`Hi, I'm interested in the ${packageData.name}. Can you help me?`)}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex-1 bg-green-500 hover:bg-green-600 text-white py-2 px-3 rounded-lg text-sm font-medium transition-colors flex items-center justify-center"

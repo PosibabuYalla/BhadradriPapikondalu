@@ -24,6 +24,15 @@ interface AttractionDetailClientProps {
   attraction: Attraction
 }
 
+// The data runs several sections into one string with inline labels such as
+// "Spiritual / Experiential History:". Split on those labels into paragraphs
+// and drop the labels, which read as jargon to visitors.
+const descriptionParagraphs = (text: string) =>
+  text
+    .split(/\b(?:Spiritual|Geographical)(?: \/ \w+)? History:\s*/)
+    .map((part) => part.trim())
+    .filter(Boolean)
+
 // The most relevant tour page for each attraction, keyed by attraction slug.
 const relatedTour: Record<string, { href: string; label: string; howToVisit: string }> = {
   'papikondalu': {
@@ -119,9 +128,13 @@ export default function AttractionDetailClient({ attraction }: AttractionDetailC
                   <Info className="text-primary-600" size={24} />
                   <h2 className="text-2xl font-bold text-gray-900">About {attraction.name}</h2>
                 </div>
-                <p className="text-gray-700 text-lg leading-relaxed">
-                  {attraction.description}
-                </p>
+                <div className="space-y-4">
+                  {descriptionParagraphs(attraction.description).map((paragraph) => (
+                    <p key={paragraph.slice(0, 40)} className="text-gray-700 text-lg leading-relaxed">
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
               </motion.div>
 
               {/* Activities */}

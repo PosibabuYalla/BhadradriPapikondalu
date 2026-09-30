@@ -4,8 +4,8 @@ export const packagesData = [
     name: 'Papikondalu River Cruise Package',
     title: 'Papikondalu River Cruise Package from Bhadrachalam',
     metaDescription: 'Papikondalu river cruise from Bhadrachalam with a temple visit, Godavari boat ride through the hills, guide and temple entry. Call or WhatsApp to book.',
-    shortDescription: 'Book the best Papikondalu river cruise tour in East Godavari. Enjoy breathtaking views, safe boats, and expert guides.',
-    description: 'Book the best Papikondalu river cruise tour in East Godavari. Enjoy breathtaking views, safe boats, and expert guides. Reserve today!',
+    shortDescription: 'A Godavari river cruise through the Papikondalu hills, starting from Bhadrachalam with a temple visit.',
+    description: 'Start with a visit to Bhadrachalam temple, then board the boat and cruise down the Godavari into the Papikondalu hills. A guide travels with you, and temple entry is included.',
     image: 'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_600,q_auto,f_auto/v1755980906/BhadrachalamTemple-1068x421_heh1o2.png',
     gallery: [
       'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_600,q_auto,f_auto/v1755980906/BhadrachalamTemple-1068x421_heh1o2.png',
@@ -29,7 +29,7 @@ export const packagesData = [
     name: 'Bhadrachalam to Papikondalu Two Day Boat Tour',
     title: 'Bhadrachalam to Papikondalu Two Day Tour | Boat Package',
     metaDescription: 'Two day Bhadrachalam to Papikondalu boat tour with a Sri Rama temple visit, an overnight stay near the hills and meals, ending in Rajahmundry.',
-    shortDescription: 'Experience Bhadradri temple darshan and scenic Godavari cruise with trusted operators.',
+    shortDescription: 'Temple darshan at Bhadrachalam, an overnight stay in the Papikondalu hills, then on to Rajahmundry.',
     description: 'Experience Bhadradri temple darshan and scenic Godavari cruise with trusted operators. Custom packages for families and groups.',
     image: 'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_scale,w_600,q_auto,f_auto/v1756003757/rajamundry_v2aufm.jpg',
     gallery: [
@@ -77,10 +77,10 @@ export const packagesData = [
   {
     id: 4,
     name: 'Rampachodavaram Tribal Culture Tour Package',
-    title: 'Rampachodavaram Tribal Culture Tour Package',
+    title: 'Rampachodavaram Tribal Culture Tour from Rajahmundry',
     metaDescription: 'Rampachodavaram tribal culture tour from Rajahmundry with a Godavari cruise, temple visits, stay and meals. Contact us for dates, group size and rates.',
-    shortDescription: 'Discover Rampachodavaram tribal heritage and river rafting with local experts.',
-    description: 'Discover Rampachodavaram tribal heritage and river rafting. Book your authentic adventure with local experts and best rates.',
+    shortDescription: 'Discover the tribal culture of Rampachodavaram, with a Godavari cruise and temple visits.',
+    description: 'Discover the tribal culture of Rampachodavaram with local guides. The trip starts from Rajahmundry and includes a Godavari cruise, temple visits, stay and meals.',
     image: 'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_600,q_auto,f_auto/v1755980907/Bhadrachalam_Temple_yg8met.jpg',
     gallery: [
       'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_600,q_auto,f_auto/v1755980907/Bhadrachalam_Temple_yg8met.jpg',
@@ -151,10 +151,10 @@ export const packagesData = [
   {
     id: 7,
     name: 'Parnasala Heritage Temple Tour Package',
-    title: 'Parnasala Heritage Temple Tour Package',
+    title: 'Parnasala Temple Tour near Bhadrachalam | Package',
     metaDescription: 'Parnasala heritage tour to the Ramayana site where Lord Rama is believed to have lived in exile, near Bhadrachalam. Contact us for dates and group rates.',
-    shortDescription: 'Visit ancient Shiva temples and heritage sites at Parnasala with guided cultural tours.',
-    description: 'Visit ancient Shiva temples and heritage sites at Parnasala. Guided tours with cultural insights and spiritual experiences.',
+    shortDescription: 'Visit Parnasala, the Ramayana site near Bhadrachalam, on a guided heritage tour.',
+    description: 'Visit Parnasala, near Bhadrachalam, where Lord Rama, Sita and Lakshmana are believed to have lived during their exile. A guide explains the site and its stories.',
     image: 'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_600,q_auto,f_auto/v1755978851/MAREDUMILLI_-_waterfalls_kmuppt.jpg',
     gallery: [
       'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_600,q_auto,f_auto/v1755978851/MAREDUMILLI_-_waterfalls_kmuppt.jpg'
@@ -175,7 +175,7 @@ export const packagesData = [
   {
     id: 8,
     name: 'Gudisa Hills Trekking Tour Package',
-    title: 'Gudisa Hills Trekking Tour Package',
+    title: 'Gudisa Hills Trekking Tour Package | Papikondalu Tourism',
     metaDescription: 'Gudisa hill station trip with panoramic Eastern Ghats viewpoints, cool weather and guided walks. Contact us for dates, group size and current rates.',
     shortDescription: 'Trek Gudisa hills for panoramic mountain views with expert guides and camping.',
     description: 'Trek Gudisa hills for panoramic mountain views. Adventure package includes expert guides and memorable camping experiences.',

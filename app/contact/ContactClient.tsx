@@ -4,6 +4,9 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle, MessageCircle, User, Facebook, Instagram, Youtube, Star, Award, Shield, Heart, Sparkles } from 'lucide-react'
 import { agents } from '../lib/agents'
+import { businessInfo } from '../lib/businessInfo'
+
+const whatsappMessage = encodeURIComponent("Hi, I'm interested in Papikondalu tour packages. Can you help me?")
 
 export default function ContactClient() {
   const [formData, setFormData] = useState({
@@ -486,7 +489,7 @@ export default function ContactClient() {
                     
                     <div className="flex gap-2">
                       <a
-                        href={`https://wa.me/${agent.whatsapp}?text=Hi, I&apos;m interested in Papikondalu tour packages. Can you help me?`}
+                        href={`https://wa.me/${agent.whatsapp}?text=${whatsappMessage}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex-1 bg-green-500 hover:bg-green-600 text-white py-2 px-2 rounded-lg font-medium text-xs transition-all duration-300 flex items-center justify-center shadow-md hover:shadow-lg transform hover:scale-105"
@@ -577,36 +580,23 @@ export default function ContactClient() {
             <p className="text-xl md:text-2xl mb-10 text-white/90 leading-relaxed">
               Our team is available 24/7 to help you plan the perfect Papikondalu experience
             </p>
-            <div className="flex justify-center gap-6">
-              {agents.map((agent, index) => {
-                const colors = [
-                  'bg-blue-500 hover:bg-blue-600 shadow-blue-500/30',
-                  'bg-green-500 hover:bg-green-600 shadow-green-500/30',
-                  'bg-purple-500 hover:bg-purple-600 shadow-purple-500/30',
-                  'bg-orange-500 hover:bg-orange-600 shadow-orange-500/30'
-                ]
-                return (
-                  <motion.div
-                    key={agent.id}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1, duration: 0.6 }}
-                    viewport={{ once: true }}
-                    className="flex flex-col items-center"
-                  >
-                    <a
-                      href={`https://wa.me/${agent.whatsapp}?text=Hi, I&apos;m interested in Papikondalu tour packages. Can you help me?`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      title={`Contact ${agent.name} on WhatsApp`}
-                      className={`w-16 h-16 ${colors[index]} rounded-2xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 mb-2`}
-                    >
-                      <MessageCircle size={20} className="text-white" />
-                    </a>
-                    <span className="text-white font-medium text-sm">{agent.name.split(' ')[0]}</span>
-                  </motion.div>
-                )
-              })}
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <a
+                href={businessInfo.whatsappHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-2xl font-semibold shadow-lg transition-colors"
+              >
+                <MessageCircle size={20} className="mr-2" aria-hidden="true" />
+                WhatsApp {businessInfo.phone}
+              </a>
+              <a
+                href={businessInfo.phoneHref}
+                className="inline-flex items-center justify-center bg-white text-primary-700 hover:bg-gray-100 px-8 py-4 rounded-2xl font-semibold shadow-lg transition-colors"
+              >
+                <Phone size={20} className="mr-2" aria-hidden="true" />
+                Call {businessInfo.phone}
+              </a>
             </div>
           </motion.div>
         </div>

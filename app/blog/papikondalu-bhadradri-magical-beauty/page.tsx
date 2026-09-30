@@ -229,9 +229,9 @@ export default function BlogPost() {
 
             {/* Final CTA */}
             <div className="bg-gradient-to-r from-green-600 to-blue-600 rounded-2xl p-8 text-center text-white">
-              <h2 className="text-xl md:text-2xl font-bold mb-4">
+              <p className="text-xl md:text-2xl font-bold mb-4">
                 Book your adventure today and immerse yourself in the natural and spiritual wonders of East Godavari!
-              </h2>
+              </p>
               <p className="text-lg opacity-90">
                 Let us help you create memories that last a lifetime.
               </p>

@@ -87,7 +87,7 @@ export default function PapikondaluToursPage() {
       {/* Hero */}
       <section className="relative h-[60vh] min-h-[420px] flex items-center justify-center">
         <CoverImage
-          src="https://res.cloudinary.com/djmcbqzqt/image/upload/c_fill,w_1920,h_1080,q_auto,f_auto/v1755980788/PAPI-KONDALU_wswdud.jpg"
+          src="https://res.cloudinary.com/djmcbqzqt/image/upload/c_fill,w_1200,h_675,q_auto,f_auto/v1755980788/PAPI-KONDALU_wswdud.jpg"
           alt="Papikondalu hills rising above the Godavari River"
           className="object-cover"
           priority
