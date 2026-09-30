@@ -59,6 +59,7 @@ export const imageDimensions: Record<string, [number, number]> = {
   'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_scale,w_600,q_auto,f_auto/v1755978109/gandi_pza3wk.jpg': [600, 450],
   'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_scale,w_600,q_auto,f_auto/v1755978648/maredumilli_lqndyb.webp': [600, 360],
   'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_fill,w_1920,h_1080,q_auto,f_webp/v1755401093/papihills1_hmfpkr.jpg': [1920, 1080],
+  'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_fill,w_1920,h_1080,q_auto,f_webp/v1755976642/1b45e060-bfee-4be1-85f4-51c2c6430c70_itqkts.jpg': [1920, 1080],
   'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_fill,w_96,h_96,q_auto,f_auto/v1756177667/laxaman_rao_cshydd.jpg': [96, 96],
   'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_fill,w_96,h_96,q_auto,f_auto/v1756177679/daniel_psd7do.jpg': [96, 96],
   'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_fill,w_96,h_96,q_auto,f_auto/v1756177697/janu_t64fm3.jpg': [96, 96],
