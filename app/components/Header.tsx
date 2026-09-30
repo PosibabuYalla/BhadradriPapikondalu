@@ -68,6 +68,7 @@ const Header = () => {
                   alt="Papikondalu Tourism"
                   width={60}
                   height={60}
+                  loading="eager"
                   className="object-contain transition-transform duration-300 group-hover:scale-110"
                 />
               </div>

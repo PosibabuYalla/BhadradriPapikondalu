@@ -12,7 +12,7 @@ const testimonials = [
     rating: 5,
     text: 'Amazing experience! The boat ride through Papikondalu was breathtaking. The team was professional and the arrangements were perfect. Highly recommend for families!',
     date: 'December 2023',
-    avatar: 'https://res.cloudinary.com/dnz1dmnmb/image/upload/v1756177667/laxaman_rao_cshydd.jpg'
+    avatar: 'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_fill,w_96,h_96,q_auto,f_auto/v1756177667/laxaman_rao_cshydd.jpg'
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ const testimonials = [
     rating: 5,
     text: 'Best tourism service in the region. 20+ years of experience really shows in their attention to detail and customer care. Worth every penny!',
     date: 'November 2023',
-    avatar: 'https://res.cloudinary.com/dnz1dmnmb/image/upload/v1756177679/daniel_psd7do.jpg'
+    avatar: 'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_fill,w_96,h_96,q_auto,f_auto/v1756177679/daniel_psd7do.jpg'
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ const testimonials = [
     rating: 5,
     text: 'Visited with family and everyone loved it. The temple tour combined with scenic beauty made it a perfect spiritual journey. Unforgettable memories!',
     date: 'October 2023',
-    avatar: 'https://res.cloudinary.com/dnz1dmnmb/image/upload/v1756177697/janu_t64fm3.jpg'
+    avatar: 'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_fill,w_96,h_96,q_auto,f_auto/v1756177697/janu_t64fm3.jpg'
   }
 ]
 
@@ -132,8 +132,9 @@ const Testimonials = () => {
                   <Image
                     src={testimonial.avatar}
                     alt={testimonial.name}
-                    fill
-                    className="object-cover rounded-full"
+                    width={48}
+                    height={48}
+                    className="h-12 w-12 object-cover rounded-full"
                   />
                 </div>
                 <div className="flex-1">

@@ -1,11 +1,11 @@
 'use client'
 
-import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Users, MapPin, Star } from 'lucide-react'
 import { packagesData } from './packagesData'
 import { getPackageSlug } from '../utils/slugs'
+import CoverImage from '../components/CoverImage'
 
 export default function PackagesClient() {
   return (
@@ -32,7 +32,10 @@ export default function PackagesClient() {
             <Link href="/papikondalu-tours" className="underline font-semibold">
               Papikondalu tour guide
             </Link>{' '}
-            for routes, timings and what to carry.
+            for routes, timings and what to carry, or see{' '}
+            <Link href="/papikondalu-tours#price" className="underline font-semibold">
+              how Papikondalu tour prices work
+            </Link>.
           </p>
         </div>
       </section>
@@ -49,12 +52,12 @@ export default function PackagesClient() {
                 className="card-elevated overflow-hidden group hover-glow"
               >
                 <div className="relative h-64 overflow-hidden">
-                  <Image
+                  <CoverImage
                     src={pkg.image}
                     alt={pkg.name}
-                    fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    loading={index < 3 ? 'eager' : 'lazy'}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                 </div>

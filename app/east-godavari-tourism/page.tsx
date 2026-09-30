@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import JsonLd from '../components/JsonLd'
 import { pageMetadata, breadcrumbSchema } from '../lib/seo'
+import CoverImage from '../components/CoverImage'
 
 export const metadata: Metadata = pageMetadata({
   title: 'East Godavari Tourism | Places to Visit Near Papikondalu',
@@ -18,10 +19,9 @@ export default function EastGodavariTourismPage() {
         { name: 'East Godavari Tourism', path: '/east-godavari-tourism' },
       ])} />
       <section className="relative h-[70vh] flex items-center justify-center">
-        <Image
+        <CoverImage
           src="https://res.cloudinary.com/dnz1dmnmb/image/upload/c_fill,w_1920,h_1080,q_auto,f_webp/v1755401093/papihills1_hmfpkr.jpg"
           alt="Papikondalu hills on the Godavari in East Godavari"
-          fill
           className="object-cover"
           priority
           sizes="100vw"

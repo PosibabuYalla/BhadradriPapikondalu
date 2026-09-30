@@ -1,11 +1,11 @@
 'use client'
 
-import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Users, MapPin, ArrowRight, Calendar, Heart } from 'lucide-react'
 import { getPackageSlug } from '../utils/slugs'
 import { packagesData } from '../packages/packagesData'
+import CoverImage from './CoverImage'
 
 // Capacity/departure come from packagesData so the homepage never contradicts
 // the package page it links to.
@@ -96,10 +96,9 @@ const PackageShowcase = () => {
               </button>
 
               <div className="relative h-64 overflow-hidden">
-                <Image
+                <CoverImage
                   src={pkg.image}
                   alt={pkg.name}
-                  fill
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
                   sizes="(max-width: 1024px) 100vw, 33vw"
                 />

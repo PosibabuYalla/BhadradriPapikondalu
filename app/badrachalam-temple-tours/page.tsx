@@ -1,12 +1,12 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import Image from 'next/image'
 import { MapPin, Users } from 'lucide-react'
 import JsonLd from '../components/JsonLd'
 import { businessInfo } from '../lib/businessInfo'
 import { pageMetadata, breadcrumbSchema } from '../lib/seo'
 import { packagesData } from '../packages/packagesData'
 import { getPackageSlug } from '../utils/slugs'
+import CoverImage from '../components/CoverImage'
 
 // URL keeps the historical "badrachalam" spelling (already indexed); on-page
 // copy uses the correct "Bhadrachalam".
@@ -34,10 +34,9 @@ export default function BadrachalamTempleToursPage() {
     <div className="min-h-screen">
       <JsonLd data={jsonLd} />
       <section className="relative h-[60vh] min-h-[400px] flex items-center justify-center">
-        <Image
+        <CoverImage
           src="https://res.cloudinary.com/djmcbqzqt/image/upload/c_fill,w_1920,h_1080,q_auto,f_auto/v1755980907/Bhadrachalam_Temple_yg8met.jpg"
           alt="Bhadrachalam Sri Rama temple"
-          fill
           className="object-cover"
           priority
           sizes="100vw"

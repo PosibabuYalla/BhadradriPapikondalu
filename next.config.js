@@ -1,3 +1,27 @@
+// Built from what the site actually loads (checked 2026-09-30):
+// - scripts/styles: own /_next assets + Next.js inline bootstrap scripts and
+//   framer-motion inline styles (hence 'unsafe-inline'; nonces would force
+//   every page to render dynamically)
+// - images: /_next/image, Cloudinary, data: placeholders
+// - frames: Google Maps embed on /contact
+// - connect: /api/contact and Vercel Speed Insights (same-origin /_vercel/*)
+// No analytics, tag manager or web fonts are loaded. Add their origins here
+// before adding any of them.
+const contentSecurityPolicy = [
+  "default-src 'self'",
+  "script-src 'self' 'unsafe-inline'",
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' data: blob: https://res.cloudinary.com",
+  "font-src 'self' data:",
+  "connect-src 'self'",
+  "frame-src https://www.google.com https://maps.google.com",
+  "frame-ancestors 'none'",
+  "base-uri 'self'",
+  "form-action 'self'",
+  "object-src 'none'",
+  'upgrade-insecure-requests',
+].join('; ')
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
@@ -100,6 +124,14 @@ const nextConfig = {
           key: 'Referrer-Policy',
           value: 'strict-origin-when-cross-origin',
         },
+        {
+          key: 'Permissions-Policy',
+          value: 'camera=(), microphone=(), geolocation=(), payment=()',
+        },
+        // Dev server needs eval for hot reload, so only enforce CSP in production.
+        ...(process.env.NODE_ENV === 'production'
+          ? [{ key: 'Content-Security-Policy', value: contentSecurityPolicy }]
+          : []),
       ],
     },
     {

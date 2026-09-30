@@ -1,19 +1,13 @@
 'use client'
 
-import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { ArrowRight, Users, Calendar, Award, MapPin, Play } from 'lucide-react'
-import { useState, useEffect, memo } from 'react'
+import { memo } from 'react'
 import { businessInfo } from '../lib/businessInfo'
+import CoverImage from './CoverImage'
 
 const Hero = () => {
-  const [isMounted, setIsMounted] = useState(false)
-
-  useEffect(() => {
-    setIsMounted(true)
-  }, [])
-
   const stats = [
     { icon: Calendar, label: '20+ Years', sublabel: 'Experience' },
     { icon: Users, label: '7+ Lakh', sublabel: 'Happy Customers' },
@@ -25,10 +19,9 @@ const Hero = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Parallax Effect */}
       <div className="absolute inset-0">
-        <Image
+        <CoverImage
           src="https://res.cloudinary.com/dnz1dmnmb/image/upload/c_fill,w_1920,h_1080,q_auto,f_webp/v1755401093/papihills1_hmfpkr.jpg"
           alt="Papikondalu Hills - Scenic Godavari River Boat Tours"
-          fill
           className="object-cover scale-110"
           priority
           sizes="100vw"
@@ -53,7 +46,6 @@ const Hero = () => {
       </div>
 
       <div className="relative z-10 text-center text-white max-w-6xl mx-auto container-padding">
-        {isMounted ? (
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -149,26 +141,6 @@ const Hero = () => {
               <div className="text-sm">✓ Running Papikondalu tours since {businessInfo.foundedYear}</div>
             </motion.div>
           </motion.div>
-        ) : (
-          <div className="space-y-8">
-            {/* Static content for SSR */}
-            <div className="space-y-4">
-              <div className="inline-flex items-center bg-white/10 backdrop-blur-md rounded-full px-6 py-2 border border-white/20">
-                <MapPin size={16} className="mr-2 text-secondary-400" />
-                <span className="text-sm font-medium">Godavari River, Andhra Pradesh</span>
-              </div>
-
-              <h1 className="text-2xl md:text-4xl font-bold text-white leading-tight">
-                <span className="text-yellow-400">Papikondalu Boat Tours</span>
-                <span className="block">
-                  <span className="bg-gradient-to-r from-secondary-400 to-secondary-600 bg-clip-text text-transparent">
-                    Authentic Godavari River Cruises
-                  </span>
-                </span>
-              </h1>
-            </div>
-          </div>
-        )}
       </div>
 
       {/* Scroll Indicator */}

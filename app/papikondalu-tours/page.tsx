@@ -1,12 +1,12 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import Image from 'next/image'
 import { MapPin, Clock, Users, Phone, MessageCircle, Sun, Backpack, ShieldCheck, Ticket } from 'lucide-react'
 import JsonLd from '../components/JsonLd'
 import { businessInfo } from '../lib/businessInfo'
 import { pageMetadata, absoluteUrl, breadcrumbSchema, faqSchema } from '../lib/seo'
 import { packagesData } from '../packages/packagesData'
 import { getPackageSlug } from '../utils/slugs'
+import CoverImage from '../components/CoverImage'
 
 const description = 'Plan a Papikondalu tour: one day and two day Godavari boat trips from Rajahmundry and Bhadrachalam, timings, how prices work, what to carry and booking.'
 
@@ -86,10 +86,9 @@ export default function PapikondaluToursPage() {
 
       {/* Hero */}
       <section className="relative h-[60vh] min-h-[420px] flex items-center justify-center">
-        <Image
+        <CoverImage
           src="https://res.cloudinary.com/djmcbqzqt/image/upload/c_fill,w_1920,h_1080,q_auto,f_auto/v1755980788/PAPI-KONDALU_wswdud.jpg"
           alt="Papikondalu hills rising above the Godavari River"
-          fill
           className="object-cover"
           priority
           sizes="100vw"
@@ -171,7 +170,7 @@ export default function PapikondaluToursPage() {
         </section>
 
         {/* Price */}
-        <section>
+        <section id="price" className="scroll-mt-24">
           <h2 className="text-3xl font-bold text-gray-900 mb-4 flex items-center"><Ticket className="mr-3 text-primary-600" aria-hidden="true" />Papikondalu Tour Price</h2>
           {/* TODO(owner): add a price table (per adult / child, per package, weekday vs weekend) once rates are confirmed. */}
           <p className="text-lg text-gray-700 mb-4">
@@ -190,7 +189,7 @@ export default function PapikondaluToursPage() {
         </section>
 
         {/* Timings */}
-        <section>
+        <section id="timings" className="scroll-mt-24">
           <h2 className="text-3xl font-bold text-gray-900 mb-4 flex items-center"><Clock className="mr-3 text-primary-600" aria-hidden="true" />Papikondalu Boat Timings and Boarding</h2>
           {/* TODO(owner): add reporting time, departure time, return time and the exact boarding point for each route. */}
           <p className="text-lg text-gray-700 mb-4">

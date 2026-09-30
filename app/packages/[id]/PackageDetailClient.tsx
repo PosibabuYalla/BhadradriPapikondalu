@@ -1,11 +1,11 @@
 'use client'
 
-import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { ArrowLeft, MapPin, Users, Calendar, CheckCircle, Info, Route, Lightbulb, Phone, MessageCircle, ShieldCheck } from 'lucide-react'
 import { agents } from '../../lib/agents'
 import { getPackageSlug } from '../../utils/slugs'
+import CoverImage from '../../components/CoverImage'
 
 interface Package {
   id: number
@@ -39,10 +39,9 @@ export default function PackageDetailClient({ packageData }: PackageDetailClient
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <section className="relative h-96 overflow-hidden">
-        <Image
+        <CoverImage
           src={packageData.image}
           alt={packageData.name}
-          fill
           className="object-cover"
           priority
           sizes="100vw"
@@ -127,7 +126,7 @@ export default function PackageDetailClient({ packageData }: PackageDetailClient
               >
                 <div className="flex items-center gap-2 mb-6">
                   <Route className="text-primary-600" size={24} />
-                  <h2 className="text-2xl font-bold text-gray-900">Itinerary</h2>
+                  <h2 className="text-2xl font-bold text-gray-900">{packageData.name} Itinerary</h2>
                 </div>
                 <div className="space-y-4">
                   {packageData.itinerary.map((item, index) => (
@@ -225,6 +224,11 @@ export default function PackageDetailClient({ packageData }: PackageDetailClient
                       Papikondalu tour guide: routes, timings, prices and what to carry
                     </Link>
                   </li>
+                  <li>
+                    <Link href="/papikondalu-tours#timings" className="text-primary-600 hover:underline font-medium">
+                      Check Papikondalu boat timings and boarding
+                    </Link>
+                  </li>
                   {relatedPackages
                     .filter((related) => related.id !== packageData.id)
                     .map((related) => (
@@ -268,6 +272,9 @@ export default function PackageDetailClient({ packageData }: PackageDetailClient
                   <div className="text-center p-4 bg-primary-50 rounded-lg">
                     <p className="text-primary-600 font-semibold">Contact for Pricing</p>
                     <p className="text-sm text-gray-600 mt-1">Rates depend on date, group size and boat</p>
+                    <Link href="/papikondalu-tours#price" className="text-sm text-primary-600 hover:underline mt-2 inline-block">
+                      How Papikondalu tour prices work
+                    </Link>
                   </div>
                 </div>
 

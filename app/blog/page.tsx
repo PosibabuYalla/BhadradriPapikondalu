@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
 import Link from 'next/link'
 import { Calendar, Clock, ArrowRight } from 'lucide-react'
 import { pageMetadata } from '../lib/seo'
+import CoverImage from '../components/CoverImage'
 
 export const metadata: Metadata = pageMetadata({
   title: 'Papikondalu Travel Blog | Guides & Trip Tips',
@@ -52,10 +52,9 @@ export default function Blog() {
                 <div className="md:flex">
                   <div className="md:w-1/3">
                     <div className="relative h-64 md:h-full">
-                      <Image
+                      <CoverImage
                         src={post.image}
                         alt={post.title}
-                        fill
                         className="object-cover"
                         sizes="(max-width: 768px) 100vw, 33vw"
                       />

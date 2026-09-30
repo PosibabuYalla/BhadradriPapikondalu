@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
 import Link from 'next/link'
 import { Calendar, MapPin, Clock, ArrowLeft } from 'lucide-react'
 import { pageMetadata, absoluteUrl, breadcrumbSchema, organizationRef } from '../../lib/seo'
 import JsonLd from '../../components/JsonLd'
+import CoverImage from '../../components/CoverImage'
 
 export const metadata: Metadata = pageMetadata({
   title: 'Papikondalu & Bhadradri Travel Guide | East Godavari',
@@ -95,12 +95,11 @@ export default function BlogPost() {
             <section className="mb-16">
               <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
                 <div className="relative h-64 md:h-80">
-                  <Image
+                  <CoverImage
                     src="https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_1200,q_auto,f_auto/v1755980788/PAPI-KONDALU_wswdud.jpg"
                     alt="Scenic view of Papikondalu Hills with Godavari River"
-                    fill
                     className="object-cover"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+                    sizes="(max-width: 896px) 100vw, 896px"
                   />
                 </div>
                 <div className="p-8">
@@ -122,12 +121,11 @@ export default function BlogPost() {
             <section className="mb-16">
               <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
                 <div className="relative h-64 md:h-80">
-                  <Image
+                  <CoverImage
                     src="https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_1200,q_auto,f_auto/v1755980906/BhadrachalamTemple-1068x421_heh1o2.png"
                     alt="Ancient Bhadradri Temple dedicated to Lord Rama"
-                    fill
                     className="object-cover"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+                    sizes="(max-width: 896px) 100vw, 896px"
                   />
                 </div>
                 <div className="p-8">
@@ -148,12 +146,11 @@ export default function BlogPost() {
             <section className="mb-16">
               <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
                 <div className="relative h-64 md:h-80">
-                  <Image
+                  <CoverImage
                     src="https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_1200,q_auto,f_auto/v1755978851/MAREDUMILLI_-_waterfalls_kmuppt.jpg"
                     alt="Beautiful Maredumilli Waterfalls surrounded by dense forest"
-                    fill
                     className="object-cover"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+                    sizes="(max-width: 896px) 100vw, 896px"
                   />
                 </div>
                 <div className="p-8">

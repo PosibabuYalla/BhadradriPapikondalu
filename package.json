@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "images:dims": "node scripts/generate-image-dimensions.mjs",
     "analyze": "ANALYZE=true next build",
     "build:analyze": "cross-env ANALYZE=true next build",
     "lighthouse": "lighthouse http://localhost:3000 --output html --output-path ./lighthouse-report.html",

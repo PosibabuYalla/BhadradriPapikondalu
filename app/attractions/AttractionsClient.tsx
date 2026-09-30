@@ -1,11 +1,11 @@
 'use client'
 
-import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Star } from 'lucide-react'
 import { attractionsData } from './attractionsData'
 import { getAttractionSlug } from '../utils/slugs'
+import CoverImage from '../components/CoverImage'
 
 export default function AttractionsClient() {
   return (
@@ -42,12 +42,12 @@ export default function AttractionsClient() {
                 className="card-elevated overflow-hidden group hover-glow"
               >
                 <div className="relative h-64 overflow-hidden">
-                  <Image
+                  <CoverImage
                     src={attraction.image}
                     alt={attraction.name}
-                    fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    loading={index < 3 ? 'eager' : 'lazy'}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                 </div>
@@ -77,6 +77,41 @@ export default function AttractionsClient() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Route orientation — grouping follows each place's description and linked package */}
+      <section className="pb-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">Which Places Are on the Boat Route?</h2>
+          <p className="text-gray-700 mb-6">
+            Some of these places are seen from, or reached by, a Godavari boat. Others are road trips you can add
+            before or after a boat tour.
+          </p>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="card-elevated p-6">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">By boat on the Godavari</h3>
+              <ul className="space-y-2 text-gray-700">
+                <li><Link href="/attractions/papikondalu" className="text-primary-600 hover:underline">Papikondalu hills</Link>, the gorge the boat cruises through</li>
+                <li><Link href="/attractions/perantalapalli" className="text-primary-600 hover:underline">Perantalapalli</Link>, a riverside temple stop reached mainly by boat</li>
+                <li><Link href="/attractions/sirivaka-night-stay-camping" className="text-primary-600 hover:underline">Sirivaka</Link>, reached by river for overnight camping</li>
+              </ul>
+            </div>
+            <div className="card-elevated p-6">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Start points and road trips</h3>
+              <ul className="space-y-2 text-gray-700">
+                <li><Link href="/attractions/bhadrachalam" className="text-primary-600 hover:underline">Bhadrachalam</Link>, the temple town where upstream boat tours begin</li>
+                <li><Link href="/attractions/parnasala" className="text-primary-600 hover:underline">Parnasala</Link>, a Ramayana site near Bhadrachalam</li>
+                <li><Link href="/attractions/maredumilli" className="text-primary-600 hover:underline">Maredumilli</Link> forest and waterfalls, a day trip from Rajahmundry</li>
+                <li><Link href="/attractions/gudisa" className="text-primary-600 hover:underline">Gudisa</Link> hill station, for viewpoints and camping</li>
+              </ul>
+            </div>
+          </div>
+          <p className="text-gray-700 mt-6">
+            To plan the boat part of your trip, see the{' '}
+            <Link href="/papikondalu-tours" className="text-primary-600 hover:underline">Papikondalu tour guide</Link> or{' '}
+            <Link href="/packages" className="text-primary-600 hover:underline">explore Papikondalu tour packages</Link>.
+          </p>
         </div>
       </section>
 

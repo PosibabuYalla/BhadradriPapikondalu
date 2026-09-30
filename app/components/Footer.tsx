@@ -206,7 +206,7 @@ const Footer = () => {
         <div className="border-t border-neutral-700 pt-8 flex flex-col md:flex-row justify-between items-center">
           <div className="text-neutral-400 text-sm mb-4 md:mb-0">
             <p>&copy; {currentYear} {businessInfo.name}. All rights reserved.</p>
-            <p className="mt-1">Made with <Heart className="inline w-4 h-4 text-red-500 mx-1" /> for travelers by <a href="https://www.linkedin.com/in/posibabu-yalla-a05746305/" target="_blank" rel="noopener noreferrer" className="text-primary-400 hover:text-primary-300 transition-colors">Posibabu Yalla</a></p>
+            <p className="mt-1">Made with <Heart className="inline w-4 h-4 text-red-500 mx-1" /> for travelers by <a href="https://www.sabariyatech.in/" target="_blank" rel="noopener noreferrer" className="text-primary-400 hover:text-primary-300 transition-colors">SabariyaTech</a></p>
           </div>
           
           <div className="flex items-center space-x-6">

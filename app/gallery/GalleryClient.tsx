@@ -2,6 +2,8 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
+import { imageDimensions } from '../lib/imageDimensions'
 import { motion } from 'framer-motion'
 import Lightbox from '../components/Lightbox'
 
@@ -53,6 +55,12 @@ const galleryImages = [
   { id: 36, src: 'https://res.cloudinary.com/djmcbqzqt/image/upload/v1756059651/IMG-20250824-WA0098_ruqlbn.jpg', alt: 'River Tourism', category: 'nature' },
   { id: 37, src: 'https://res.cloudinary.com/djmcbqzqt/image/upload/v1756059651/IMG-20250824-WA0099_wy8ety.jpg', alt: 'Scenic Journey', category: 'nature' },
 ]
+
+// 400px-wide thumbnail height that keeps the image's real aspect ratio.
+const thumbHeight = (src: string) => {
+  const dims = imageDimensions[src]
+  return dims ? Math.round((400 * dims[1]) / dims[0]) : 300
+}
 
 const categories = [
   { id: 'all', label: 'All Photos', count: galleryImages.length },
@@ -146,8 +154,11 @@ export default function GalleryClient() {
                   <Image
                     src={image.src}
                     alt={image.alt}
+                    // Masonry layout shows each photo at its natural aspect ratio, so the
+                    // height must match the real image or the column reflows on load.
                     width={400}
-                    height={300}
+                    height={thumbHeight(image.src)}
+                    loading={index < 4 ? 'eager' : 'lazy'}
                     className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
@@ -159,6 +170,20 @@ export default function GalleryClient() {
                 </div>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">See These Places on a Papikondalu Tour</h2>
+          <p className="text-lg text-gray-700 mb-6">
+            Many of these places can be visited on our Godavari tours. Pick the trip that fits your time.
+          </p>
+          <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center">
+            <Link href="/packages/rajahmundry-papikondalu-packages" className="btn-primary">Rajahmundry to Papikondalu One Day Tour</Link>
+            <Link href="/packages/bhadrachalam-papikondalu-packages" className="btn-outline">Bhadrachalam to Papikondalu Two Day Tour</Link>
+            <Link href="/papikondalu-tours" className="btn-outline">Papikondalu Tour Guide</Link>
           </div>
         </div>
       </section>

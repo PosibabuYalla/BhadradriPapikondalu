@@ -1,10 +1,10 @@
 'use client'
 
-import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { ArrowLeft, Star, MapPin, Camera, Info, CheckCircle } from 'lucide-react'
 import { getAttractionSlug } from '../../utils/slugs'
+import CoverImage from '../../components/CoverImage'
 
 interface Attraction {
   id: number
@@ -25,27 +25,50 @@ interface AttractionDetailClientProps {
 }
 
 // The most relevant tour page for each attraction, keyed by attraction slug.
-const relatedTour: Record<string, { href: string; label: string }> = {
-  'papikondalu': { href: '/papikondalu-tours', label: 'Plan a Papikondalu Boat Tour' },
-  'perantalapalli': { href: '/packages/perantalapalli-packages', label: 'View Perantalapalli Eco Tour' },
-  'gandipochamma-temple': { href: '/papikondalu-tours', label: 'Plan a Papikondalu Boat Tour' },
-  'bhadrachalam': { href: '/packages/bhadrachalam-papikondalu-packages', label: 'View Bhadrachalam to Papikondalu Tour' },
-  'sirivaka-night-stay-camping': { href: '/packages/sirivaka-night-stay-package', label: 'View Sirivaka Night Stay Package' },
-  'maredumilli': { href: '/packages/maredumilli-packages', label: 'View Maredumilli Tour Package' },
-  'parnasala': { href: '/packages/parnasala-packages', label: 'View Parnasala Temple Tour' },
-  'gudisa': { href: '/packages/gudisa-packages', label: 'View Gudisa Hills Tour' },
+const relatedTour: Record<string, { href: string; label: string; howToVisit: string }> = {
+  'papikondalu': {
+    href: '/papikondalu-tours', label: 'Plan a Papikondalu Boat Tour',
+    howToVisit: 'The Papikondalu hills are seen from the boat. The one day tour from Rajahmundry and the two day tour from Bhadrachalam both cruise through the gorge, and the Rajahmundry day tour stops at Perantalapalli before returning the same evening.',
+  },
+  'perantalapalli': {
+    href: '/packages/perantalapalli-packages', label: 'View Perantalapalli Eco Tour',
+    howToVisit: 'Perantalapalli is reached by boat. It is a stop on the Rajahmundry to Papikondalu one day tour, and we also run a separate Perantalapalli eco tour.',
+  },
+  'gandipochamma-temple': {
+    href: '/papikondalu-tours', label: 'Plan a Papikondalu Boat Tour',
+    howToVisit: 'Ask us when you book whether your Papikondalu boat tour can include a visit to Gandipochamma Temple, as stops depend on the route and the day.',
+  },
+  'bhadrachalam': {
+    href: '/packages/bhadrachalam-papikondalu-packages', label: 'View Bhadrachalam to Papikondalu Tour',
+    howToVisit: 'Bhadrachalam is the starting point for the two day Bhadrachalam to Papikondalu boat tour and the Papikondalu river cruise package, and both begin with a temple visit.',
+  },
+  'sirivaka-night-stay-camping': {
+    href: '/packages/sirivaka-night-stay-package', label: 'View Sirivaka Night Stay Package',
+    howToVisit: 'Sirivaka is reached on the Sirivaka night stay package, which travels from Rajahmundry by river and includes camping gear, meals and activities.',
+  },
+  'maredumilli': {
+    href: '/packages/maredumilli-packages', label: 'View Maredumilli Tour Package',
+    howToVisit: 'Our Maredumilli tour departs from Rajahmundry and includes transport, a guide, lunch and refreshments.',
+  },
+  'parnasala': {
+    href: '/packages/parnasala-packages', label: 'View Parnasala Temple Tour',
+    howToVisit: 'Parnasala is near Bhadrachalam and is covered on our Parnasala heritage temple tour. Many visitors combine it with a Bhadrachalam temple visit. Ask us for the current itinerary.',
+  },
+  'gudisa': {
+    href: '/packages/gudisa-packages', label: 'View Gudisa Hills Tour',
+    howToVisit: 'Gudisa is covered on our Gudisa hills tour. Ask us for the current itinerary and pickup point.',
+  },
 }
 
 export default function AttractionDetailClient({ attraction }: AttractionDetailClientProps) {
-  const related = relatedTour[getAttractionSlug(attraction.id)] || { href: '/packages', label: 'View Tour Packages' }
+  const related = relatedTour[getAttractionSlug(attraction.id)] || { href: '/packages', label: 'View Tour Packages', howToVisit: 'Contact us to plan a visit as part of a Godavari tour.' }
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <section className="relative h-96 overflow-hidden">
-        <Image
+        <CoverImage
           src={attraction.image}
           alt={attraction.name}
-          fill
           className="object-cover"
           priority
           sizes="100vw"
@@ -94,7 +117,7 @@ export default function AttractionDetailClient({ attraction }: AttractionDetailC
               >
                 <div className="flex items-center gap-2 mb-6">
                   <Info className="text-primary-600" size={24} />
-                  <h2 className="text-2xl font-bold text-gray-900">About This Place</h2>
+                  <h2 className="text-2xl font-bold text-gray-900">About {attraction.name}</h2>
                 </div>
                 <p className="text-gray-700 text-lg leading-relaxed">
                   {attraction.description}
@@ -110,7 +133,7 @@ export default function AttractionDetailClient({ attraction }: AttractionDetailC
               >
                 <div className="flex items-center gap-2 mb-6">
                   <Camera className="text-primary-600" size={24} />
-                  <h2 className="text-2xl font-bold text-gray-900">Activities</h2>
+                  <h2 className="text-2xl font-bold text-gray-900">Things to Do at {attraction.name}</h2>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {attraction.activities.map((activity, index) => (
@@ -141,6 +164,21 @@ export default function AttractionDetailClient({ attraction }: AttractionDetailC
                     </div>
                   ))}
                 </div>
+              </motion.div>
+
+              {/* How to visit — facts come from the linked package's itinerary/inclusions */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.35 }}
+                className="card-elevated p-8 mb-8"
+              >
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">How to Visit {attraction.name}</h2>
+                <p className="text-gray-700 leading-relaxed mb-4">{related.howToVisit}</p>
+                <p className="text-gray-700 leading-relaxed">
+                  Best time to visit: <strong>{attraction.bestTime}</strong>. For routes, boat timings and what to carry, see the{' '}
+                  <Link href="/papikondalu-tours" className="text-primary-600 hover:underline">Papikondalu tour guide</Link>.
+                </p>
               </motion.div>
 
               {/* Tips */}

@@ -1,10 +1,10 @@
 'use client'
 
-import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { ArrowRight, MapPin, Clock } from 'lucide-react'
 import { getAttractionSlug } from '../utils/slugs'
+import CoverImage from './CoverImage'
 
 const attractions = [
   {
@@ -81,10 +81,9 @@ const FeaturedAttractions = () => {
               className="card-elevated overflow-hidden group hover-glow"
             >
               <div className="relative h-56 overflow-hidden">
-                <Image
+                <CoverImage
                   src={attraction.image}
                   alt={attraction.name}
-                  fill
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   quality={75}
