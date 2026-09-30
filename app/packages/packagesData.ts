@@ -2,8 +2,8 @@ export const packagesData = [
   {
     id: 1,
     name: 'Papikondalu River Cruise Package',
-    title: 'Papikondalu River Cruise Package – East Godavari\'s Top Tour',
-    metaDescription: 'Book the best Papikondalu river cruise tour in East Godavari. Enjoy breathtaking views, safe boats, and expert guides. Reserve today!',
+    title: 'Papikondalu River Cruise Package from Bhadrachalam',
+    metaDescription: 'Papikondalu river cruise from Bhadrachalam with a temple visit, Godavari boat ride through the hills, guide and temple entry. Call or WhatsApp to book.',
     shortDescription: 'Book the best Papikondalu river cruise tour in East Godavari. Enjoy breathtaking views, safe boats, and expert guides.',
     description: 'Book the best Papikondalu river cruise tour in East Godavari. Enjoy breathtaking views, safe boats, and expert guides. Reserve today!',
     image: 'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_600,q_auto,f_auto/v1755980906/BhadrachalamTemple-1068x421_heh1o2.png',
@@ -13,8 +13,6 @@ export const packagesData = [
     ],
     capacity: '50 People',
     departure: 'Bhadrachalam',
-    rating: 4.8,
-    reviews: 245,
     features: ['Temple darshan', 'Scenic boat ride', 'Local cuisine', 'Professional guide'],
     itinerary: [
       'Bhadrachalam temple visit and boat departure',
@@ -28,9 +26,9 @@ export const packagesData = [
   },
   {
     id: 2,
-    name: 'Bhadradri Temple & Godavari Cruise Tour Package',
-    title: 'Bhadradri Temple & Godavari Cruise Tour Package',
-    metaDescription: 'Experience Bhadradri temple darshan and scenic Godavari cruise with trusted operators. Custom packages for families and groups.',
+    name: 'Bhadrachalam to Papikondalu Two Day Boat Tour',
+    title: 'Bhadrachalam to Papikondalu Two Day Tour | Boat Package',
+    metaDescription: 'Two day Bhadrachalam to Papikondalu boat tour: Sri Rama temple visit, overnight stay near the hills, meals, then onward to Rajahmundry. Enquire for dates.',
     shortDescription: 'Experience Bhadradri temple darshan and scenic Godavari cruise with trusted operators.',
     description: 'Experience Bhadradri temple darshan and scenic Godavari cruise with trusted operators. Custom packages for families and groups.',
     image: 'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_scale,w_600,q_auto,f_auto/v1756003757/rajamundry_v2aufm.jpg',
@@ -40,8 +38,6 @@ export const packagesData = [
     ],
     capacity: '100 People',
     departure: 'Bhadrachalam',
-    rating: 4.9,
-    reviews: 189,
     features: ['Extended river cruise', 'Multiple attractions', 'Onboard accommodation', 'All meals included'],
     itinerary: [
       'Bhadrachalam departure and temple visit',
@@ -56,8 +52,8 @@ export const packagesData = [
   {
     id: 3,
     name: 'Maredumilli Waterfalls Adventure Package',
-    title: 'Maredumilli Waterfalls Adventure Package – East Godavari',
-    metaDescription: 'Explore Maredumilli waterfalls and forest treks. Adventure-filled tour package with safe travel, meals, and expert guides.',
+    title: 'Maredumilli Waterfalls Tour Package from Rajahmundry',
+    metaDescription: 'Maredumilli waterfalls and forest day tour from Rajahmundry with a guide, lunch and refreshments. Contact us for group rates, dates and the full itinerary.',
     shortDescription: 'Explore Maredumilli waterfalls and forest treks with safe travel, meals, and expert guides.',
     description: 'Explore Maredumilli waterfalls and forest treks. Adventure-filled tour package with safe travel, meals, and expert guides.',
     image: 'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_600,q_auto,f_auto/v1755980788/PAPI-KONDALU_wswdud.jpg',
@@ -67,8 +63,6 @@ export const packagesData = [
     ],
     capacity: '100 People',
     departure: 'Rajahmundry',
-    rating: 4.9,
-    reviews: 312,
     features: ['Day tour', 'Photography opportunities', 'Refreshments', 'Return journey'],
     itinerary: [
       'Morning departure from Rajahmundry',
@@ -83,8 +77,8 @@ export const packagesData = [
   {
     id: 4,
     name: 'Rampachodavaram Tribal Culture Tour Package',
-    title: 'Rampachodavaram Tribal Culture Tour Package – Andhra Pradesh',
-    metaDescription: 'Discover Rampachodavaram tribal heritage and river rafting. Book your authentic adventure with local experts and best rates.',
+    title: 'Rampachodavaram Tribal Culture Tour Package',
+    metaDescription: 'Rampachodavaram tribal culture tour from Rajahmundry with a Godavari cruise, temple visits, stay and meals. Contact us for dates, group size and rates.',
     shortDescription: 'Discover Rampachodavaram tribal heritage and river rafting with local experts.',
     description: 'Discover Rampachodavaram tribal heritage and river rafting. Book your authentic adventure with local experts and best rates.',
     image: 'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_600,q_auto,f_auto/v1755980907/Bhadrachalam_Temple_yg8met.jpg',
@@ -94,8 +88,6 @@ export const packagesData = [
     ],
     capacity: '75 People',
     departure: 'Rajahmundry',
-    rating: 4.7,
-    reviews: 156,
     features: ['Extended river cruise', 'Temple visits', 'Cultural experiences', 'Comfortable stay'],
     itinerary: [
       'Rajahmundry departure and river cruise',
@@ -109,9 +101,9 @@ export const packagesData = [
   },
   {
     id: 5,
-    name: 'Rajahmundry to Papikondalu Day Tour',
-    title: 'Rajahmundry to Papikondalu Day Tour – Boat Ride & Perantalapalli Stop',
-    metaDescription: 'Day boat tour from Rajahmundry through the Papikondalu hills with a stop at Perantalapalli. Lunch, guide, and same-day return included.',
+    name: 'Rajahmundry to Papikondalu One Day Tour',
+    title: 'Rajahmundry to Papikondalu One Day Tour | Boat Package',
+    metaDescription: 'One day Papikondalu boat tour from Rajahmundry through the Godavari hills, with a Perantalapalli stop, lunch, guide and life jackets. Same-day return.',
     shortDescription: 'Day boat tour from Rajahmundry through the Papikondalu hills, with a stop at Perantalapalli and same-day return.',
     description: 'Board at Rajahmundry and cruise up the Godavari through the Papikondalu hills, with a stop at Perantalapalli before heading back the same evening. This is our most-booked day tour for families and groups who want the Papikondalu boat ride without an overnight stay.',
     image: 'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_scale,w_600,q_auto,f_auto/v1756003757/rajamundry_v2aufm.jpg',
@@ -121,8 +113,6 @@ export const packagesData = [
     ],
     capacity: '100 People',
     departure: 'Rajahmundry',
-    rating: 4.9,
-    reviews: 189,
     features: ['Same-day return', 'Perantalapalli stop', 'Onboard lunch', 'Photography stops'],
     itinerary: [
       'Morning departure from Rajahmundry by boat',
@@ -137,8 +127,8 @@ export const packagesData = [
   {
     id: 6,
     name: 'Sirivaka Night Stay & Camping Package',
-    title: 'Sirivaka Night Stay & Camping Package – Papikondalu Adventures',
-    metaDescription: 'Book Sirivaka camping in Papikondalu with campfire, nature walks, and stargazing. Secure your adventure night now!',
+    title: 'Sirivaka Night Stay Package | Papikondalu Camping',
+    metaDescription: 'Overnight Sirivaka camping package in the Papikondalu hills from Rajahmundry, with river transport, meals, a campfire and nature walks. Enquire for dates.',
     shortDescription: 'Book Sirivaka camping in Papikondalu with campfire, nature walks, and stargazing.',
     description: 'Book Sirivaka camping in Papikondalu with campfire, nature walks, and stargazing. Secure your adventure night now!',
     image: 'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_scale,w_600,q_auto,f_auto/v1756003855/sirivaka_fdzsuf.avif',
@@ -147,8 +137,6 @@ export const packagesData = [
     ],
     capacity: '40 People',
     departure: 'Rajahmundry',
-    rating: 4.5,
-    reviews: 87,
     features: ['River journey', 'Camping setup', 'Outdoor activities', 'Local cuisine'],
     itinerary: [
       'Rajahmundry to Sirivaka journey',
@@ -163,8 +151,8 @@ export const packagesData = [
   {
     id: 7,
     name: 'Parnasala Heritage Temple Tour Package',
-    title: 'Parnasala Heritage Temple Tour Package – East Godavari',
-    metaDescription: 'Visit ancient Shiva temples and heritage sites at Parnasala. Guided tours with cultural insights and spiritual experiences.',
+    title: 'Parnasala Heritage Temple Tour Package',
+    metaDescription: 'Parnasala heritage tour to the Ramayana site where Lord Rama is believed to have lived in exile, near Bhadrachalam. Contact us for dates and group rates.',
     shortDescription: 'Visit ancient Shiva temples and heritage sites at Parnasala with guided cultural tours.',
     description: 'Visit ancient Shiva temples and heritage sites at Parnasala. Guided tours with cultural insights and spiritual experiences.',
     image: 'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_600,q_auto,f_auto/v1755978851/MAREDUMILLI_-_waterfalls_kmuppt.jpg',
@@ -173,8 +161,6 @@ export const packagesData = [
     ],
     capacity: '25 People',
     departure: 'Rajahmundry',
-    rating: 4.7,
-    reviews: 134,
     features: ['Waterfall visits', 'Forest trekking', 'Wildlife spotting', 'Photography'],
     itinerary: [
       'Departure and forest entry',
@@ -189,8 +175,8 @@ export const packagesData = [
   {
     id: 8,
     name: 'Gudisa Hills Trekking Tour Package',
-    title: 'Gudisa Hills Trekking Tour Package – Scenic Andhra Pradesh Views',
-    metaDescription: 'Trek Gudisa hills for panoramic mountain views. Adventure package includes expert guides and memorable camping experiences.',
+    title: 'Gudisa Hills Trekking Tour Package',
+    metaDescription: 'Gudisa hill station trip with panoramic Eastern Ghats viewpoints, cool weather and guided walks. Contact us for dates, group size and current rates.',
     shortDescription: 'Trek Gudisa hills for panoramic mountain views with expert guides and camping.',
     description: 'Trek Gudisa hills for panoramic mountain views. Adventure package includes expert guides and memorable camping experiences.',
     image: 'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_scale,w_600,q_auto,f_auto/v1755979312/dev_parnasala_pfvan7.jpg',
@@ -199,8 +185,6 @@ export const packagesData = [
     ],
     capacity: '50 People',
     departure: 'Bhadrachalam',
-    rating: 4.4,
-    reviews: 76,
     features: ['Historical tour', 'Cultural stories', 'Scenic views', 'Photography'],
     itinerary: [
       'Departure to Parnasala',
@@ -215,8 +199,8 @@ export const packagesData = [
   {
     id: 9,
     name: 'Perantalapalli Eco Tour Package',
-    title: 'Perantalapalli Eco Tour Package – Papikondalu Nature Special',
-    metaDescription: 'Eco-friendly tour to Perantalapalli with jungle trekking, river views, and ancient temples. Ideal for nature lovers and explorers.',
+    title: 'Perantalapalli Eco Tour Package | Papikondalu',
+    metaDescription: 'Perantalapalli eco tour on the Godavari in the Papikondalu hills, visiting the riverside Shiva temple reached by boat. Contact us for dates and rates.',
     shortDescription: 'Eco-friendly tour to Perantalapalli with jungle trekking, river views, and ancient temples.',
     description: 'Eco-friendly tour to Perantalapalli with jungle trekking, river views, and ancient temples. Ideal for nature lovers and explorers.',
     image: 'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_600,q_auto,f_auto/v1755981754/Camping_in_Mountains_ytwmvi.avif',
@@ -225,8 +209,6 @@ export const packagesData = [
     ],
     capacity: '20 People',
     departure: 'Rajahmundry',
-    rating: 4.3,
-    reviews: 45,
     features: ['Hill station visit', 'Panoramic views', 'Adventure activities', 'Cool climate'],
     itinerary: [
       'Journey to Gudisa hills',

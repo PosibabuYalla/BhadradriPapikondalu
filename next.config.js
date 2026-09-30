@@ -12,7 +12,9 @@ const nextConfig = {
       },
     ],
     formats: ['image/webp', 'image/avif'],
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    // Cloudinary sources are at most 1920px wide, so 2048/3840 variants only
+    // added bytes without adding detail.
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 31536000,
   },
@@ -65,6 +67,17 @@ const nextConfig = {
         destination: '/packages/parnasala-packages',
         permanent: true,
       },
+      // URLs that were linked internally but never existed (crawl 404s).
+      // Links are fixed at the source; these catch external links/old crawls.
+      { source: '/papikondalu', destination: '/attractions/papikondalu', permanent: true },
+      { source: '/bhadrachalam', destination: '/attractions/bhadrachalam', permanent: true },
+      { source: '/maredumilli', destination: '/attractions/maredumilli', permanent: true },
+      { source: '/aboutus/blog', destination: '/blog', permanent: true },
+      { source: '/packages/rajahmundry-to-papikondalu', destination: '/packages/rajahmundry-papikondalu-packages', permanent: true },
+      { source: '/packages/bhadrachalam-to-papikondalu', destination: '/packages/bhadrachalam-papikondalu-packages', permanent: true },
+      { source: '/maredumilli-tours', destination: '/packages/maredumilli-packages', permanent: true },
+      { source: '/rajahmundry-tours', destination: '/packages/rajahmundry-papikondalu-packages', permanent: true },
+      { source: '/attractions/sirivaka-night-stay', destination: '/attractions/sirivaka-night-stay-camping', permanent: true },
     ]
   },
   headers: async () => [

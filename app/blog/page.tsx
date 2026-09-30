@@ -2,12 +2,13 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Calendar, Clock, ArrowRight } from 'lucide-react'
+import { pageMetadata } from '../lib/seo'
 
-export const metadata: Metadata = {
-  title: 'Travel Blog | Papikondalu, Bhadradri, East Godavari & Maredumalli Stories',
-  description: 'Explore the latest travel tips, adventure stories, and insights for Papikondalu, Bhadradri temple, East Godavari, and Maredumalli. Find guides from trusted local experts.',
-  keywords: 'Papikondalu blog, Bhadradri temple guide, East Godavari tourism, Maredumilli waterfalls, travel stories',
-}
+export const metadata: Metadata = pageMetadata({
+  title: 'Papikondalu Travel Blog | Guides & Trip Tips',
+  description: 'Travel guides for Papikondalu, Bhadrachalam and the Godavari region: how to plan a boat trip, when to go, what to carry and places to visit nearby.',
+  path: '/blog'
+})
 
 const blogPosts = [
   {
@@ -31,8 +32,13 @@ export default function Blog() {
             Travel Blog
           </h1>
           <p className="text-xl text-white/90 max-w-3xl mx-auto">
-            Discover travel tips, adventure stories, and insights for Papikondalu, 
-            Bhadradri temple, East Godavari, and Maredumalli from our local experts.
+            Travel guides for Papikondalu, Bhadrachalam temple and the Godavari region, written by the team that runs the boat tours.
+          </p>
+          <p className="text-white/90 max-w-3xl mx-auto mt-4">
+            Planning a trip now? Start with the{' '}
+            <Link href="/papikondalu-tours" className="underline font-semibold">Papikondalu tour guide</Link>{' '}
+            or compare{' '}
+            <Link href="/packages" className="underline font-semibold">Papikondalu tour packages</Link>.
           </p>
         </div>
       </div>
@@ -82,7 +88,7 @@ export default function Blog() {
                       href={`/blog/${post.id}`}
                       className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold transition-colors"
                     >
-                      Read More
+                      Read the Papikondalu &amp; Bhadradri guide
                       <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>

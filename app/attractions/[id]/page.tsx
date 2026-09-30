@@ -1,8 +1,9 @@
-import Script from 'next/script'
+import JsonLd from '../../components/JsonLd'
 import { attractionsData } from '../attractionsData'
 import AttractionDetailClient from './AttractionDetailClient'
 import { notFound } from 'next/navigation'
 import { getAttractionSlug, getAttractionIdFromSlug } from '../../utils/slugs'
+import { pageMetadata, absoluteUrl, breadcrumbSchema } from '../../lib/seo'
 import type { Metadata } from 'next'
 
 export async function generateStaticParams() {
@@ -18,22 +19,18 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
 
   if (!attraction) {
     return {
-      title: 'Attraction Not Found | Papikondalu Tourism',
-      description: 'The requested attraction could not be found.'
+      title: 'Attraction Not Found',
+      robots: { index: false, follow: true },
     }
   }
 
-  return {
-    title: `${attraction.name} | Papikondalu Tourism | East Godavari Attractions`,
-    description: `${attraction.shortDescription} - Best time to visit: ${attraction.bestTime}. Book your ${attraction.name} tour with Papikondalu Tourism.`,
-    keywords: `${attraction.name}, ${attraction.activities?.join(', ')}, East Godavari, Papikondalu Tourism, Godavari River`,
-    openGraph: {
-      title: `${attraction.name} | Papikondalu Tourism`,
-      description: attraction.shortDescription,
-      images: [attraction.image],
-      type: 'website'
-    }
-  }
+  return pageMetadata({
+    title: attraction.seoTitle,
+    description: attraction.metaDescription,
+    path: `/attractions/${id}`,
+    image: attraction.image,
+    imageAlt: attraction.name,
+  })
 }
 
 export default async function AttractionDetailPage({ params }: { params: Promise<{ id: string }> }) {
@@ -50,33 +47,32 @@ export default async function AttractionDetailPage({ params }: { params: Promise
     notFound()
   }
 
+  const url = absoluteUrl(`/attractions/${id}`)
+
+  // No geo/address: the previous schema gave every attraction the Rajahmundry
+  // office coordinates and "East Godavari", which is wrong for Bhadrachalam and
+  // Parnasala (Telangana). Add per-place coordinates once verified.
   const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'TouristAttraction',
-    'name': attraction.name,
-    'description': attraction.description,
-    'url': `https://bhadradripapikondalu.com/attractions/${id}`,
-    'image': attraction.image,
-    'geo': {
-      '@type': 'GeoCoordinates',
-      'latitude': 17.0005,
-      'longitude': 81.8040
-    },
-    'address': {
-      '@type': 'PostalAddress',
-      'addressLocality': 'East Godavari',
-      'addressRegion': 'Andhra Pradesh',
-      'addressCountry': 'IN'
-    }
+    '@graph': [
+      {
+        '@type': 'TouristAttraction',
+        '@id': `${url}#place`,
+        name: attraction.name,
+        description: attraction.shortDescription,
+        url,
+        image: attraction.image,
+      },
+      breadcrumbSchema([
+        { name: 'Home', path: '/' },
+        { name: 'Attractions', path: '/attractions' },
+        { name: attraction.name, path: `/attractions/${id}` },
+      ]),
+    ],
   }
 
   return (
     <>
-      <Script
-        id={`attraction-schema-${attraction.id}`}
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <JsonLd data={jsonLd} />
       <AttractionDetailClient attraction={attraction} />
     </>
   )

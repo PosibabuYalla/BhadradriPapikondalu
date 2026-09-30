@@ -17,21 +17,22 @@ const Footer = () => {
   ]
 
   const quickLinks = [
-    { href: '/', label: 'Homepage' },
-    { href: '/aboutus', label: 'Company Info' },
+    { href: '/', label: 'Home' },
+    { href: '/aboutus', label: 'About Us' },
     { href: '/attractions', label: 'Places to Visit' },
-    { href: '/packages', label: 'Tour Plans' },
-    { href: '/gallery', label: 'Image Gallery' },
-    { href: '/contact', label: 'Get in Touch' }
+    { href: '/packages', label: 'Tour Packages' },
+    { href: '/blog', label: 'Travel Blog' },
+    { href: '/gallery', label: 'Photo Gallery' },
+    { href: '/contact', label: 'Contact & Booking' }
   ]
 
-  const services = [
-    'Best Boat Tours Papikondalu',
-    'Godavari River Cruise', 
-    'Adventure Packages',
-    'Night Stay Arrangements',
-    'Group Bookings',
-    'Custom Itineraries'
+  const tourLinks = [
+    { href: '/papikondalu-tours', label: 'Papikondalu Tour Guide' },
+    { href: '/packages/rajahmundry-papikondalu-packages', label: 'Rajahmundry to Papikondalu Tour' },
+    { href: '/packages/bhadrachalam-papikondalu-packages', label: 'Bhadrachalam to Papikondalu Tour' },
+    { href: '/packages/sirivaka-night-stay-package', label: 'Sirivaka Night Stay' },
+    { href: '/badrachalam-temple-tours', label: 'Bhadrachalam Temple Tours' },
+    { href: '/east-godavari-tourism', label: 'East Godavari Tourism' }
   ]
 
   const currentYear = new Date().getFullYear()
@@ -159,12 +160,17 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h3 className="text-xl font-bold mb-6 text-white">Our Services</h3>
+            <h3 className="text-xl font-bold mb-6 text-white">Papikondalu Tours</h3>
             <ul className="space-y-3 mb-8">
-              {services.map((service) => (
-                <li key={service} className="text-neutral-300 flex items-center">
-                  <span className="w-2 h-2 bg-secondary-500 rounded-full mr-3" />
-                  {service}
+              {tourLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-neutral-300 hover:text-primary-400 transition-colors duration-300 flex items-center"
+                  >
+                    <span className="w-2 h-2 bg-secondary-500 rounded-full mr-3" />
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>

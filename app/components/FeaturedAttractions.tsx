@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { ArrowRight, MapPin, Clock, Star } from 'lucide-react'
+import { ArrowRight, MapPin, Clock } from 'lucide-react'
 import { getAttractionSlug } from '../utils/slugs'
 
 const attractions = [
@@ -13,9 +13,8 @@ const attractions = [
     description: 'Majestic hills along the Godavari River offering breathtaking views',
     image: 'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_400,q_auto,f_auto/v1755980788/PAPI-KONDALU_wswdud.jpg',
     duration: '4-6 hours',
-    rating: 4.9,
     highlight: 'Most Popular',
-    link: '/papikondalu'
+    link: `/attractions/${getAttractionSlug(1)}`
   },
   {
     id: 2,
@@ -23,19 +22,17 @@ const attractions = [
     description: 'Sacred temple dedicated to Lord Rama with rich spiritual heritage',
     image: 'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_400,q_auto,f_auto/v1755980906/BhadrachalamTemple-1068x421_heh1o2.png',
     duration: '2-3 hours',
-    rating: 4.8,
     highlight: 'Spiritual',
-    link: '/bhadrachalam'
+    link: `/attractions/${getAttractionSlug(4)}`
   },
   {
     id: 3,
-    name: 'Maredumalli Waterfalls',
+    name: 'Maredumilli Waterfalls',
     description: 'Pristine waterfalls surrounded by lush green forests',
     image: 'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_400,q_auto,f_auto/v1755978851/MAREDUMILLI_-_waterfalls_kmuppt.jpg',
     duration: '3-4 hours',
-    rating: 4.7,
     highlight: 'Adventure',
-    link: '/maredumilli'
+    link: `/attractions/${getAttractionSlug(6)}`
   },
   {
     id: 4,
@@ -43,7 +40,6 @@ const attractions = [
     description: 'Historic site with cultural significance and natural beauty',
     image: 'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_scale,w_400,q_auto,f_auto/v1755979312/dev_parnasala_pfvan7.jpg',
     duration: '2-3 hours',
-    rating: 4.6,
     highlight: 'Heritage',
     link: `/attractions/${getAttractionSlug(7)}`
   }
@@ -68,8 +64,9 @@ const FeaturedAttractions = () => {
             Featured <span className="gradient-text">Attractions</span>
           </h2>
           <p className="text-body max-w-3xl mx-auto">
-            Experience the best boat tours Papikondalu destinations with our premium Godavari river cruise packages. 
-            Our Godavari river cruise adventures take you to the most beautiful places for unforgettable experiences
+            The hills, temples and forests most visitors combine with a Godavari boat trip. See the full{' '}
+            <Link href="/papikondalu-tours" className="text-primary-600 font-semibold hover:underline">Papikondalu tour guide</Link>{' '}
+            for routes and planning tips.
           </p>
         </motion.div>
 
@@ -91,7 +88,6 @@ const FeaturedAttractions = () => {
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   quality={75}
-                  loading="eager"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                 
@@ -100,12 +96,6 @@ const FeaturedAttractions = () => {
                   <span className="bg-secondary-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
                     {attraction.highlight}
                   </span>
-                </div>
-
-                {/* Rating */}
-                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg px-2 py-1 flex items-center">
-                  <Star className="w-3 h-3 text-secondary-500 fill-current mr-1" />
-                  <span className="text-xs font-semibold text-neutral-800">{attraction.rating}</span>
                 </div>
 
                 {/* Duration */}
@@ -126,7 +116,7 @@ const FeaturedAttractions = () => {
                   href={attraction.link}
                   className="inline-flex items-center text-primary-600 hover:text-primary-700 font-semibold group/link transition-colors"
                 >
-                  Explore Details
+                  Explore {attraction.name}
                   <ArrowRight size={16} className="ml-2 transition-transform group-hover/link:translate-x-1" />
                 </Link>
               </div>

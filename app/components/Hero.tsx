@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { ArrowRight, Star, Users, Calendar, Award, MapPin, Play } from 'lucide-react'
+import { ArrowRight, Users, Calendar, Award, MapPin, Play } from 'lucide-react'
 import { useState, useEffect, memo } from 'react'
 import { businessInfo } from '../lib/businessInfo'
 
@@ -17,7 +17,7 @@ const Hero = () => {
   const stats = [
     { icon: Calendar, label: '20+ Years', sublabel: 'Experience' },
     { icon: Users, label: '7+ Lakh', sublabel: 'Happy Customers' },
-    { icon: Star, label: '4.9/5', sublabel: 'Rating' },
+    { icon: MapPin, label: '2 Routes', sublabel: 'Rajahmundry & Bhadrachalam' },
     { icon: Award, label: 'Premium', sublabel: 'Service' },
   ]
 

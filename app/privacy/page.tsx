@@ -1,9 +1,11 @@
 import type { Metadata } from 'next'
+import { pageMetadata } from '../lib/seo'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: 'Privacy Policy | Papikondalu Tourism',
-  description: 'Privacy policy for Papikondalu Tourism. Learn how we protect your personal information and data.',
-}
+  description: 'How Papikondalu Tourism collects, uses and protects the personal information you share when you enquire about or book a Godavari boat tour.',
+  path: '/privacy'
+})
 
 export default function PrivacyPage() {
   return (

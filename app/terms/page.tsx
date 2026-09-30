@@ -1,9 +1,11 @@
 import type { Metadata } from 'next'
+import { pageMetadata } from '../lib/seo'
 
-export const metadata: Metadata = {
-  title: 'Terms of Service | Papikondalu Tourism',
-  description: 'Terms of service for Papikondalu Tourism. Read our booking terms, conditions, and policies.',
-}
+export const metadata: Metadata = pageMetadata({
+  title: 'Booking & Cancellation Terms | Papikondalu Tourism',
+  description: 'Booking, cancellation, refund and safety terms for Papikondalu Tourism boat tours and packages, including weather-related rescheduling and ID rules.',
+  path: '/terms'
+})
 
 export default function TermsPage() {
   return (

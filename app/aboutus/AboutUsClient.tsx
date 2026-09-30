@@ -124,7 +124,7 @@ export default function AboutUsClient() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
                 <div className="absolute bottom-8 left-8 text-white">
-                  <h3 className="text-2xl font-bold mb-2">Papikondalu Hills</h3>
+                  <p className="text-2xl font-bold mb-2">Papikondalu Hills</p>
                   <p className="text-white/90">Natural Paradise on Godavari River</p>
                 </div>
               </div>
@@ -391,7 +391,7 @@ export default function AboutUsClient() {
                   Contact Us Today
                 </Link>
                 <Link 
-                  href="/aboutus/blog" 
+                  href="/blog" 
                   className="inline-flex items-center bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-2xl font-semibold hover:bg-white/30 transition-all duration-300 border border-white/30"
                 >
                   <BookOpen className="mr-2" size={20} />

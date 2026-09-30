@@ -3,50 +3,46 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { Users, MapPin, Star, ArrowRight, Calendar, Heart } from 'lucide-react'
+import { Users, MapPin, ArrowRight, Calendar, Heart } from 'lucide-react'
 import { getPackageSlug } from '../utils/slugs'
+import { packagesData } from '../packages/packagesData'
 
-const packages = [
+// Capacity/departure come from packagesData so the homepage never contradicts
+// the package page it links to.
+const showcase = [
   {
-    id: 1,
+    packageId: 2,
     name: 'Bhadrachalam to Papikondalu',
-    capacity: '50 People',
-    departure: 'Bhadrachalam',
-    rating: 4.8,
-    reviews: 245,
     image: 'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_400,q_auto,f_auto/v1755980906/BhadrachalamTemple-1068x421_heh1o2.png',
-    highlights: ['Temple Visit', 'Scenic Boat Ride', 'Local Cuisine', 'Professional Guide'],
-    badge: 'Most Popular',
+    highlights: ['Temple Visit', 'Scenic Boat Ride', 'Overnight Stay', 'Professional Guide'],
+    badge: 'Temple + Cruise',
     badgeColor: 'bg-gradient-to-r from-orange-500 to-red-500',
-    description: 'Experience the spiritual journey from sacred temple to scenic hills'
+    description: 'Two day trip from Bhadrachalam temple through the Papikondalu hills to Rajahmundry'
   },
   {
-    id: 2,
+    packageId: 5,
     name: 'Rajahmundry to Papikondalu',
-    capacity: '100 People',
-    departure: 'Rajahmundry',
-    rating: 4.9,
-    reviews: 189,
     image: 'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_scale,w_400,q_auto,f_auto/v1756003757/rajamundry_v2aufm.jpg',
-    highlights: ['Day Tour', 'Photography', 'Refreshments', 'Return Journey'],
-    badge: 'Best Value',
+    highlights: ['One Day Tour', 'Perantalapalli Stop', 'Onboard Lunch', 'Same-day Return'],
+    badge: 'Day Trip',
     badgeColor: 'bg-gradient-to-r from-green-500 to-emerald-500',
-    description: 'Perfect day trip to experience the beauty of Papikondalu hills'
+    description: 'One day boat tour through the Papikondalu hills with same-day return'
   },
   {
-    id: 3,
+    packageId: 6,
     name: 'Sirivaka Night Stay',
-    capacity: '30 People',
-    departure: 'Bhadrachalam',
-    rating: 4.7,
-    reviews: 156,
     image: 'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_scale,w_400,q_auto,f_auto/v1756003855/sirivaka_fdzsuf.avif',
     highlights: ['Night Stay', 'Campfire', 'Nature Walk', 'Stargazing'],
-    badge: 'Premium',
+    badge: 'Overnight',
     badgeColor: 'bg-gradient-to-r from-purple-500 to-indigo-500',
-    description: 'Adventure package with overnight camping in nature'
+    description: 'Overnight camping in the Papikondalu hills beside the Godavari'
   }
 ]
+
+const packages = showcase.map((item) => {
+  const data = packagesData.find((pkg) => pkg.id === item.packageId)
+  return { ...item, capacity: data?.capacity ?? '', departure: data?.departure ?? '' }
+})
 
 const PackageShowcase = () => {
   return (
@@ -73,15 +69,14 @@ const PackageShowcase = () => {
             Popular <span className="gradient-text">Tour Packages</span>
           </h2>
           <p className="text-body max-w-3xl mx-auto">
-            Choose from our best boat tours Papikondalu packages. Experience premium Godavari river cruise adventures
-            designed to give you the most unforgettable best boat tours Papikondalu experience with expert guides
+            Three ways to see Papikondalu by boat: a one day trip from Rajahmundry, a two day trip from Bhadrachalam, and an overnight camp at Sirivaka.
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {packages.map((pkg, index) => (
             <motion.div
-              key={pkg.id}
+              key={pkg.packageId}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: index * 0.05 }}
@@ -106,15 +101,9 @@ const PackageShowcase = () => {
                   alt={pkg.name}
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  sizes="(max-width: 1024px) 100vw, 33vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-
-                {/* Rating */}
-                <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-1 flex items-center">
-                  <Star className="w-4 h-4 text-secondary-500 fill-current mr-1" />
-                  <span className="text-sm font-semibold text-neutral-800">{pkg.rating}</span>
-                  <span className="text-xs text-neutral-600 ml-1">({pkg.reviews})</span>
-                </div>
               </div>
 
               <div className="p-6">
@@ -158,10 +147,10 @@ const PackageShowcase = () => {
                 </div>
 
                 <Link
-                  href={`/packages/${getPackageSlug(pkg.id)}`}
+                  href={`/packages/${getPackageSlug(pkg.packageId)}`}
                   className="w-full btn-primary text-center group/btn"
                 >
-                  View Details
+                  View {pkg.name} Tour
                   <ArrowRight className="ml-2 transition-transform group-hover/btn:translate-x-1" size={16} />
                 </Link>
               </div>

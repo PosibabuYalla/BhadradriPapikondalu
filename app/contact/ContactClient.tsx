@@ -124,10 +124,10 @@ export default function ContactClient() {
             
             <h1 className="text-2xl md:text-4xl font-bold mb-6 leading-tight">
               Let&apos;s Plan Your
-              <span className="block text-secondary-300">Journey through Papikondalu Tours, Bhadradri, East Godavari & Maredumalli Tourism</span>
+              <span className="block text-secondary-300">Papikondalu Boat Tour</span>
             </h1>
             <p className="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed text-white/90">
-              Get in touch with the leading Papikondalu tour operator for Bhadradri temple visits, East Godavari river cruises, and Maredumalli adventures. 24/7 expert assistance, best pricing, and customized travel support.
+              Tell us your travel date, group size and starting point (Rajahmundry or Bhadrachalam), and we&apos;ll suggest the right Papikondalu boat tour or temple package.
             </p>
           </motion.div>
         </div>

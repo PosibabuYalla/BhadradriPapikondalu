@@ -8,7 +8,8 @@
 export const businessInfo = {
   name: 'Papikondalu Tourism',
   legalName: 'Papikondalu Tourism',
-  domain: 'https://bhadradripapikondalu.com',
+  // Must match the primary domain configured in Vercel (apex redirects to www).
+  domain: 'https://www.bhadradripapikondalu.com',
   phone: '+91 9848323488',
   phoneHref: 'tel:+919848323488',
   whatsappNumber: '919848323488',

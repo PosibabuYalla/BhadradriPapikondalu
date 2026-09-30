@@ -4,9 +4,9 @@ export const dynamic = 'force-static'
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Papikondalu Tourism - Best Boat Tours in Andhra Pradesh',
+    name: 'Papikondalu Tourism - Godavari Boat Tours',
     short_name: 'Papikondalu Tourism',
-    description: 'Experience Papikondalu Hills with India\'s #1 river tourism company. Premium boat tours, temple visits & adventure packages.',
+    description: 'Papikondalu boat tours on the Godavari from Rajahmundry and Bhadrachalam, plus temple and camping trips.',
     start_url: '/',
     display: 'standalone',
     background_color: '#ffffff',

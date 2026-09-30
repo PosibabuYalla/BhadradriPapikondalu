@@ -5,53 +5,36 @@ import PapikondaluOverview from './components/PapikondaluOverview'
 import FAQSection from './components/FAQSection'
 import { LazyTestimonials, LazyNewsletter } from './components/LazyComponents'
 import CriticalCSS from './components/CriticalCSS'
-import Script from 'next/script'
+import JsonLd from './components/JsonLd'
 import { Metadata } from 'next'
 import { businessInfo } from './lib/businessInfo'
+import { pageMetadata } from './lib/seo'
 
-export const metadata: Metadata = {
-  title: 'Papikondalu Tours | Book Boat Tours from Rajahmundry & Bhadrachalam',
-  description: `Book Papikondalu boat tours from Rajahmundry & Bhadrachalam. Call ${businessInfo.phone} — trusted operator serving Godavari river cruises for 20+ years.`,
-  openGraph: {
-    title: 'Papikondalu Tours | Book Boat Tours from Rajahmundry & Bhadrachalam',
-    description: `Book Papikondalu boat tours from Rajahmundry & Bhadrachalam. Call ${businessInfo.phone} — trusted operator serving Godavari river cruises for 20+ years.`,
-    images: [{
-      url: businessInfo.heroImage,
-      width: 1200,
-      height: 630,
-      alt: 'Papikondalu Boat Tours - Rajahmundry & Bhadrachalam Godavari River Cruise'
-    }]
-  }
-}
+const description = 'Book Papikondalu boat tours on the Godavari from Rajahmundry and Bhadrachalam: one day trips, two day tours and Sirivaka night stays. Call or WhatsApp.'
+
+export const metadata: Metadata = pageMetadata({
+  title: 'Papikondalu Boat Tours | Godavari River Cruises',
+  description,
+  path: '/',
+  imageAlt: 'Papikondalu hills on the Godavari River',
+})
 
 export default function Home() {
   const homePageStructuredData = {
-    '@context': 'https://schema.org',
     '@type': 'WebPage',
     '@id': `${businessInfo.domain}/#webpage`,
     'url': businessInfo.domain,
-    'name': 'Papikondalu Boat Tours — Authentic Godavari River Cruises',
-    'isPartOf': {
-      '@id': `${businessInfo.domain}/#website`
-    },
-    'about': {
-      '@id': `${businessInfo.domain}/#organization`
-    },
-    'description': `Book Papikondalu boat tours from Rajahmundry & Bhadrachalam. Call ${businessInfo.phone} — trusted operator serving Godavari river cruises for 20+ years.`,
-    'breadcrumb': {
-      '@id': `${businessInfo.domain}/#breadcrumb`
-    },
-    'inLanguage': 'en-US',
+    'name': 'Papikondalu Boat Tours | Godavari River Cruises',
+    'description': description,
+    'isPartOf': { '@id': `${businessInfo.domain}/#website` },
+    'about': { '@id': `${businessInfo.domain}/#organization` },
+    'inLanguage': 'en-IN',
   }
 
   return (
     <>
       <CriticalCSS />
-      <Script
-        id="home-structured-data"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(homePageStructuredData) }}
-      />
+      <JsonLd data={homePageStructuredData} />
       <Hero />
       <PapikondaluOverview />
       <FeaturedAttractions />

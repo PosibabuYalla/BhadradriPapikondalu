@@ -2,26 +2,52 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Calendar, MapPin, Clock, ArrowLeft } from 'lucide-react'
+import { pageMetadata, absoluteUrl, breadcrumbSchema, organizationRef } from '../../lib/seo'
+import JsonLd from '../../components/JsonLd'
 
-export const metadata: Metadata = {
-  title: 'Papikondalu River Cruise Package – East Godavari\'s Top Tour | Bhadradri Temple & Godavari Cruise',
-  description: 'Book the best Papikondalu river cruise tour in East Godavari. Experience Bhadradri temple darshan, Maredumilli waterfalls adventure, and Rampachodavaram tribal culture tours with expert guides.',
-  keywords: 'Papikondalu river cruise, Bhadradri temple tour, Maredumilli waterfalls adventure, Rampachodavaram tribal culture, Sirivaka camping, Parnasala heritage temple, Gudisa hills trekking, Perantalapalli eco tour, East Godavari tours',
+export const metadata: Metadata = pageMetadata({
+  title: 'Papikondalu & Bhadradri Travel Guide | East Godavari',
+  description: 'A travel guide to the Papikondalu hills and Bhadradri (Bhadrachalam) temple: Godavari river cruises, Maredumilli waterfalls, Parnasala and when to visit.',
+  path: '/blog/papikondalu-bhadradri-magical-beauty',
+  image: 'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_1200,q_auto,f_auto/v1755980788/PAPI-KONDALU_wswdud.jpg',
+  imageAlt: 'Papikondalu hills beside the Godavari River'
+})
+
+const articleSchema = {
+  '@graph': [
+    {
+      '@type': 'Article',
+      headline: 'Papikondalu & Bhadradri Travel Guide',
+      description: 'A travel guide to the Papikondalu hills and Bhadradri (Bhadrachalam) temple: Godavari river cruises, Maredumilli waterfalls, Parnasala and when to visit.',
+      image: 'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_1200,q_auto,f_auto/v1755980788/PAPI-KONDALU_wswdud.jpg',
+      // Month-only date as shown on the page; replace with the exact publish date if known.
+      datePublished: '2024-12',
+      author: organizationRef,
+      publisher: organizationRef,
+      mainEntityOfPage: absoluteUrl('/blog/papikondalu-bhadradri-magical-beauty'),
+    },
+    breadcrumbSchema([
+      { name: 'Home', path: '/' },
+      { name: 'Blog', path: '/blog' },
+      { name: 'Papikondalu & Bhadradri Travel Guide', path: '/blog/papikondalu-bhadradri-magical-beauty' },
+    ]),
+  ],
 }
 
 export default function BlogPost() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
+      <JsonLd data={articleSchema} />
       {/* Hero Section */}
       <div className="relative h-96 bg-gradient-to-r from-blue-600 to-green-600 overflow-hidden">
         <div className="absolute inset-0 bg-black/30"></div>
         <div className="relative container mx-auto px-4 h-full flex items-center justify-center text-center">
           <div className="text-white">
             <h1 className="text-2xl md:text-4xl font-bold mb-4">
-              Magical Beauty of Papikondalu & Bhadradri – Ultimate East Godavari Travel Guide
+              Papikondalu &amp; Bhadradri Travel Guide
             </h1>
             <p className="text-xl md:text-2xl opacity-90">
-              Discover the wonders of Papikondalu hills and Bhadradri temple in East Godavari. Read this complete travel guide for scenic river cruises, spiritual escapes, adventure tours, and top tips. Plan your memorable East Godavari getaway today!
+              River cruises through the Papikondalu hills, the Sri Rama temple at Bhadrachalam, and the waterfalls and heritage sites nearby.
             </p>
           </div>
         </div>
@@ -70,7 +96,7 @@ export default function BlogPost() {
               <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
                 <div className="relative h-64 md:h-80">
                   <Image
-                    src="https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_400,q_auto,f_auto/v1755980788/PAPI-KONDALU_wswdud.jpg"
+                    src="https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_1200,q_auto,f_auto/v1755980788/PAPI-KONDALU_wswdud.jpg"
                     alt="Scenic view of Papikondalu Hills with Godavari River"
                     fill
                     className="object-cover"
@@ -84,7 +110,9 @@ export default function BlogPost() {
                   <p className="text-lg text-gray-700 leading-relaxed">
                     Experience the serene beauty of the Papikondalu hills by cruising along the Godavari River. 
                     The lush green hills and the peaceful river landscape create a perfect backdrop for travelers 
-                    seeking both adventure and relaxation.
+                    seeking both adventure and relaxation. Our{' '}
+                    <Link href="/papikondalu-tours" className="text-blue-600 hover:underline">Papikondalu tour guide</Link>{' '}
+                    covers the boat routes from Rajahmundry and Bhadrachalam.
                   </p>
                 </div>
               </div>
@@ -95,7 +123,7 @@ export default function BlogPost() {
               <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
                 <div className="relative h-64 md:h-80">
                   <Image
-                    src="https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_400,q_auto,f_auto/v1755980906/BhadrachalamTemple-1068x421_heh1o2.png"
+                    src="https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_1200,q_auto,f_auto/v1755980906/BhadrachalamTemple-1068x421_heh1o2.png"
                     alt="Ancient Bhadradri Temple dedicated to Lord Rama"
                     fill
                     className="object-cover"
@@ -109,7 +137,8 @@ export default function BlogPost() {
                   <p className="text-lg text-gray-700 leading-relaxed">
                     Visit the ancient Bhadradri temple, a place of worship dedicated to Lord Rama. 
                     This temple is renowned for its architectural grandeur and festive celebrations like Rama Navami, 
-                    where thousands gather to seek blessings.
+                    where thousands gather to seek blessings. Read more about{' '}
+                    <Link href="/attractions/bhadrachalam" className="text-blue-600 hover:underline">visiting Bhadrachalam temple</Link>.
                   </p>
                 </div>
               </div>
@@ -120,7 +149,7 @@ export default function BlogPost() {
               <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
                 <div className="relative h-64 md:h-80">
                   <Image
-                    src="https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_400,q_auto,f_auto/v1755978851/MAREDUMILLI_-_waterfalls_kmuppt.jpg"
+                    src="https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_1200,q_auto,f_auto/v1755978851/MAREDUMILLI_-_waterfalls_kmuppt.jpg"
                     alt="Beautiful Maredumilli Waterfalls surrounded by dense forest"
                     fill
                     className="object-cover"
@@ -133,7 +162,8 @@ export default function BlogPost() {
                   </h2>
                   <p className="text-lg text-gray-700 leading-relaxed">
                     If you love nature and adventure, Maredumilli Waterfalls should be on your list. 
-                    Trek through dense forests, enjoy the misty spray of the waterfalls, and embrace the serenity of untouched nature.
+                    Trek through dense forests, enjoy the misty spray of the waterfalls, and embrace the serenity of untouched nature. See our{' '}
+                    <Link href="/attractions/maredumilli" className="text-blue-600 hover:underline">Maredumilli travel guide</Link>.
                   </p>
                 </div>
               </div>
@@ -145,7 +175,7 @@ export default function BlogPost() {
                 <h2 className="text-2xl md:text-3xl font-bold mb-6">Other Enchanting Attractions</h2>
                 <div className="grid md:grid-cols-3 gap-6">
                   <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-                    <h3 className="text-xl font-semibold mb-3">Parnasala Heritage Site</h3>
+                    <h3 className="text-xl font-semibold mb-3"><Link href="/attractions/parnasala" className="hover:underline">Parnasala Heritage Site</Link></h3>
                     <p className="opacity-90">Dive into history and marvel at ancient monuments.</p>
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
@@ -153,7 +183,7 @@ export default function BlogPost() {
                     <p className="opacity-90">A hidden gem offering tranquility and postcard views.</p>
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-                    <h3 className="text-xl font-semibold mb-3">Gudisa Hill Station</h3>
+                    <h3 className="text-xl font-semibold mb-3"><Link href="/attractions/gudisa" className="hover:underline">Gudisa Hill Station</Link></h3>
                     <p className="opacity-90">Ideal for camping and panoramic mountain vistas.</p>
                   </div>
                 </div>
@@ -202,9 +232,9 @@ export default function BlogPost() {
 
             {/* Final CTA */}
             <div className="bg-gradient-to-r from-green-600 to-blue-600 rounded-2xl p-8 text-center text-white">
-              <h3 className="text-xl md:text-2xl font-bold mb-4">
+              <h2 className="text-xl md:text-2xl font-bold mb-4">
                 Book your adventure today and immerse yourself in the natural and spiritual wonders of East Godavari!
-              </h3>
+              </h2>
               <p className="text-lg opacity-90">
                 Let us help you create memories that last a lifetime.
               </p>

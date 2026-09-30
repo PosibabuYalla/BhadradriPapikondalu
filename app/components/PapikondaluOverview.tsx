@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { Anchor, MapPin, Users, ShieldCheck } from 'lucide-react'
 import { businessInfo } from '../lib/businessInfo'
 
@@ -20,6 +21,14 @@ const PapikondaluOverview = () => {
             Papikondalu is the stretch of forested hills where the Godavari narrows into a gorge between
             Rajahmundry and Bhadrachalam. Boats leave from either town, cruise past the hills, and stop at
             Perantalapalli. We run this route as a day trip or overnight package, year-round.
+          </p>
+          <p className="text-body mt-4">
+            Compare the{' '}
+            <Link href="/packages/rajahmundry-papikondalu-packages" className="text-primary-600 font-semibold hover:underline">Rajahmundry to Papikondalu one day tour</Link>{' '}
+            and the{' '}
+            <Link href="/packages/bhadrachalam-papikondalu-packages" className="text-primary-600 font-semibold hover:underline">Bhadrachalam to Papikondalu two day tour</Link>,
+            or read the{' '}
+            <Link href="/papikondalu-tours" className="text-primary-600 font-semibold hover:underline">complete Papikondalu tour guide</Link>.
           </p>
         </div>
 

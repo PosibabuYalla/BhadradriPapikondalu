@@ -1,8 +1,9 @@
-import Script from 'next/script'
+import JsonLd from '../../components/JsonLd'
 import { packagesData } from '../packagesData'
 import PackageDetailClient from './PackageDetailClient'
 import { notFound } from 'next/navigation'
 import { getPackageSlug, getPackageIdFromSlug } from '../../utils/slugs'
+import { pageMetadata, absoluteUrl, breadcrumbSchema, organizationRef } from '../../lib/seo'
 import type { Metadata } from 'next'
 
 export async function generateStaticParams() {
@@ -18,22 +19,18 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
 
   if (!packageData) {
     return {
-      title: 'Package Not Found | Papikondalu Tourism',
-      description: 'The requested package could not be found.'
+      title: 'Package Not Found',
+      robots: { index: false, follow: true },
     }
   }
 
-  return {
-    title: packageData.title || `${packageData.name} | Papikondalu Tourism`,
-    description: packageData.metaDescription || packageData.shortDescription,
-    keywords: `${packageData.name}, Papikondalu tours, ${packageData.departure}, ${packageData.features?.join(', ')}, East Godavari`,
-    openGraph: {
-      title: packageData.title || packageData.name,
-      description: packageData.shortDescription,
-      images: [packageData.image],
-      type: 'website'
-    }
-  }
+  return pageMetadata({
+    title: packageData.title,
+    description: packageData.metaDescription,
+    path: `/packages/${id}`,
+    image: packageData.image,
+    imageAlt: packageData.name,
+  })
 }
 
 export default async function PackageDetailPage({ params }: { params: Promise<{ id: string }> }) {
@@ -50,26 +47,42 @@ export default async function PackageDetailPage({ params }: { params: Promise<{ 
     notFound()
   }
 
-  // No aggregateRating or offers.price here: packageData.rating/reviews are
-  // placeholder numbers, not a verified Google/review-platform figure, and there's
-  // no real per-package price yet. Publishing fabricated rating or price schema
-  // is a Google spam-policy violation — add these back once real numbers exist.
+  const url = absoluteUrl(`/packages/${id}`)
+
+  // TouristTrip rather than Product: Product without offers/reviews is flagged
+  // as invalid in Search Console. No price or rating is published because the
+  // site has no verified per-package price or review data — add offers here
+  // once real prices exist.
   const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Product',
-    'name': packageData.title || packageData.name,
-    'description': packageData.description,
-    'image': packageData.image,
-    'url': `https://bhadradripapikondalu.com/packages/${id}`,
+    '@graph': [
+      {
+        '@type': 'TouristTrip',
+        '@id': `${url}#trip`,
+        name: packageData.name,
+        description: packageData.description,
+        image: packageData.image,
+        url,
+        provider: organizationRef,
+        itinerary: {
+          '@type': 'ItemList',
+          itemListElement: packageData.itinerary.map((step, index) => ({
+            '@type': 'ListItem',
+            position: index + 1,
+            name: step,
+          })),
+        },
+      },
+      breadcrumbSchema([
+        { name: 'Home', path: '/' },
+        { name: 'Tour Packages', path: '/packages' },
+        { name: packageData.name, path: `/packages/${id}` },
+      ]),
+    ],
   }
 
   return (
     <>
-      <Script
-        id={`package-schema-${packageData.id}`}
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <JsonLd data={jsonLd} />
       <PackageDetailClient packageData={packageData} />
     </>
   )

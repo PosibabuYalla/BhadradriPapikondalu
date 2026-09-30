@@ -1,9 +1,8 @@
 import Link from 'next/link'
 import { Metadata } from 'next'
-import Script from 'next/script'
 
 export const metadata: Metadata = {
-  title: 'Page Not Found | Papikondalu Tourism',
+  title: { absolute: 'Page Not Found | Papikondalu Tourism' },
   description: 'The page you are looking for could not be found. Explore our Papikondalu tours and packages.',
   robots: {
     index: false,
@@ -12,21 +11,8 @@ export const metadata: Metadata = {
 }
 
 export default function NotFound() {
-  const notFoundSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'WebPage',
-    'name': '404 - Page Not Found',
-    'description': 'The requested page could not be found on Papikondalu Tourism website',
-    'url': 'https://bhadradripapikondalu.com/404'
-  }
-
   return (
     <>
-      <Script
-        id="notfound-structured-data"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(notFoundSchema) }}
-      />
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 px-4">
         <div className="text-center max-w-2xl mx-auto">
           <div className="mb-8">
@@ -53,10 +39,13 @@ export default function NotFound() {
             </div>
 
             <div className="bg-white/50 backdrop-blur-sm rounded-lg p-6 border">
-              <h3 className="text-lg font-semibold mb-4 text-gray-900">
-                Popular Destinations
-              </h3>
+              <h2 className="text-lg font-semibold mb-4 text-gray-900">
+                Popular Pages
+              </h2>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                <Link href="/papikondalu-tours" className="text-blue-600 hover:text-blue-700 transition-colors">
+                  Papikondalu Tours
+                </Link>
                 <Link href="/attractions" className="text-blue-600 hover:text-blue-700 transition-colors">
                   Attractions
                 </Link>

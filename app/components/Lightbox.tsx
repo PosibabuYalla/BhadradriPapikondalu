@@ -86,7 +86,7 @@ const Lightbox = ({ images, currentIndex, isOpen, onClose, onNext, onPrev }: Lig
           </div>
 
           <div className="text-white text-center mt-4">
-            <h3 className="text-lg font-semibold">{images[currentIndex].alt}</h3>
+            <p className="text-lg font-semibold">{images[currentIndex].alt}</p>
             <p className="text-sm text-gray-300 capitalize">
               {images[currentIndex].category} • {currentIndex + 1} of {images.length}
             </p>

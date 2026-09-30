@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next'
+import { businessInfo } from './lib/businessInfo'
 
 export const dynamic = 'force-static'
 
@@ -7,23 +8,10 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: '*',
-        allow: ['/', '/_next/static/', '/_next/image/', '/images/', '/css/', '/js/'],
-        disallow: ['/api/contact', '/admin/', '/private/', '/_next/server/'],
+        allow: '/',
+        disallow: ['/api/'],
       },
-      {
-        userAgent: 'Googlebot',
-        allow: ['/', '/_next/static/', '/_next/image/', '/images/', '/css/', '/js/'],
-        disallow: ['/api/contact', '/admin/', '/private/', '/_next/server/'],
-      },
-      {
-        userAgent: 'Bingbot',
-        allow: ['/', '/_next/static/', '/_next/image/', '/images/', '/css/', '/js/'],
-        disallow: ['/api/contact', '/admin/', '/private/', '/_next/server/'],
-      }
     ],
-    sitemap: [
-      'https://bhadradripapikondalu.com/sitemap.xml'
-    ],
-    host: 'https://bhadradripapikondalu.com',
+    sitemap: `${businessInfo.domain}/sitemap.xml`,
   }
 }

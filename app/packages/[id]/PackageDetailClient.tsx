@@ -3,8 +3,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { ArrowLeft, Star, MapPin, Users, Calendar, CheckCircle, Info, Route, Lightbulb, Phone, MessageCircle } from 'lucide-react'
+import { ArrowLeft, MapPin, Users, Calendar, CheckCircle, Info, Route, Lightbulb, Phone, MessageCircle, ShieldCheck } from 'lucide-react'
 import { agents } from '../../lib/agents'
+import { getPackageSlug } from '../../utils/slugs'
 
 interface Package {
   id: number
@@ -15,8 +16,6 @@ interface Package {
   gallery: string[]
   capacity: string
   departure: string
-  rating: number
-  reviews: number
   features: string[]
   itinerary: string[]
   bestTime: string
@@ -29,6 +28,12 @@ interface PackageDetailClientProps {
   packageData: Package
 }
 
+const relatedPackages = [
+  { id: 5, label: 'Rajahmundry to Papikondalu one day boat tour' },
+  { id: 2, label: 'Bhadrachalam to Papikondalu two day boat tour' },
+  { id: 6, label: 'Sirivaka night stay and camping package' },
+]
+
 export default function PackageDetailClient({ packageData }: PackageDetailClientProps) {
   return (
     <div className="min-h-screen bg-gray-50">
@@ -40,6 +45,7 @@ export default function PackageDetailClient({ packageData }: PackageDetailClient
           fill
           className="object-cover"
           priority
+          sizes="100vw"
         />
         <div className="absolute inset-0 bg-black/40" />
         <div className="absolute inset-0 flex items-center justify-center">
@@ -67,7 +73,8 @@ export default function PackageDetailClient({ packageData }: PackageDetailClient
           href="/packages"
           className="absolute top-6 left-6 bg-white/20 backdrop-blur-sm text-white p-3 rounded-full hover:bg-white/30 transition-colors"
         >
-          <ArrowLeft size={20} />
+          <ArrowLeft size={20} aria-hidden="true" />
+          <span className="sr-only">Back to all Papikondalu tour packages</span>
         </Link>
       </section>
 
@@ -92,7 +99,7 @@ export default function PackageDetailClient({ packageData }: PackageDetailClient
                 </p>
                 
                 {/* Package Stats */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-4 bg-gray-50 rounded-lg">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 p-4 bg-gray-50 rounded-lg">
                   <div className="text-center">
                     <Users className="mx-auto text-primary-600 mb-2" size={24} />
                     <p className="text-sm text-gray-600">Capacity</p>
@@ -102,11 +109,6 @@ export default function PackageDetailClient({ packageData }: PackageDetailClient
                     <MapPin className="mx-auto text-primary-600 mb-2" size={24} />
                     <p className="text-sm text-gray-600">Departure</p>
                     <p className="font-semibold">{packageData.departure}</p>
-                  </div>
-                  <div className="text-center">
-                    <Star className="mx-auto text-primary-600 mb-2" size={24} />
-                    <p className="text-sm text-gray-600">Rating</p>
-                    <p className="font-semibold">{packageData.rating}/5</p>
                   </div>
                   <div className="text-center">
                     <Calendar className="mx-auto text-primary-600 mb-2" size={24} />
@@ -195,6 +197,50 @@ export default function PackageDetailClient({ packageData }: PackageDetailClient
                   ))}
                 </div>
               </motion.div>
+
+              {/* Booking policies — summarised from /terms, the single source for these rules */}
+              <div className="card-elevated p-8 mt-8">
+                <div className="flex items-center gap-2 mb-6">
+                  <ShieldCheck className="text-primary-600" size={24} />
+                  <h2 className="text-2xl font-bold text-gray-900">Good to Know Before You Book</h2>
+                </div>
+                <ul className="space-y-3 text-gray-700">
+                  <li>Carry a valid photo ID for every passenger.</li>
+                  <li>Life jackets are provided and must be worn during the boat ride.</li>
+                  <li>Children must be accompanied by an adult.</li>
+                  <li>Trips can be rescheduled or cancelled for unsafe weather or river conditions, with a full refund or a new date.</li>
+                  <li>
+                    Cancellation: full refund up to 48 hours before departure, 50% between 24 and 48 hours, no refund within 24 hours.
+                    See our <Link href="/terms" className="text-primary-600 hover:underline">booking and cancellation terms</Link>.
+                  </li>
+                </ul>
+              </div>
+
+              {/* Related Papikondalu pages */}
+              <div className="card-elevated p-8 mt-8">
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">Plan Your Papikondalu Trip</h2>
+                <ul className="space-y-3">
+                  <li>
+                    <Link href="/papikondalu-tours" className="text-primary-600 hover:underline font-medium">
+                      Papikondalu tour guide: routes, timings, prices and what to carry
+                    </Link>
+                  </li>
+                  {relatedPackages
+                    .filter((related) => related.id !== packageData.id)
+                    .map((related) => (
+                      <li key={related.id}>
+                        <Link href={`/packages/${getPackageSlug(related.id)}`} className="text-primary-600 hover:underline font-medium">
+                          {related.label}
+                        </Link>
+                      </li>
+                    ))}
+                  <li>
+                    <Link href="/attractions/perantalapalli" className="text-primary-600 hover:underline font-medium">
+                      About Perantalapalli, the riverside temple stop on the boat route
+                    </Link>
+                  </li>
+                </ul>
+              </div>
             </div>
 
             {/* Sidebar */}
@@ -204,16 +250,8 @@ export default function PackageDetailClient({ packageData }: PackageDetailClient
                 animate={{ opacity: 1, x: 0 }}
                 className="card-elevated p-6 mb-8 sticky top-6"
               >
-                <div className="text-center mb-6">
-                  <div className="flex items-center justify-center gap-2 mb-2">
-                    <Star className="text-yellow-500" size={20} />
-                    <span className="text-xl font-bold">{packageData.rating}</span>
-                  </div>
-                  <p className="text-gray-600">{packageData.reviews} reviews</p>
-                </div>
-
                 <div className="mb-6">
-                  <h4 className="font-semibold text-gray-900 mb-3">Highlights</h4>
+                  <h3 className="font-semibold text-gray-900 mb-3">Highlights</h3>
                   <div className="flex flex-wrap gap-2">
                     {packageData.highlights.map((highlight, index) => (
                       <span
@@ -229,7 +267,7 @@ export default function PackageDetailClient({ packageData }: PackageDetailClient
                 <div className="space-y-3 mb-6">
                   <div className="text-center p-4 bg-primary-50 rounded-lg">
                     <p className="text-primary-600 font-semibold">Contact for Pricing</p>
-                    <p className="text-sm text-gray-600 mt-1">Best rates guaranteed</p>
+                    <p className="text-sm text-gray-600 mt-1">Rates depend on date, group size and boat</p>
                   </div>
                 </div>
 

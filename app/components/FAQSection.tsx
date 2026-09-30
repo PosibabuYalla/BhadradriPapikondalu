@@ -1,5 +1,6 @@
-import Script from 'next/script'
+import JsonLd from './JsonLd'
 import { businessInfo } from '../lib/businessInfo'
+import { faqSchema } from '../lib/seo'
 
 export const homeFAQs = [
   {
@@ -45,27 +46,10 @@ export const homeFAQs = [
 ]
 
 const FAQSection = () => {
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: homeFAQs.map((faq) => ({
-      '@type': 'Question',
-      name: faq.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: faq.answer,
-      },
-    })),
-  }
-
   return (
     <section className="section-padding bg-neutral-50">
       <div className="max-w-4xl mx-auto container-padding">
-        <Script
-          id="home-faq-schema"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-        />
+        <JsonLd data={faqSchema(homeFAQs)} />
         <h2 className="heading-lg mb-8 text-center">Papikondalu tour FAQs</h2>
         <div className="space-y-4">
           {homeFAQs.map((faq) => (

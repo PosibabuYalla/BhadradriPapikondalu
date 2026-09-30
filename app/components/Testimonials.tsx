@@ -51,8 +51,8 @@ const stats = [
   },
   {
     icon: Award,
-    number: '4.9/5',
-    label: 'Rating',
+    number: '2',
+    label: 'Departure Points',
     color: 'from-yellow-500 to-orange-500',
     bgColor: 'bg-yellow-50'
   },
@@ -137,9 +137,9 @@ const Testimonials = () => {
                   />
                 </div>
                 <div className="flex-1">
-                  <h4 className="font-semibold text-neutral-900">
+                  <h3 className="font-semibold text-neutral-900">
                     {testimonial.name}
-                  </h4>
+                  </h3>
                   <p className="text-sm text-neutral-600">
                     {testimonial.location}
                   </p>

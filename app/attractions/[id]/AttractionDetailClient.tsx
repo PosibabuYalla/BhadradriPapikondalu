@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { ArrowLeft, Star, MapPin, Camera, Info, CheckCircle } from 'lucide-react'
+import { getAttractionSlug } from '../../utils/slugs'
 
 interface Attraction {
   id: number
@@ -23,7 +24,20 @@ interface AttractionDetailClientProps {
   attraction: Attraction
 }
 
+// The most relevant tour page for each attraction, keyed by attraction slug.
+const relatedTour: Record<string, { href: string; label: string }> = {
+  'papikondalu': { href: '/papikondalu-tours', label: 'Plan a Papikondalu Boat Tour' },
+  'perantalapalli': { href: '/packages/perantalapalli-packages', label: 'View Perantalapalli Eco Tour' },
+  'gandipochamma-temple': { href: '/papikondalu-tours', label: 'Plan a Papikondalu Boat Tour' },
+  'bhadrachalam': { href: '/packages/bhadrachalam-papikondalu-packages', label: 'View Bhadrachalam to Papikondalu Tour' },
+  'sirivaka-night-stay-camping': { href: '/packages/sirivaka-night-stay-package', label: 'View Sirivaka Night Stay Package' },
+  'maredumilli': { href: '/packages/maredumilli-packages', label: 'View Maredumilli Tour Package' },
+  'parnasala': { href: '/packages/parnasala-packages', label: 'View Parnasala Temple Tour' },
+  'gudisa': { href: '/packages/gudisa-packages', label: 'View Gudisa Hills Tour' },
+}
+
 export default function AttractionDetailClient({ attraction }: AttractionDetailClientProps) {
+  const related = relatedTour[getAttractionSlug(attraction.id)] || { href: '/packages', label: 'View Tour Packages' }
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
@@ -34,6 +48,7 @@ export default function AttractionDetailClient({ attraction }: AttractionDetailC
           fill
           className="object-cover"
           priority
+          sizes="100vw"
         />
         <div className="absolute inset-0 bg-black/40" />
         <div className="absolute inset-0 flex items-center justify-center">
@@ -61,7 +76,8 @@ export default function AttractionDetailClient({ attraction }: AttractionDetailC
           href="/attractions"
           className="absolute top-6 left-6 bg-white/20 backdrop-blur-sm text-white p-3 rounded-full hover:bg-white/30 transition-colors"
         >
-          <ArrowLeft size={20} />
+          <ArrowLeft size={20} aria-hidden="true" />
+          <span className="sr-only">Back to all attractions</span>
         </Link>
       </section>
 
@@ -180,8 +196,8 @@ export default function AttractionDetailClient({ attraction }: AttractionDetailC
                 </div>
 
                 <div className="space-y-3">
-                  <Link href="/packages" className="w-full btn-primary text-center block">
-                    View Packages
+                  <Link href={related.href} className="w-full btn-primary text-center block">
+                    {related.label}
                   </Link>
                   <Link href="/contact" className="w-full btn-outline text-center block">
                     Contact Us
