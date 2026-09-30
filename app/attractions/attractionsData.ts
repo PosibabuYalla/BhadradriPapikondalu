@@ -40,10 +40,10 @@ export const attractionsData = [
     name: 'Gandipochamma Temple',
     shortDescription: 'A sacred temple with deep spiritual significance and traditional South Indian architecture.',
     description: 'Spiritual History: A sacred temple with deep spiritual significance, Perantalapalli Shiva Temple has long been a place where devotees seek peace, blessings, and divine connection. The temple architecture reflects traditional South Indian style, creating a serene space for worship, meditation, and spiritual contemplation along the holy banks of the Godavari. Geographical History: Situated in the heart of the Papikondalu hills, the temple is surrounded by lush forests, waterfalls, and the flowing Godavari River. Accessible mainly by boat, Perantalapalli stands as both a geographical marvel and a spiritual retreat, blending natural beauty with centuries of devotion.',
-    image: 'https://res.cloudinary.com/dnz1dmnmb/image/upload/v1755978109/gandi_pza3wk.jpg',
+    image: 'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_scale,w_600,q_auto,f_auto/v1755978109/gandi_pza3wk.jpg',
     gallery: [
       'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_600,q_auto,f_auto/v1755980906/BhadrachalamTemple-1068x421_heh1o2.png',
-      'https://res.cloudinary.com/dnz1dmnmb/image/upload/v1755978109/gandi_pza3wk.jpg'
+      'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_scale,w_600,q_auto,f_auto/v1755978109/gandi_pza3wk.jpg'
     ],
     highlights: ['Spiritual experience', 'Traditional architecture', 'Religious ceremonies', 'Peaceful atmosphere'],
     bestTime: 'Year round',
@@ -93,9 +93,9 @@ export const attractionsData = [
     name: 'Maredumilli',
     shortDescription: 'A pristine forest area with stunning waterfalls and rich biodiversity.',
     description: 'Spiritual / Experiential History: A pristine forest area blessed with stunning waterfalls and untouched natural charm, this destination is a paradise for those seeking peace and renewal in the lap of nature. The calmness of the flowing streams and the songs of birds create a meditative atmosphere, offering travelers a spiritual escape into the wilderness. Geographical History: Rich in biodiversity, this forest region is home to rare flora and fauna, making it ideal for trekking, photography, and wildlife spotting. With scenic trails, cascading waterfalls, and dense greenery, it offers adventure enthusiasts and nature lovers an unforgettable journey into the wild beauty of the Eastern Ghats.',
-    image: 'https://res.cloudinary.com/dnz1dmnmb/image/upload/v1755978648/maredumilli_lqndyb.webp',
+    image: 'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_scale,w_600,q_auto,f_auto/v1755978648/maredumilli_lqndyb.webp',
     gallery: [
-      'https://res.cloudinary.com/dnz1dmnmb/image/upload/v1755978648/maredumilli_lqndyb.webp',
+      'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_scale,w_600,q_auto,f_auto/v1755978648/maredumilli_lqndyb.webp',
       'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_600,q_auto,f_auto/v1755978851/MAREDUMILLI_-_waterfalls_kmuppt.jpg'
     ],
     highlights: ['Waterfalls', 'Forest trekking', 'Wildlife spotting', 'Adventure activities'],

@@ -44,16 +44,16 @@ const galleryImages = [
   { id: 27, src: 'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_400,q_auto,f_auto/v1755981754/Camping_in_Mountains_ytwmvi.avif', alt: 'Mountain Camping', category: 'accommodation' },
   
   // New Gallery Images
-  { id: 28, src: 'https://res.cloudinary.com/djmcbqzqt/image/upload/v1756059652/IMG-20250824-WA0095_qvbgh3.jpg', alt: 'Papikondalu Tourism Experience', category: 'nature' },
-  { id: 29, src: 'https://res.cloudinary.com/djmcbqzqt/image/upload/v1756059653/IMG-20250824-WA0090_bam34k.jpg', alt: 'River Journey', category: 'nature' },
-  { id: 30, src: 'https://res.cloudinary.com/djmcbqzqt/image/upload/v1756059653/IMG-20250824-WA0093_xbqlev.jpg', alt: 'Scenic Boat Ride', category: 'nature' },
-  { id: 31, src: 'https://res.cloudinary.com/djmcbqzqt/image/upload/v1756059654/IMG-20250824-WA0091_bsdafe.jpg', alt: 'Godavari River Views', category: 'nature' },
-  { id: 32, src: 'https://res.cloudinary.com/djmcbqzqt/image/upload/v1756059652/IMG-20250824-WA0092_nciyzz.jpg', alt: 'Natural Beauty', category: 'nature' },
-  { id: 33, src: 'https://res.cloudinary.com/djmcbqzqt/image/upload/v1756059653/IMG-20250824-WA0094_gs9otn.jpg', alt: 'River Landscape', category: 'nature' },
-  { id: 34, src: 'https://res.cloudinary.com/djmcbqzqt/image/upload/v1756059652/IMG-20250824-WA0097_byc1lo.jpg', alt: 'Tourism Adventure', category: 'nature' },
-  { id: 35, src: 'https://res.cloudinary.com/djmcbqzqt/image/upload/v1756059652/IMG-20250824-WA0096_nuvajb.jpg', alt: 'Papikondalu Hills View', category: 'nature' },
-  { id: 36, src: 'https://res.cloudinary.com/djmcbqzqt/image/upload/v1756059651/IMG-20250824-WA0098_ruqlbn.jpg', alt: 'River Tourism', category: 'nature' },
-  { id: 37, src: 'https://res.cloudinary.com/djmcbqzqt/image/upload/v1756059651/IMG-20250824-WA0099_wy8ety.jpg', alt: 'Scenic Journey', category: 'nature' },
+  { id: 28, src: 'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_400,q_auto,f_auto/v1756059652/IMG-20250824-WA0095_qvbgh3.jpg', alt: 'Papikondalu Tourism Experience', category: 'nature' },
+  { id: 29, src: 'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_400,q_auto,f_auto/v1756059653/IMG-20250824-WA0090_bam34k.jpg', alt: 'River Journey', category: 'nature' },
+  { id: 30, src: 'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_400,q_auto,f_auto/v1756059653/IMG-20250824-WA0093_xbqlev.jpg', alt: 'Scenic Boat Ride', category: 'nature' },
+  { id: 31, src: 'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_400,q_auto,f_auto/v1756059654/IMG-20250824-WA0091_bsdafe.jpg', alt: 'Godavari River Views', category: 'nature' },
+  { id: 32, src: 'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_400,q_auto,f_auto/v1756059652/IMG-20250824-WA0092_nciyzz.jpg', alt: 'Natural Beauty', category: 'nature' },
+  { id: 33, src: 'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_400,q_auto,f_auto/v1756059653/IMG-20250824-WA0094_gs9otn.jpg', alt: 'River Landscape', category: 'nature' },
+  { id: 34, src: 'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_400,q_auto,f_auto/v1756059652/IMG-20250824-WA0097_byc1lo.jpg', alt: 'Tourism Adventure', category: 'nature' },
+  { id: 35, src: 'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_400,q_auto,f_auto/v1756059652/IMG-20250824-WA0096_nuvajb.jpg', alt: 'Papikondalu Hills View', category: 'nature' },
+  { id: 36, src: 'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_400,q_auto,f_auto/v1756059651/IMG-20250824-WA0098_ruqlbn.jpg', alt: 'River Tourism', category: 'nature' },
+  { id: 37, src: 'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_400,q_auto,f_auto/v1756059651/IMG-20250824-WA0099_wy8ety.jpg', alt: 'Scenic Journey', category: 'nature' },
 ]
 
 // 400px-wide thumbnail height that keeps the image's real aspect ratio.

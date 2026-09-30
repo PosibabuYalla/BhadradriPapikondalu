@@ -17,19 +17,19 @@ export default function AboutUsClient() {
     { 
       name: 'Aswini', 
       capacity: '120 passengers', 
-      image: 'https://res.cloudinary.com/djmcbqzqt/image/upload/v1756059545/WhatsApp_Image_2025-08-24_at_22.29.36_7a1d5156_ktga3z.jpg',
+      image: 'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_600,q_auto,f_auto/v1756059545/WhatsApp_Image_2025-08-24_at_22.29.36_7a1d5156_ktga3z.jpg',
       features: ['AC Cabin', 'Restaurant', 'Safety Equipment', 'Panoramic Views'] 
     },
     { 
       name: 'Sri Godavari', 
       capacity: '150 passengers', 
-      image: 'https://res.cloudinary.com/djmcbqzqt/image/upload/v1756059654/WhatsApp_Image_2025-08-24_at_22.29.36_76559ca0_vgryqk.jpg',
+      image: 'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_600,q_auto,f_auto/v1756059654/WhatsApp_Image_2025-08-24_at_22.29.36_76559ca0_vgryqk.jpg',
       features: ['Luxury Seating', 'Entertainment', 'Dining Hall', 'Upper Deck'] 
     },
     { 
       name: 'Srilaxmi', 
       capacity: '100 passengers', 
-      image: 'https://res.cloudinary.com/djmcbqzqt/image/upload/v1756059655/WhatsApp_Image_2025-08-24_at_22.29.53_d0d316b3_gjgggn.jpg',
+      image: 'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_600,q_auto,f_auto/v1756059655/WhatsApp_Image_2025-08-24_at_22.29.53_d0d316b3_gjgggn.jpg',
       features: ['Panoramic Views', 'Comfort Seating', 'Refreshments', 'Photography Deck'] 
     },
   ]
@@ -116,7 +116,7 @@ export default function AboutUsClient() {
             >
               <div className="relative overflow-hidden rounded-3xl shadow-2xl">
                 <Image
-                  src="https://res.cloudinary.com/dnz1dmnmb/image/upload/v1756004871/aboutus_papikonalu_mjtxyo.jpg"
+                  src="https://res.cloudinary.com/dnz1dmnmb/image/upload/c_scale,w_600,q_auto,f_auto/v1756004871/aboutus_papikonalu_mjtxyo.jpg"
                   alt="Papikondalu Scenic Beauty"
                   width={600}
                   height={700}
