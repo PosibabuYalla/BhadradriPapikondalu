@@ -1,8 +1,13 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Star, Quote, Users, Calendar, Award, TrendingUp } from 'lucide-react'
+import { Star, Quote, Users, Calendar, MapPin, Ship } from 'lucide-react'
 import Image from 'next/image'
+import { businessInfo } from '../lib/businessInfo'
+
+// TODO(owner): every testimonial here must be a real customer who agreed to be
+// quoted. Add the tour they took (`trip`) so readers get context, and replace
+// any quote you can't trace to a real message or Google review.
 
 const testimonials = [
   {
@@ -37,29 +42,29 @@ const testimonials = [
 const stats = [
   {
     icon: Calendar,
-    number: '20+',
+    number: businessInfo.yearsInBusiness,
     label: 'Years Experience',
     color: 'from-blue-500 to-blue-600',
     bgColor: 'bg-blue-50'
   },
-  {
+  ...(businessInfo.customersServed ? [{
     icon: Users,
-    number: '7+ Lakh',
-    label: 'Happy Customers',
+    number: businessInfo.customersServed,
+    label: 'Travellers Served',
     color: 'from-green-500 to-green-600',
     bgColor: 'bg-green-50'
-  },
+  }] : []),
   {
-    icon: Award,
+    icon: MapPin,
     number: '2',
     label: 'Departure Points',
     color: 'from-yellow-500 to-orange-500',
     bgColor: 'bg-yellow-50'
   },
   {
-    icon: TrendingUp,
-    number: 'Premium',
-    label: 'Service',
+    icon: Ship,
+    number: '3',
+    label: 'Boats in Our Fleet',
     color: 'from-purple-500 to-purple-600',
     bgColor: 'bg-purple-50'
   }
@@ -90,9 +95,13 @@ const Testimonials = () => {
             What Our <span className="gradient-text">Customers Say</span>
           </h2>
           <p className="text-body max-w-3xl mx-auto">
-            Join thousands of satisfied customers who have experienced the best boat tours Papikondalu adventures
-            with our award-winning Godavari river cruise services and premium tour packages
+            What travellers told us after their Papikondalu boat tours and Bhadrachalam temple trips.
           </p>
+          {businessInfo.googleReviewsUrl && (
+            <a href={businessInfo.googleReviewsUrl} target="_blank" rel="noopener noreferrer" className="inline-block mt-4 text-primary-600 font-semibold hover:underline">
+              Read all our reviews on Google
+            </a>
+          )}
         </motion.div>
 
         {/* Testimonials Grid */}

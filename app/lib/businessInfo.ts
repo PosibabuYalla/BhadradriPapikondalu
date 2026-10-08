@@ -16,6 +16,10 @@ export const businessInfo = {
   whatsappHref: 'https://wa.me/919848323488?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20Papikondalu%20boat%20tour%20packages.',
   email: 'aswinigodavari@gmail.com',
   foundedYear: 2004,
+  // Derived so "20+ years" can never drift from foundedYear.
+  get yearsInBusiness() {
+    return `${Math.floor((new Date().getFullYear() - this.foundedYear) / 5) * 5}+`
+  },
   logo: 'https://res.cloudinary.com/dnz1dmnmb/image/upload/v1755418849/AG_LOGO_2_xfznol.png',
   heroImage: 'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_scale,w_1200,h_630,q_auto,f_auto/v1755401093/papihills1_hmfpkr.jpg',
 
@@ -41,6 +45,19 @@ export const businessInfo = {
   // violation (fabricated review markup) and the reason old schema had to be ripped out.
   googleRating: null as number | null,
   googleReviewCount: null as number | null,
+  // Public Google Business Profile reviews link, so visitors can verify the
+  // testimonials on the site. Leave null until the GBP is claimed.
+  googleReviewsUrl: null as string | null,
+
+  // Headline trust figures. Every page that shows a customer count reads it
+  // from here, so changing or removing it is a one-line edit. Only show a
+  // figure you can back up (booking registers, ticket counts); set to null to
+  // hide it everywhere.
+  customersServed: '7+ Lakh' as string | null,
+
+  // Named person who checks the travel guides (shown as "Reviewed by" on the
+  // blog and tour hub). TODO(owner): real name + one-line local experience.
+  guideReviewer: null as { name: string; bio: string } | null,
 
   socialLinks: {
     facebook: 'https://www.facebook.com/profile.php?id=61579935625167',

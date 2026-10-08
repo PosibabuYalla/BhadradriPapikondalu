@@ -30,7 +30,7 @@ export const packagesData = [
     title: 'Bhadrachalam to Papikondalu Two Day Tour | Boat Package',
     metaDescription: 'Two day Bhadrachalam to Papikondalu boat tour with a Sri Rama temple visit, an overnight stay near the hills and meals, ending in Rajahmundry.',
     shortDescription: 'Two days on the Godavari. Visit Bhadrachalam temple, stay overnight near the Papikondalu hills, and end in Rajahmundry.',
-    description: 'Experience Bhadradri temple darshan and scenic Godavari cruise with trusted operators. Custom packages for families and groups.',
+    description: 'Day one starts at Bhadrachalam with darshan at the Sri Rama temple, then the boat heads downriver into the Papikondalu hills for an overnight stay. On day two you continue through the gorge and end the trip in Rajahmundry. Accommodation, all meals, a guide and entry fees are included.',
     image: 'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_scale,w_600,q_auto,f_auto/v1756003757/rajamundry_v2aufm.jpg',
     gallery: [
       'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_scale,w_600,q_auto,f_auto/v1756003757/rajamundry_v2aufm.jpg',
@@ -55,24 +55,23 @@ export const packagesData = [
     title: 'Maredumilli Waterfalls Tour Package from Rajahmundry',
     metaDescription: 'Maredumilli waterfalls and forest day tour from Rajahmundry with a guide, lunch and refreshments. Contact us for dates and group rates.',
     shortDescription: 'Day trip to Maredumilli waterfalls and forest trails from Rajahmundry. Includes transport, guide and lunch.',
-    description: 'Explore Maredumilli waterfalls and forest treks. Adventure-filled tour package with safe travel, meals, and expert guides.',
-    image: 'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_600,q_auto,f_auto/v1755980788/PAPI-KONDALU_wswdud.jpg',
+    description: 'A road trip from Rajahmundry into the Maredumilli forest in the Eastern Ghats, visiting its waterfalls and walking the forest trails with a trekking guide. Forest permits and lunch are included.',
+    image: 'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_600,q_auto,f_auto/v1755978851/MAREDUMILLI_-_waterfalls_kmuppt.jpg',
     gallery: [
-      'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_600,q_auto,f_auto/v1755980788/PAPI-KONDALU_wswdud.jpg',
-      'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_scale,w_600,q_auto,f_auto/v1756003757/rajamundry_v2aufm.jpg'
+      'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_600,q_auto,f_auto/v1755978851/MAREDUMILLI_-_waterfalls_kmuppt.jpg'
     ],
-    capacity: '100 People',
+    capacity: '25 People',
     departure: 'Rajahmundry',
-    features: ['Day tour', 'Photography opportunities', 'Refreshments', 'Return journey'],
+    features: ['Waterfall visits', 'Forest trekking', 'Wildlife spotting', 'Photography'],
     itinerary: [
-      'Morning departure from Rajahmundry',
-      'Papikondalu sightseeing and lunch',
-      'Evening return journey to Rajahmundry'
+      'Departure from Rajahmundry and forest entry',
+      'Waterfall exploration and lunch',
+      'Wildlife spotting and return journey'
     ],
-    bestTime: 'October to March',
-    inclusions: ['Transportation', 'Lunch', 'Guide services', 'Refreshments'],
-    highlights: ['Scenic boat ride', 'Mountain photography', 'River views', 'Day excursion'],
-    tips: ['Start early morning', 'Carry camera', 'Wear sun protection', 'Comfortable footwear']
+    bestTime: 'June to February',
+    inclusions: ['Forest permits', 'Trekking guide', 'Lunch', 'Transportation', 'Safety gear'],
+    highlights: ['Multiple waterfalls', 'Forest trekking', 'Wildlife photography', 'Nature trails'],
+    tips: ['Wear trekking shoes', 'Carry water', 'Follow guide instructions', 'Respect wildlife']
   },
   {
     id: 4,
@@ -130,7 +129,7 @@ export const packagesData = [
     title: 'Sirivaka Night Stay Package | Papikondalu Camping',
     metaDescription: 'Overnight Sirivaka camping in the Papikondalu hills from Rajahmundry, with river transport, meals, a campfire and nature walks.',
     shortDescription: 'Overnight camping at Sirivaka in the Papikondalu hills. Includes river transport, campfire, meals and nature walks.',
-    description: 'Book Sirivaka camping in Papikondalu with campfire, nature walks, and stargazing. Secure your adventure night now!',
+    description: 'Travel from Rajahmundry by river to Sirivaka in the Papikondalu hills and spend the night at a riverside camp, with a campfire, nature walks and meals, before returning the next morning. Camping gear is provided.',
     image: 'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_scale,w_600,q_auto,f_auto/v1756003855/sirivaka_fdzsuf.avif',
     gallery: [
       'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_scale,w_600,q_auto,f_auto/v1756003855/sirivaka_fdzsuf.avif'
@@ -155,30 +154,6 @@ export const packagesData = [
     metaDescription: 'Parnasala heritage tour to the Ramayana site where Lord Rama is believed to have lived in exile, near Bhadrachalam. Contact us for dates and group rates.',
     shortDescription: 'Guided visit to Parnasala, the Ramayana heritage site near Bhadrachalam. Includes transport and a guide.',
     description: 'Visit Parnasala, near Bhadrachalam, where Lord Rama, Sita and Lakshmana are believed to have lived during their exile. A guide explains the site and its stories.',
-    image: 'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_600,q_auto,f_auto/v1755978851/MAREDUMILLI_-_waterfalls_kmuppt.jpg',
-    gallery: [
-      'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_600,q_auto,f_auto/v1755978851/MAREDUMILLI_-_waterfalls_kmuppt.jpg'
-    ],
-    capacity: '25 People',
-    departure: 'Rajahmundry',
-    features: ['Waterfall visits', 'Forest trekking', 'Wildlife spotting', 'Photography'],
-    itinerary: [
-      'Departure and forest entry',
-      'Waterfall exploration and lunch',
-      'Wildlife spotting and return journey'
-    ],
-    bestTime: 'June to February',
-    inclusions: ['Forest permits', 'Trekking guide', 'Lunch', 'Transportation', 'Safety gear'],
-    highlights: ['Multiple waterfalls', 'Forest trekking', 'Wildlife photography', 'Nature trails'],
-    tips: ['Wear trekking shoes', 'Carry water', 'Follow guide instructions', 'Respect wildlife']
-  },
-  {
-    id: 8,
-    name: 'Gudisa Hills Trekking Tour Package',
-    title: 'Gudisa Hills Trekking Tour Package | Papikondalu Tourism',
-    metaDescription: 'Gudisa hill station trip with panoramic Eastern Ghats viewpoints, cool weather and guided walks. Contact us for dates, group size and current rates.',
-    shortDescription: 'Visit Gudisa hill station for panoramic Eastern Ghats views. Includes transport, guide and refreshments.',
-    description: 'Trek Gudisa hills for panoramic mountain views. Adventure package includes expert guides and memorable camping experiences.',
     image: 'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_scale,w_600,q_auto,f_auto/v1755979312/dev_parnasala_pfvan7.jpg',
     gallery: [
       'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_scale,w_600,q_auto,f_auto/v1755979312/dev_parnasala_pfvan7.jpg'
@@ -187,22 +162,22 @@ export const packagesData = [
     departure: 'Bhadrachalam',
     features: ['Historical tour', 'Cultural stories', 'Scenic views', 'Photography'],
     itinerary: [
-      'Departure to Parnasala',
+      'Departure from Bhadrachalam to Parnasala',
       'Site exploration and cultural tour',
-      'Mythology sessions and return journey'
+      'Ramayana stories from the guide and return journey'
     ],
     bestTime: 'October to March',
     inclusions: ['Transportation', 'Guide services', 'Cultural program', 'Refreshments'],
     highlights: ['Mythological significance', 'Cultural heritage', 'Scenic beauty', 'Historical insights'],
-    tips: ['Learn about Ramayana', 'Carry camera', 'Respect sacred sites', 'Comfortable walking shoes']
+    tips: ['Read up on the Ramayana before you go', 'Carry a camera', 'Respect sacred sites', 'Comfortable walking shoes']
   },
   {
-    id: 9,
-    name: 'Perantalapalli Eco Tour Package',
-    title: 'Perantalapalli Eco Tour Package | Papikondalu',
-    metaDescription: 'Perantalapalli eco tour on the Godavari in the Papikondalu hills, visiting the riverside Shiva temple reached by boat. Contact us for dates and rates.',
-    shortDescription: 'Boat tour to Perantalapalli in the Papikondalu hills. Visit the riverside Shiva temple and explore the forest trails.',
-    description: 'Eco-friendly tour to Perantalapalli with jungle trekking, river views, and ancient temples. Ideal for nature lovers and explorers.',
+    id: 8,
+    name: 'Gudisa Hills Trekking Tour Package',
+    title: 'Gudisa Hills Trekking Tour Package | Papikondalu Tourism',
+    metaDescription: 'Gudisa hill station trip with panoramic Eastern Ghats viewpoints, cool weather and guided walks. Contact us for dates, group size and current rates.',
+    shortDescription: 'Visit Gudisa hill station for panoramic Eastern Ghats views. Includes transport, guide and refreshments.',
+    description: 'A trip from Rajahmundry up to the Gudisa hill station in the Eastern Ghats for wide grassland viewpoints, cooler air and the sunset, with a guide and refreshments.',
     image: 'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_600,q_auto,f_auto/v1755981754/Camping_in_Mountains_ytwmvi.avif',
     gallery: [
       'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_600,q_auto,f_auto/v1755981754/Camping_in_Mountains_ytwmvi.avif'
@@ -211,7 +186,7 @@ export const packagesData = [
     departure: 'Rajahmundry',
     features: ['Hill station visit', 'Panoramic views', 'Adventure activities', 'Cool climate'],
     itinerary: [
-      'Journey to Gudisa hills',
+      'Journey from Rajahmundry to Gudisa hills',
       'Sightseeing and adventure activities',
       'Sunset viewing and return journey'
     ],
@@ -219,5 +194,30 @@ export const packagesData = [
     inclusions: ['Transportation', 'Guide services', 'Adventure equipment', 'Refreshments'],
     highlights: ['Mountain views', 'Cool climate', 'Adventure sports', 'Photography spots'],
     tips: ['Carry warm clothes', 'Wear trekking shoes', 'Check weather', 'Start early morning']
+  },
+  {
+    id: 9,
+    name: 'Perantalapalli Eco Tour Package',
+    title: 'Perantalapalli Eco Tour Package | Papikondalu',
+    metaDescription: 'Perantalapalli eco tour on the Godavari in the Papikondalu hills, visiting the riverside Shiva temple reached by boat. Contact us for dates and rates.',
+    shortDescription: 'Boat tour to Perantalapalli in the Papikondalu hills. Visit the riverside Shiva temple and explore the forest trails.',
+    description: 'A boat trip from Rajahmundry into the Papikondalu hills that spends its time at Perantalapalli: the riverside Shiva temple, the village and the forest paths around it, with lunch and a same-day return.',
+    image: 'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_600,q_auto,f_auto/v1755980788/PAPI-KONDALU_wswdud.jpg',
+    gallery: [
+      'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_600,q_auto,f_auto/v1755980788/PAPI-KONDALU_wswdud.jpg',
+      'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_scale,w_600,q_auto,f_auto/v1756003757/rajamundry_v2aufm.jpg'
+    ],
+    capacity: '100 People',
+    departure: 'Rajahmundry',
+    features: ['Day tour', 'Photography opportunities', 'Refreshments', 'Return journey'],
+    itinerary: [
+      'Morning departure from Rajahmundry',
+      'Cruise into the Papikondalu hills, Perantalapalli temple visit and lunch',
+      'Evening return journey to Rajahmundry'
+    ],
+    bestTime: 'October to March',
+    inclusions: ['Transportation', 'Lunch', 'Guide services', 'Refreshments'],
+    highlights: ['Perantalapalli Shiva temple', 'Forest trails', 'River views', 'Day excursion'],
+    tips: ['Start early morning', 'Carry camera', 'Wear sun protection', 'Comfortable footwear']
   }
 ]

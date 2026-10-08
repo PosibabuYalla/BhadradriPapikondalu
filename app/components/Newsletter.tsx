@@ -177,7 +177,7 @@ const Newsletter = () => {
             viewport={{ once: true }}
             className="mt-12 text-white/60 text-sm"
           >
-            <p>Join 10,000+ travelers who trust us for their adventures</p>
+            <p>No spam. Unsubscribe any time.</p>
           </motion.div>
         </motion.div>
       </div>

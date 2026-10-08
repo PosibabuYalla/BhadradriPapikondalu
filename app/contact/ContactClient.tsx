@@ -93,10 +93,10 @@ export default function ContactClient() {
   ]
 
   const stats = [
-    { icon: Star, value: '20+', label: 'Years Experience' },
-    { icon: Heart, value: '7L+', label: 'Happy Customers' },
-    { icon: Award, value: '100%', label: 'Safe Tours' },
-    { icon: Shield, value: '24/7', label: 'Support' }
+    { icon: Star, value: businessInfo.yearsInBusiness, label: 'Years Experience' },
+    ...(businessInfo.customersServed ? [{ icon: Heart, value: businessInfo.customersServed, label: 'Travellers Served' }] : []),
+    { icon: Award, value: '3', label: 'Boats in Our Fleet' },
+    { icon: Shield, value: '2', label: 'Departure Points' }
   ]
 
   return (
@@ -231,9 +231,9 @@ export default function ContactClient() {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {[
-                    '20+ Years of Experience',
-                    '7+ Lakh Happy Customers',
-                    'Professional & Safe Tours',
+                    `Running tours since ${businessInfo.foundedYear}`,
+                    'Our own boats and crew',
+                    'Life jackets on every trip',
                     'Customizable Packages'
                   ].map((feature, idx) => (
                     <div key={idx} className="flex items-center">

@@ -6,6 +6,7 @@ import { ArrowLeft, MapPin, Users, Calendar, CheckCircle, Info, Route, Lightbulb
 import { agents } from '../../lib/agents'
 import { getPackageSlug } from '../../utils/slugs'
 import CoverImage from '../../components/CoverImage'
+import { type TourLogistics, hasVerifiedPrice, formatINR, formatCheckedOn } from '../tourLogistics'
 
 interface Package {
   id: number
@@ -26,6 +27,7 @@ interface Package {
 
 interface PackageDetailClientProps {
   packageData: Package
+  logistics: TourLogistics
 }
 
 const relatedPackages = [
@@ -34,7 +36,18 @@ const relatedPackages = [
   { id: 6, label: 'Sirivaka night stay and camping package' },
 ]
 
-export default function PackageDetailClient({ packageData }: PackageDetailClientProps) {
+// The destination guide each package visits, so guide ↔ package links run both ways.
+const packageAttraction: Record<number, { slug: string; label: string }> = {
+  1: { slug: 'bhadrachalam', label: 'Visiting Bhadrachalam Sri Rama temple' },
+  2: { slug: 'papikondalu', label: 'About the Papikondalu hills and gorge' },
+  3: { slug: 'maredumilli', label: 'Maredumilli forest and waterfalls guide' },
+  5: { slug: 'papikondalu', label: 'About the Papikondalu hills and gorge' },
+  6: { slug: 'sirivaka-night-stay-camping', label: 'About Sirivaka riverside camping' },
+  7: { slug: 'parnasala', label: 'Parnasala Ramayana heritage site guide' },
+  8: { slug: 'gudisa', label: 'Gudisa hill station guide' },
+}
+
+export default function PackageDetailClient({ packageData, logistics }: PackageDetailClientProps) {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
@@ -156,7 +169,35 @@ export default function PackageDetailClient({ packageData }: PackageDetailClient
                     </div>
                   ))}
                 </div>
+                {logistics.exclusions.length > 0 && (
+                  <>
+                    <h3 className="text-lg font-semibold text-gray-900 mt-6 mb-3">Not Included</h3>
+                    <ul className="list-disc pl-6 space-y-1 text-gray-700">
+                      {logistics.exclusions.map((item) => <li key={item}>{item}</li>)}
+                    </ul>
+                  </>
+                )}
               </motion.div>
+
+              {/* Boarding and timings — from packages/tourLogistics.ts */}
+              <div className="card-elevated p-8 mb-8">
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">Boarding and Timings</h2>
+                <dl className="grid grid-cols-[auto,1fr] gap-x-4 gap-y-2 text-gray-700">
+                  <dt className="font-medium text-gray-900">Boarding</dt>
+                  <dd>
+                    {logistics.boardingPoint ?? `${packageData.departure}, exact point confirmed when you book`}
+                    {logistics.boardingMapUrl && (
+                      <> (<a href={logistics.boardingMapUrl} target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:underline">open in Maps</a>)</>
+                    )}
+                  </dd>
+                  <dt className="font-medium text-gray-900">Report by</dt>
+                  <dd>{logistics.reportingTime ?? 'Sent with your booking confirmation'}</dd>
+                  <dt className="font-medium text-gray-900">Back by</dt>
+                  <dd>{logistics.returnTime ?? 'Sent with your booking confirmation'}</dd>
+                  {logistics.dropPoint && (<><dt className="font-medium text-gray-900">Drop</dt><dd>{logistics.dropPoint}</dd></>)}
+                  {logistics.meals && (<><dt className="font-medium text-gray-900">Meals</dt><dd>{logistics.meals}</dd></>)}
+                </dl>
+              </div>
 
               {/* Features */}
               <motion.div
@@ -238,6 +279,13 @@ export default function PackageDetailClient({ packageData }: PackageDetailClient
                         </Link>
                       </li>
                     ))}
+                  {packageAttraction[packageData.id] && (
+                    <li>
+                      <Link href={`/attractions/${packageAttraction[packageData.id].slug}`} className="text-primary-600 hover:underline font-medium">
+                        {packageAttraction[packageData.id].label}
+                      </Link>
+                    </li>
+                  )}
                   <li>
                     <Link href="/attractions/perantalapalli" className="text-primary-600 hover:underline font-medium">
                       About Perantalapalli, the riverside temple stop on the boat route
@@ -270,8 +318,20 @@ export default function PackageDetailClient({ packageData }: PackageDetailClient
 
                 <div className="space-y-3 mb-6">
                   <div className="text-center p-4 bg-primary-50 rounded-lg">
-                    <p className="text-primary-600 font-semibold">Contact for Pricing</p>
-                    <p className="text-sm text-gray-600 mt-1">Rates depend on date, group size and boat</p>
+                    {hasVerifiedPrice(logistics) ? (
+                      <>
+                        <p className="text-sm text-gray-600">From</p>
+                        <p className="text-2xl font-bold text-primary-700">{formatINR(logistics.fromPrice!)}<span className="text-sm font-normal text-gray-600"> per adult</span></p>
+                        {logistics.childPrice !== null && <p className="text-sm text-gray-600">Child: {formatINR(logistics.childPrice)}</p>}
+                        {logistics.priceNote && <p className="text-sm text-gray-600 mt-1">{logistics.priceNote}</p>}
+                        <p className="text-xs text-gray-500 mt-1">Price checked on {formatCheckedOn(logistics.priceCheckedOn!)}</p>
+                      </>
+                    ) : (
+                      <>
+                        <p className="text-primary-600 font-semibold">Contact for Pricing</p>
+                        <p className="text-sm text-gray-600 mt-1">Rates depend on date, group size and boat</p>
+                      </>
+                    )}
                     <Link href="/papikondalu-tours#price" className="text-sm text-primary-600 hover:underline mt-2 inline-block">
                       How Papikondalu tour prices work
                     </Link>

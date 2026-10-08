@@ -2,17 +2,18 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { ArrowRight, Users, Calendar, Award, MapPin, Play } from 'lucide-react'
+import { ArrowRight, Users, Calendar, Ship, MapPin, Play } from 'lucide-react'
 import { memo } from 'react'
 import { businessInfo } from '../lib/businessInfo'
 import CoverImage from './CoverImage'
 
 const Hero = () => {
+  // Only factual, checkable stats here — no "premium"/"award-winning" labels.
   const stats = [
-    { icon: Calendar, label: '20+ Years', sublabel: 'Experience' },
-    { icon: Users, label: '7+ Lakh', sublabel: 'Happy Customers' },
+    { icon: Calendar, label: `Since ${businessInfo.foundedYear}`, sublabel: `${businessInfo.yearsInBusiness} years on the Godavari` },
+    ...(businessInfo.customersServed ? [{ icon: Users, label: businessInfo.customersServed, sublabel: 'Travellers served' }] : []),
     { icon: MapPin, label: '2 Routes', sublabel: 'Rajahmundry & Bhadrachalam' },
-    { icon: Award, label: 'Premium', sublabel: 'Service' },
+    { icon: Ship, label: '3 Boats', sublabel: 'Own fleet' },
   ]
 
   return (
@@ -74,7 +75,7 @@ const Hero = () => {
               </h1>
 
               <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-                Boat departures from Rajahmundry and Bhadrachalam through the Papikondalu hills, with stops at Perantalapalli and Bhadrachalam temple. Running these tours for 20+ years.
+                Boat departures from Rajahmundry and Bhadrachalam through the Papikondalu hills, with stops at Perantalapalli and Bhadrachalam temple. Running these tours since {businessInfo.foundedYear}.
               </p>
             </div>
 
@@ -116,7 +117,7 @@ const Hero = () => {
               </a>
 
               <Link href="/packages" className="btn-outline group bg-white/10 backdrop-blur-md border-white/30 text-white hover:bg-white hover:text-neutral-900 text-lg px-8 py-4">
-                View Packages &amp; Pricing
+                View Tour Packages
               </Link>
 
               <a

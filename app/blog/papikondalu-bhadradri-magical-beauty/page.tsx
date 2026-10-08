@@ -4,14 +4,22 @@ import { Calendar, MapPin, Clock, ArrowLeft } from 'lucide-react'
 import { pageMetadata, absoluteUrl, breadcrumbSchema, organizationRef } from '../../lib/seo'
 import JsonLd from '../../components/JsonLd'
 import CoverImage from '../../components/CoverImage'
+import { businessInfo } from '../../lib/businessInfo'
+import { contentUpdated } from '../../lib/contentDates'
+import { formatCheckedOn } from '../../packages/tourLogistics'
 
 export const metadata: Metadata = pageMetadata({
   title: 'Papikondalu & Bhadradri Travel Guide | East Godavari',
   description: 'A travel guide to the Papikondalu hills and Bhadradri (Bhadrachalam) temple: Godavari river cruises, Maredumilli waterfalls, Parnasala and when to visit.',
   path: '/blog/papikondalu-bhadradri-magical-beauty',
   image: 'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_1200,q_auto,f_auto/v1755980788/PAPI-KONDALU_wswdud.jpg',
-  imageAlt: 'Papikondalu hills beside the Godavari River'
+  imageAlt: 'Papikondalu hills beside the Godavari River',
+  type: 'article',
 })
+
+const path = '/blog/papikondalu-bhadradri-magical-beauty'
+const reviewedOn = contentUpdated(path)
+const reviewer = businessInfo.guideReviewer
 
 const articleSchema = {
   '@graph': [
@@ -22,7 +30,8 @@ const articleSchema = {
       image: 'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_1200,q_auto,f_auto/v1755980788/PAPI-KONDALU_wswdud.jpg',
       // Month-only date as shown on the page; replace with the exact publish date if known.
       datePublished: '2024-12',
-      author: organizationRef,
+      dateModified: reviewedOn,
+      author: reviewer ? { '@type': 'Person', name: reviewer.name, description: reviewer.bio } : organizationRef,
       publisher: organizationRef,
       mainEntityOfPage: absoluteUrl('/blog/papikondalu-bhadradri-magical-beauty'),
     },
@@ -80,6 +89,13 @@ export default function BlogPost() {
                 <Clock className="w-4 h-4" />
                 <span>8 min read</span>
               </div>
+              <div className="w-full">
+                Last reviewed <time dateTime={reviewedOn}>{formatCheckedOn(reviewedOn)}</time>
+                {reviewer
+                  ? <> by {reviewer.name}, {reviewer.bio}</>
+                  : <> by the {businessInfo.name} team, Godavari boat tour operators in {businessInfo.address.addressLocality} since {businessInfo.foundedYear}</>}
+                .
+              </div>
             </div>
 
             {/* Introduction */}
@@ -90,6 +106,35 @@ export default function BlogPost() {
                 Together, they make a natural two or three day trip from Rajahmundry.
               </p>
             </div>
+
+            {/* Trip plan — built from the actual package itineraries */}
+            <section className="mb-16">
+              <div className="bg-white rounded-2xl shadow-lg p-8">
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                  How to Combine Papikondalu and Bhadradri in One Trip
+                </h2>
+                <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                  The boat runs between the two places, so the main decision is which end you start from.
+                </p>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Option 1: Start at Bhadrachalam, finish in Rajahmundry</h3>
+                <ul className="list-disc pl-6 space-y-2 text-lg text-gray-700 mb-6">
+                  <li><strong>Day 1:</strong> darshan at the Bhadrachalam Sri Rama temple, then board the boat downriver into the Papikondalu hills. Overnight stay near the hills.</li>
+                  <li><strong>Day 2:</strong> continue through the gorge and get off at Rajahmundry, which has a railway station and an airport for the journey home.</li>
+                  <li>This is our <Link href="/packages/bhadrachalam-papikondalu-packages" className="text-blue-600 hover:underline">Bhadrachalam to Papikondalu two day tour</Link>, with accommodation and meals included.</li>
+                  <li>If you have an extra half day at the start, add <Link href="/attractions/parnasala" className="text-blue-600 hover:underline">Parnasala</Link>, the Ramayana site near Bhadrachalam.</li>
+                </ul>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Option 2: Base yourself in Rajahmundry</h3>
+                <ul className="list-disc pl-6 space-y-2 text-lg text-gray-700 mb-6">
+                  <li><strong>Day 1:</strong> the <Link href="/packages/rajahmundry-papikondalu-packages" className="text-blue-600 hover:underline">Rajahmundry to Papikondalu one day tour</Link>: morning boarding, the gorge, a stop at Perantalapalli, lunch on board and back the same evening.</li>
+                  <li><strong>Day 2:</strong> travel by road to Bhadrachalam for the temple.</li>
+                  <li><strong>Optional extra day:</strong> the <Link href="/packages/maredumilli-packages" className="text-blue-600 hover:underline">Maredumilli forest and waterfalls trip</Link> from Rajahmundry.</li>
+                </ul>
+                <p className="text-gray-700">
+                  Not sure which suits you? The <Link href="/papikondalu-tours#routes" className="text-blue-600 hover:underline">route comparison</Link> sets
+                  out the differences side by side.
+                </p>
+              </div>
+            </section>
 
             {/* Papikondalu Hills Section */}
             <section className="mb-16">

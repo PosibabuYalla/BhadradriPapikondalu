@@ -1,5 +1,6 @@
 import JsonLd from '../../components/JsonLd'
 import { packagesData } from '../packagesData'
+import { getTourLogistics, hasVerifiedPrice } from '../tourLogistics'
 import PackageDetailClient from './PackageDetailClient'
 import { notFound } from 'next/navigation'
 import { getPackageSlug, getPackageIdFromSlug } from '../../utils/slugs'
@@ -49,10 +50,12 @@ export default async function PackageDetailPage({ params }: { params: Promise<{ 
 
   const url = absoluteUrl(`/packages/${id}`)
 
+  const logistics = getTourLogistics(packageData.id)
+
   // TouristTrip rather than Product: Product without offers/reviews is flagged
-  // as invalid in Search Console. No price or rating is published because the
-  // site has no verified per-package price or review data — add offers here
-  // once real prices exist.
+  // as invalid in Search Console. An Offer is only published once a fare and
+  // its check date are set in tourLogistics.ts, so the markup always matches
+  // the price visible on the page. No rating is published.
   const jsonLd = {
     '@graph': [
       {
@@ -63,6 +66,16 @@ export default async function PackageDetailPage({ params }: { params: Promise<{ 
         image: packageData.image,
         url,
         provider: organizationRef,
+        ...(hasVerifiedPrice(logistics) ? {
+          offers: {
+            '@type': 'Offer',
+            price: logistics.fromPrice,
+            priceCurrency: 'INR',
+            url,
+            availability: 'https://schema.org/InStock',
+            seller: organizationRef,
+          },
+        } : {}),
         itinerary: {
           '@type': 'ItemList',
           itemListElement: packageData.itinerary.map((step, index) => ({
@@ -83,7 +96,7 @@ export default async function PackageDetailPage({ params }: { params: Promise<{ 
   return (
     <>
       <JsonLd data={jsonLd} />
-      <PackageDetailClient packageData={packageData} />
+      <PackageDetailClient packageData={packageData} logistics={logistics} />
     </>
   )
 }

@@ -4,13 +4,17 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Users, Award, Ship, Clock, Star, CheckCircle, Shield, Heart, MapPin, Phone, Mail, Calendar, BookOpen, ArrowRight } from 'lucide-react'
+import { businessInfo } from '../lib/businessInfo'
 
 export default function AboutUsClient() {
+  // Rating only shows once a real Google Business Profile rating is set in businessInfo.
   const stats = [
-    { icon: Users, label: 'Happy Customers', value: '7+ Lakh', color: 'text-blue-600' },
-    { icon: Clock, label: 'Years of Experience', value: '20+', color: 'text-green-600' },
+    ...(businessInfo.customersServed ? [{ icon: Users, label: 'Travellers Served', value: businessInfo.customersServed, color: 'text-blue-600' }] : []),
+    { icon: Clock, label: 'Years of Experience', value: businessInfo.yearsInBusiness, color: 'text-green-600' },
     { icon: Ship, label: 'Fleet Size', value: '3 Boats', color: 'text-purple-600' },
-    { icon: Star, label: 'Customer Rating', value: '4.8/5', color: 'text-yellow-600' },
+    businessInfo.googleRating
+      ? { icon: Star, label: 'Google Rating', value: `${businessInfo.googleRating}/5`, color: 'text-yellow-600' }
+      : { icon: MapPin, label: 'Departure Points', value: '2', color: 'text-yellow-600' },
   ]
 
   const boats = [
@@ -37,8 +41,8 @@ export default function AboutUsClient() {
   const whyChooseUs = [
     { icon: Shield, title: 'Safety First', desc: 'Modern safety equipment and trained crew' },
     { icon: Award, title: 'Expert Guides', desc: 'Local guides with deep cultural knowledge' },
-    { icon: Heart, title: 'Customer Care', desc: '24/7 support and personalized service' },
-    { icon: Star, title: 'Quality Service', desc: 'Consistently rated 4.8/5 by customers' },
+    { icon: Heart, title: 'Customer Care', desc: 'Talk to us directly by phone or WhatsApp before and during your trip' },
+    { icon: Star, title: 'Own Boats', desc: 'We run our own fleet of three boats on the Godavari' },
     { icon: MapPin, title: 'Best Routes', desc: 'Carefully curated scenic routes' },
     { icon: Calendar, title: 'Flexible Booking', desc: 'Easy booking and cancellation policies' },
   ]
@@ -72,10 +76,12 @@ export default function AboutUsClient() {
                   Over <strong className="text-primary-600">two decades</strong>, we have grown from a small family venture into
                   one of Andhra Pradesh&apos;s most <strong className="text-primary-600">trusted tourism operators</strong>.
                 </p>
-                <p>
-                  We have served more than <strong className="text-secondary-600">7 lakh customers</strong> on our boat tours,
-                  temple visits and adventure packages in the Papikondalu region.
-                </p>
+                {businessInfo.customersServed && (
+                  <p>
+                    We have served <strong className="text-secondary-600">{businessInfo.customersServed} travellers</strong> on our boat tours,
+                    temple visits and adventure packages in the Papikondalu region.
+                  </p>
+                )}
                 <p>
                   Safety, reliability and genuine local knowledge are what we are known for.
                   Our team lives and works in this region, and that shows in every trip we run.
@@ -187,8 +193,8 @@ export default function AboutUsClient() {
                   <h3 className="text-3xl md:text-4xl font-bold text-gray-900">{boats[0].name}</h3>
                 </div>
                 <p className="text-lg text-gray-600 leading-relaxed">
-                  Our flagship vessel designed for intimate river experiences. Perfect for smaller groups 
-                  seeking comfort and personalized service on the scenic Godavari waters.
+                  Our flagship boat, carrying up to 120 passengers, with an AC cabin and an on-board
+                  restaurant for the Papikondalu cruise.
                 </p>
               </div>
               
@@ -218,8 +224,8 @@ export default function AboutUsClient() {
                   <h3 className="text-3xl md:text-4xl font-bold text-gray-900">{boats[1].name}</h3>
                 </div>
                 <p className="text-lg text-gray-600 leading-relaxed">
-                  Our largest and most luxurious vessel, accommodating up to 100 passengers. 
-                  Features premium amenities and spacious decks for the ultimate river cruise experience.
+                  Our largest boat, carrying up to 150 passengers, with a dining hall and an upper deck
+                  for views of the hills.
                 </p>
               </div>
               
@@ -281,9 +287,7 @@ export default function AboutUsClient() {
                   <h3 className="text-3xl md:text-4xl font-bold text-gray-900">{boats[2].name}</h3>
                 </div>
                 <p className="text-lg text-gray-600 leading-relaxed">
-                  The perfect balance of comfort and capacity. Ideal for medium-sized groups 
-                  with excellent panoramic viewing areas and comfortable seating arrangements.
-                </p>
+                  Carries up to 100 passengers, with a photography deck and open viewing areas.                </p>
               </div>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -362,14 +366,14 @@ export default function AboutUsClient() {
                   <Phone size={20} className="text-secondary-300" />
                   <div>
                     <p className="font-semibold">Call Us</p>
-                    <p className="text-white/80">+91 9848323488</p>
+                    <p className="text-white/80"><a href={businessInfo.phoneHref} className="hover:underline">{businessInfo.phone}</a></p>
                   </div>
                 </div>
                 <div className="flex items-center justify-center space-x-3">
                   <Mail size={20} className="text-secondary-300" />
                   <div>
                     <p className="font-semibold">Email Us</p>
-                    <p className="text-white/80">info@papikondalutourism.com</p>
+                    <p className="text-white/80"><a href={`mailto:${businessInfo.email}`} className="hover:underline">{businessInfo.email}</a></p>
                   </div>
                 </div>
                 <div className="flex items-center justify-center space-x-3">

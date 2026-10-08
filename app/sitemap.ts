@@ -3,10 +3,7 @@ import { attractionSlugs, packageSlugs } from './utils/slugs'
 import { attractionsData } from './attractions/attractionsData'
 import { packagesData } from './packages/packagesData'
 import { absoluteUrl } from './lib/seo'
-
-// Update when page content actually changes. A lastmod that is always "now"
-// teaches Google to ignore it.
-const CONTENT_UPDATED = '2026-09-30'
+import { contentUpdated } from './lib/contentDates'
 
 type Entry = { path: string; priority: number; changeFrequency: 'weekly' | 'monthly' | 'yearly'; images?: string[] }
 
@@ -44,7 +41,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [...staticPages, ...packagePages, ...attractionPages].map(entry => ({
     url: absoluteUrl(entry.path),
-    lastModified: CONTENT_UPDATED,
+    // Per-page date from lib/contentDates — never "now", or Google ignores it.
+    lastModified: contentUpdated(entry.path),
     changeFrequency: entry.changeFrequency,
     priority: entry.priority,
     ...(entry.images ? { images: entry.images } : {}),

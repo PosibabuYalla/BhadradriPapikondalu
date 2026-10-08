@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Menu, X, Phone, Mail } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { businessInfo } from '../lib/businessInfo'
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -46,7 +47,8 @@ const Header = () => {
             </div>
             <div className="text-xs">
               <span className="bg-white/20 px-3 py-1 rounded-full">
-                20+ Years of Excellence | 7+ Lakh Happy Customers
+                Godavari boat tours since {businessInfo.foundedYear}
+                {businessInfo.customersServed ? ` | ${businessInfo.customersServed} travellers served` : ''}
               </span>
             </div>
           </div>

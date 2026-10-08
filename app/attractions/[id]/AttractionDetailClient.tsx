@@ -34,10 +34,15 @@ const descriptionParagraphs = (text: string) =>
     .filter(Boolean)
 
 // The most relevant tour page for each attraction, keyed by attraction slug.
-const relatedTour: Record<string, { href: string; label: string; howToVisit: string }> = {
+const relatedTour: Record<string, { href: string; label: string; howToVisit: string; tours?: { href: string; label: string }[] }> = {
   'papikondalu': {
     href: '/papikondalu-tours', label: 'Plan a Papikondalu Boat Tour',
     howToVisit: 'The Papikondalu hills are seen from the boat. The one day tour from Rajahmundry and the two day tour from Bhadrachalam both cruise through the gorge, and the Rajahmundry day tour stops at Perantalapalli before returning the same evening.',
+    tours: [
+      { href: '/packages/rajahmundry-papikondalu-packages', label: 'Rajahmundry to Papikondalu one day tour' },
+      { href: '/packages/bhadrachalam-papikondalu-packages', label: 'Bhadrachalam to Papikondalu two day tour' },
+      { href: '/papikondalu-tours#routes', label: 'Compare the two routes' },
+    ],
   },
   'perantalapalli': {
     href: '/packages/perantalapalli-packages', label: 'View Perantalapalli Eco Tour',
@@ -57,7 +62,7 @@ const relatedTour: Record<string, { href: string; label: string; howToVisit: str
   },
   'maredumilli': {
     href: '/packages/maredumilli-packages', label: 'View Maredumilli Tour Package',
-    howToVisit: 'Our Maredumilli tour departs from Rajahmundry and includes transport, a guide, lunch and refreshments.',
+    howToVisit: 'Our Maredumilli tour departs from Rajahmundry and includes transport, forest permits, a trekking guide, lunch and safety gear.',
   },
   'parnasala': {
     href: '/packages/parnasala-packages', label: 'View Parnasala Temple Tour',
@@ -65,7 +70,7 @@ const relatedTour: Record<string, { href: string; label: string; howToVisit: str
   },
   'gudisa': {
     href: '/packages/gudisa-packages', label: 'View Gudisa Hills Tour',
-    howToVisit: 'Gudisa is covered on our Gudisa hills tour. Ask us for the current itinerary and pickup point.',
+    howToVisit: 'Gudisa is covered on our Gudisa hills tour from Rajahmundry, which includes transport, a guide and refreshments and stays for the sunset.',
   },
 }
 
@@ -188,6 +193,13 @@ export default function AttractionDetailClient({ attraction }: AttractionDetailC
               >
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">How to Visit {attraction.name}</h2>
                 <p className="text-gray-700 leading-relaxed mb-4">{related.howToVisit}</p>
+                {related.tours && (
+                  <ul className="list-disc pl-6 space-y-1 mb-4">
+                    {related.tours.map((tour) => (
+                      <li key={tour.href}><Link href={tour.href} className="text-primary-600 hover:underline">{tour.label}</Link></li>
+                    ))}
+                  </ul>
+                )}
                 <p className="text-gray-700 leading-relaxed">
                   Best time to visit: <strong>{attraction.bestTime}</strong>. For routes, boat timings and what to carry, see the{' '}
                   <Link href="/papikondalu-tours" className="text-primary-600 hover:underline">Papikondalu tour guide</Link>.
