@@ -6,7 +6,7 @@ const atAGlance = [
   { label: 'River', value: 'Godavari' },
   { label: 'Region', value: `${businessInfo.address.addressLocality} → Bhadrachalam, Andhra Pradesh` },
   { label: 'Best season', value: 'October to March' },
-  { label: 'Boat capacity', value: '30–100 passengers, by package' },
+  { label: 'Our fleet', value: '3 boats, 100 to 150 passengers each' },
   { label: 'Route', value: 'Rajahmundry / Bhadrachalam → Papikondalu hills → Perantalapalli' },
   { label: 'Operator since', value: String(businessInfo.foundedYear) },
 ]
@@ -20,7 +20,8 @@ const PapikondaluOverview = () => {
           <p className="text-body">
             Papikondalu is the stretch of forested hills where the Godavari narrows into a gorge between
             Rajahmundry and Bhadrachalam. Boats leave from either town, cruise past the hills, and stop at
-            Perantalapalli. We run this route as a day trip or overnight package, year-round.
+            Perantalapalli. We run this route as a day trip or overnight package, with October to March the
+            main season; monsoon trips depend on the river level.
           </p>
           <p className="text-body mt-4">
             Compare the{' '}
@@ -46,7 +47,10 @@ const PapikondaluOverview = () => {
             <Anchor className="text-primary-600 shrink-0 mt-1" size={22} />
             <div>
               <h3 className="font-semibold text-neutral-900 mb-1">Boats we run</h3>
-              <p className="text-sm text-neutral-600">Covered passenger boats with life jackets on board, sized 30 to 100 seats depending on the package.</p>
+              <p className="text-sm text-neutral-600">
+                Our own covered passenger boats, Aswini, Sri Godavari and Srilaxmi, with life jackets for every passenger.{' '}
+                <Link href="/aboutus" className="text-primary-600 hover:underline">Meet the fleet</Link>.
+              </p>
             </div>
           </div>
           <div className="flex items-start gap-3">

@@ -102,6 +102,10 @@ const nextConfig = {
       { source: '/maredumilli-tours', destination: '/packages/maredumilli-packages', permanent: true },
       { source: '/rajahmundry-tours', destination: '/packages/rajahmundry-papikondalu-packages', permanent: true },
       { source: '/attractions/sirivaka-night-stay', destination: '/attractions/sirivaka-night-stay-camping', permanent: true },
+      // Moved from app/middleware.ts, which never ran (Next only loads middleware from the project root).
+      { source: '/tours', destination: '/papikondalu-tours', permanent: true },
+      { source: '/booking', destination: '/contact', permanent: true },
+      { source: '/blog-old', destination: '/blog', permanent: true },
     ]
   },
   headers: async () => [

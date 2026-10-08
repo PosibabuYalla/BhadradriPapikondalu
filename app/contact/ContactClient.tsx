@@ -56,15 +56,15 @@ export default function ContactClient() {
     {
       icon: Phone,
       title: 'Phone Support',
-      details: ['Multiple agents available', '24/7 Customer Support'],
+      details: ['Multiple agents available', businessInfo.phone],
       action: null,
       gradient: 'from-blue-500 to-blue-600'
     },
     {
       icon: Mail,
       title: 'Email Us',
-      details: ['aswinigodavari@gmail.com', 'Quick Response Guaranteed'],
-      action: 'mailto:aswinigodavari@gmail.com',
+      details: [businessInfo.email, 'We reply to every enquiry'],
+      action: `mailto:${businessInfo.email}`,
       gradient: 'from-green-500 to-green-600'
     },
     {
@@ -578,7 +578,7 @@ export default function ContactClient() {
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">Need Immediate Assistance?</h2>
             <p className="text-xl md:text-2xl mb-10 text-white/90 leading-relaxed">
-              Our team is available 24/7 to help you plan the perfect Papikondalu experience
+              Call or WhatsApp us between 6:00 AM and 10:00 PM and we&apos;ll help you plan your Papikondalu trip
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <a

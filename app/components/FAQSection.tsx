@@ -17,11 +17,11 @@ export const homeFAQs = [
   },
   {
     question: 'What is the best time to visit Papikondalu?',
-    answer: 'October to March, when the river level and weather make for the most comfortable cruise. Some routes run outside this window — ask us for current availability.',
+    answer: 'October to March, when the river level and weather make for the most comfortable cruise. In the monsoon, trips depend on the river level and can be rescheduled, so ask us for current availability.',
   },
   {
     question: 'How long does the boat ride take?',
-    answer: 'It depends on the package — day tours and overnight tours cover different distances. Check each package page for its exact itinerary and duration.',
+    answer: 'The Rajahmundry day tour boards in the morning and returns the same evening. The Bhadrachalam tour takes two days with an overnight stay near the hills and ends in Rajahmundry. The Sirivaka camping trip is one night. The Papikondalu tour guide page compares the routes side by side.',
   },
   {
     question: 'What is the ticket price for Papikondalu boat tours?',

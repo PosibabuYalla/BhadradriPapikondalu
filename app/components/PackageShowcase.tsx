@@ -168,7 +168,7 @@ const PackageShowcase = () => {
             View All 9 Packages
             <ArrowRight className="ml-2 transition-transform group-hover:translate-x-1" size={20} />
           </Link>
-          <p className="text-muted mt-4">Customizable packages available • Group discounts • 24/7 support</p>
+          <p className="text-muted mt-4">Customizable packages available • Group bookings • Phone &amp; WhatsApp support</p>
         </motion.div>
       </div>
     </section>

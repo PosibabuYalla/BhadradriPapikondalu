@@ -47,23 +47,15 @@ const Hero = () => {
       </div>
 
       <div className="relative z-10 text-center text-white max-w-6xl mx-auto container-padding">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-            className="space-y-8"
-          >
+          {/* No entrance fade on the headline block: an opacity:0 start hides the
+              LCP text until JavaScript hydrates, which hurts mobile LCP. */}
+          <div className="space-y-8">
             {/* Main Heading */}
             <div className="space-y-4">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4, delay: 0.1 }}
-                className="inline-flex items-center bg-white/10 backdrop-blur-md rounded-full px-6 py-2 border border-white/20"
-              >
+              <div className="inline-flex items-center bg-white/10 backdrop-blur-md rounded-full px-6 py-2 border border-white/20">
                 <MapPin size={16} className="mr-2 text-secondary-400" />
                 <span className="text-sm font-medium">Godavari River, Andhra Pradesh</span>
-              </motion.div>
+              </div>
 
               <h1 className="text-2xl md:text-4xl font-bold text-white leading-tight">
                 <span className="text-yellow-400">Papikondalu Boat Tours</span>
@@ -141,7 +133,7 @@ const Hero = () => {
               <a href={businessInfo.phoneHref} className="text-sm hover:text-white transition-colors">📞 {businessInfo.phone}</a>
               <div className="text-sm">✓ Running Papikondalu tours since {businessInfo.foundedYear}</div>
             </motion.div>
-          </motion.div>
+          </div>
       </div>
 
       {/* Scroll Indicator */}

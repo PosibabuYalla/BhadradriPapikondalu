@@ -62,21 +62,13 @@ export default function PackageDetailClient({ packageData, logistics }: PackageD
         <div className="absolute inset-0 bg-black/40" />
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center text-white max-w-4xl px-4">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-4xl md:text-5xl font-bold mb-4"
-            >
+            {/* Plain elements, not motion: an opacity:0 start hides the LCP text until hydration. */}
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">
               {packageData.name}
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="text-xl"
-            >
+            </h1>
+            <p className="text-xl">
               {packageData.shortDescription}
-            </motion.p>
+            </p>
           </div>
         </div>
         

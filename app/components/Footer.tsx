@@ -178,9 +178,9 @@ const Footer = () => {
             <div className="bg-neutral-800 rounded-xl p-4 border border-neutral-700">
               <div className="flex items-center mb-2">
                 <Clock size={16} className="mr-2 text-primary-400" />
-                <span className="font-semibold text-white">24/7 Support</span>
+                <span className="font-semibold text-white">Phone &amp; WhatsApp Support</span>
               </div>
-              <p className="text-sm text-neutral-400">Always here to help you plan your perfect trip</p>
+              <p className="text-sm text-neutral-400">Call or message us to plan your trip, 6:00 AM to 10:00 PM daily</p>
             </div>
           </div>
         </div>
