@@ -10,6 +10,8 @@ export type PriceOption = { route: string; price: number; minMembers: number | n
 
 export type TourLogistics = {
   fromPrice: number | null // lowest displayed per-person fare in INR
+  childPrice: number | null
+  priceNote: string | null
   minMembers: number | null
   priceOptions: PriceOption[] | null // e.g. cottage / bamboo hut / tent
   priceCheckedOn: string | null // ISO date
@@ -24,6 +26,8 @@ export type TourLogistics = {
 
 const empty: TourLogistics = {
   fromPrice: null,
+  childPrice: null,
+  priceNote: null,
   minMembers: null,
   priceOptions: null,
   priceCheckedOn: null,

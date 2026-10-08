@@ -8,7 +8,7 @@ import { packagesData } from '../packages/packagesData'
 import { getPackageSlug } from '../utils/slugs'
 import CoverImage from '../components/CoverImage'
 import { getTourLogistics, formatINR, formatCheckedOn } from '../packages/tourLogistics'
-import { getDisplayFares, PRICES_CHECKED_ON, type DisplayFare } from '../lib/fares'
+import { getDisplayFares, getPackageFare, PRICES_CHECKED_ON, type DisplayFare } from '../lib/fares'
 import { contentUpdated } from '../lib/contentDates'
 
 const description = 'Papikondalu boating ticket prices per person, Rajahmundry and Bhadrachalam routes, Papikondalu night stay in cottages, bamboo huts and tents, timings and booking.'
@@ -91,6 +91,13 @@ export default function PapikondaluToursPage() {
   // Computed per render (not at module load) so each daily revalidation picks up the current week's prices.
   const fares = getDisplayFares()
   const faqs = buildFaqs(fares)
+  const pricedOptions = tourOptions
+    .map((option) => {
+      const fare = getPackageFare(option.id)
+      if (!fare) return null
+      return { ...option, logistics: { ...option.logistics, fromPrice: fare.fromPrice, childPrice: null as number | null, priceCheckedOn: PRICES_CHECKED_ON } }
+    })
+    .filter((o): o is NonNullable<typeof o> => o !== null)
   const url = absoluteUrl('/papikondalu-tours')
   const jsonLd = {
     '@graph': [
