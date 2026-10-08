@@ -99,7 +99,7 @@ export default function EastGodavariTourismPage() {
             <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
               <Image
                 src="https://res.cloudinary.com/dnz1dmnmb/image/upload/c_scale,w_400,h_250,q_auto,f_auto/v1755978648/maredumilli_lqndyb.webp"
-                alt="Maredumilli forest"
+                alt="Dense Maredumilli forest in the Eastern Ghats"
                 width={400}
                 height={250}
                 className="w-full h-48 object-cover"

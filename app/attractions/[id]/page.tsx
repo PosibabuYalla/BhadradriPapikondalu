@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     description: attraction.metaDescription,
     path: `/attractions/${id}`,
     image: attraction.image,
-    imageAlt: attraction.name,
+    imageAlt: attraction.imageAlt,
   })
 }
 

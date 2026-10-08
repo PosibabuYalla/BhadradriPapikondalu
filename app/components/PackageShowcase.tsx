@@ -14,6 +14,7 @@ const showcase = [
     packageId: 2,
     name: 'Bhadrachalam to Papikondalu',
     image: 'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_400,q_auto,f_auto/v1755980906/BhadrachalamTemple-1068x421_heh1o2.png',
+    imageAlt: 'Bhadrachalam Sri Rama temple, start of the Bhadrachalam to Papikondalu boating tour',
     highlights: ['Temple Visit', 'Scenic Boat Ride', 'Overnight Stay', 'Professional Guide'],
     badge: 'Temple + Cruise',
     badgeColor: 'bg-gradient-to-r from-orange-500 to-red-500',
@@ -23,6 +24,7 @@ const showcase = [
     packageId: 5,
     name: 'Rajahmundry to Papikondalu',
     image: 'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_scale,w_400,q_auto,f_auto/v1756003757/rajamundry_v2aufm.jpg',
+    imageAlt: 'Godavari Arch Bridge at Rajahmundry, start of the Rajahmundry to Papikondalu boating tour',
     highlights: ['One Day Tour', 'Perantalapalli Stop', 'Onboard Lunch', 'Same-day Return'],
     badge: 'Day Trip',
     badgeColor: 'bg-gradient-to-r from-green-500 to-emerald-500',
@@ -32,6 +34,7 @@ const showcase = [
     packageId: 6,
     name: 'Sirivaka Night Stay',
     image: 'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_scale,w_400,q_auto,f_auto/v1756003855/sirivaka_fdzsuf.avif',
+    imageAlt: 'Riverside tents for the Papikondalu night stay at Sirivaka',
     highlights: ['Night Stay', 'Campfire', 'Nature Walk', 'Stargazing'],
     badge: 'Overnight',
     badgeColor: 'bg-gradient-to-r from-purple-500 to-indigo-500',
@@ -98,7 +101,7 @@ const PackageShowcase = () => {
               <div className="relative h-64 overflow-hidden">
                 <CoverImage
                   src={pkg.image}
-                  alt={pkg.name}
+                  alt={pkg.imageAlt}
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
                   sizes="(max-width: 1024px) 100vw, 33vw"
                 />

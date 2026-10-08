@@ -60,7 +60,7 @@ const Footer = () => {
               <div className="relative">
                 <Image
                   src={businessInfo.logo}
-                  alt={businessInfo.name}
+                  alt={`${businessInfo.name} logo`}
                   width={60}
                   height={60}
                   className="object-contain"

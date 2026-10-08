@@ -1,6 +1,10 @@
 import JsonLd from '../../components/JsonLd'
 import { packagesData } from '../packagesData'
-import { getTourLogistics, hasVerifiedPrice } from '../tourLogistics'
+import { hasVerifiedPrice } from '../tourLogistics'
+import { getPricedLogistics } from '../../lib/fares'
+
+// Re-render daily so the weekly price step (see lib/fares.ts) goes live.
+export const revalidate = 86400
 import PackageDetailClient from './PackageDetailClient'
 import { notFound } from 'next/navigation'
 import { getPackageSlug, getPackageIdFromSlug } from '../../utils/slugs'
@@ -30,7 +34,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     description: packageData.metaDescription,
     path: `/packages/${id}`,
     image: packageData.image,
-    imageAlt: packageData.name,
+    imageAlt: packageData.imageAlt,
   })
 }
 
@@ -50,7 +54,7 @@ export default async function PackageDetailPage({ params }: { params: Promise<{ 
 
   const url = absoluteUrl(`/packages/${id}`)
 
-  const logistics = getTourLogistics(packageData.id)
+  const logistics = getPricedLogistics(packageData.id)
 
   // TouristTrip rather than Product: Product without offers/reviews is flagged
   // as invalid in Search Console. An Offer is only published once a fare and
@@ -73,6 +77,9 @@ export default async function PackageDetailPage({ params }: { params: Promise<{ 
             priceCurrency: 'INR',
             url,
             availability: 'https://schema.org/InStock',
+            ...(logistics.minMembers !== null ? {
+              eligibleQuantity: { '@type': 'QuantitativeValue', minValue: logistics.minMembers, unitText: 'person' },
+            } : {}),
             seller: organizationRef,
           },
         } : {}),

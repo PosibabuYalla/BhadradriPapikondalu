@@ -120,7 +120,7 @@ export default function AboutUsClient() {
               <div className="relative overflow-hidden rounded-3xl shadow-2xl">
                 <Image
                   src="https://res.cloudinary.com/dnz1dmnmb/image/upload/c_scale,w_600,q_auto,f_auto/v1756004871/aboutus_papikonalu_mjtxyo.jpg"
-                  alt="Papikondalu Scenic Beauty"
+                  alt="Boat on the turquoise Godavari between the Papikondalu hills"
                   width={600}
                   height={700}
                   className="object-cover w-full h-[600px] hover:scale-105 transition-transform duration-700"
@@ -175,7 +175,7 @@ export default function AboutUsClient() {
               <div className="relative overflow-hidden rounded-3xl shadow-2xl">
                 <Image
                   src={boats[0].image}
-                  alt={boats[0].name}
+                  alt={`${boats[0].name}, our ${boats[0].capacity.replace(' passengers', '')}-passenger boat for Papikondalu boating on the Godavari`}
                   width={600}
                   height={400}
                   className="w-full h-96 object-cover group-hover:scale-105 transition-transform duration-700"
@@ -244,7 +244,7 @@ export default function AboutUsClient() {
               <div className="relative overflow-hidden rounded-3xl shadow-2xl">
                 <Image
                   src={boats[1].image}
-                  alt={boats[1].name}
+                  alt={`${boats[1].name}, our ${boats[1].capacity.replace(' passengers', '')}-passenger boat full of travellers on a Papikondalu boat tour`}
                   width={600}
                   height={400}
                   className="w-full h-96 object-cover group-hover:scale-105 transition-transform duration-700"
@@ -269,7 +269,7 @@ export default function AboutUsClient() {
               <div className="relative overflow-hidden rounded-3xl shadow-2xl">
                 <Image
                   src={boats[2].image}
-                  alt={boats[2].name}
+                  alt={`${boats[2].name}, our ${boats[2].capacity.replace(' passengers', '')}-passenger boat cruising past the Papikondalu hills`}
                   width={600}
                   height={400}
                   className="w-full h-96 object-cover group-hover:scale-105 transition-transform duration-700"

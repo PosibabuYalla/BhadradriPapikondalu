@@ -67,7 +67,7 @@ const Header = () => {
               <div className="relative">
                 <Image
                   src="https://res.cloudinary.com/dnz1dmnmb/image/upload/v1755418849/AG_LOGO_2_xfznol.png"
-                  alt="Papikondalu Tourism"
+                  alt="Papikondalu Tourism logo"
                   width={60}
                   height={60}
                   loading="eager"

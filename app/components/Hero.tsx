@@ -22,7 +22,7 @@ const Hero = () => {
       <div className="absolute inset-0">
         <CoverImage
           src="https://res.cloudinary.com/dnz1dmnmb/image/upload/c_fill,w_1920,h_1080,q_auto,f_webp/v1755976642/1b45e060-bfee-4be1-85f4-51c2c6430c70_itqkts.jpg"
-          alt="Papikondalu Hills - Scenic Godavari River Boat Tours"
+          alt="Tourist boat on the Godavari in the Papikondalu gorge under monsoon clouds"
           className="object-cover scale-110"
           priority
           sizes="100vw"

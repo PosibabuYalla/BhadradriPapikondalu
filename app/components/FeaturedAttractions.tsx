@@ -12,6 +12,7 @@ const attractions = [
     name: 'Papikondalu',
     description: 'Majestic hills along the Godavari River offering breathtaking views',
     image: 'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_400,q_auto,f_auto/v1755980788/PAPI-KONDALU_wswdud.jpg',
+    imageAlt: 'Papikondalu boating: tourist boat on the Godavari between the Papikondalu hills',
     duration: '4-6 hours',
     highlight: 'Most Popular',
     link: `/attractions/${getAttractionSlug(1)}`
@@ -21,6 +22,7 @@ const attractions = [
     name: 'Bhadrachalam Temple',
     description: 'Sacred temple dedicated to Lord Rama with rich spiritual heritage',
     image: 'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_400,q_auto,f_auto/v1755980906/BhadrachalamTemple-1068x421_heh1o2.png',
+    imageAlt: 'Bhadrachalam Sri Rama temple on the hill above the Godavari',
     duration: '2-3 hours',
     highlight: 'Spiritual',
     link: `/attractions/${getAttractionSlug(4)}`
@@ -30,6 +32,7 @@ const attractions = [
     name: 'Maredumilli Waterfalls',
     description: 'Pristine waterfalls surrounded by lush green forests',
     image: 'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_400,q_auto,f_auto/v1755978851/MAREDUMILLI_-_waterfalls_kmuppt.jpg',
+    imageAlt: 'Waterfall in the Maredumilli forest, East Godavari',
     duration: '3-4 hours',
     highlight: 'Adventure',
     link: `/attractions/${getAttractionSlug(6)}`
@@ -39,6 +42,7 @@ const attractions = [
     name: 'Parnasala',
     description: 'Historic site with cultural significance and natural beauty',
     image: 'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_scale,w_400,q_auto,f_auto/v1755979312/dev_parnasala_pfvan7.jpg',
+    imageAlt: 'Statues of Rama, Sita and Lakshmana at Parnasala near Bhadrachalam',
     duration: '2-3 hours',
     highlight: 'Heritage',
     link: `/attractions/${getAttractionSlug(7)}`
@@ -83,7 +87,7 @@ const FeaturedAttractions = () => {
               <div className="relative h-56 overflow-hidden">
                 <CoverImage
                   src={attraction.image}
-                  alt={attraction.name}
+                  alt={attraction.imageAlt}
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   quality={75}

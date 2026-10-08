@@ -140,7 +140,7 @@ const Testimonials = () => {
                 <div className="relative w-12 h-12 mr-4">
                   <Image
                     src={testimonial.avatar}
-                    alt={testimonial.name}
+                    alt={`Photo of ${testimonial.name}`}
                     width={48}
                     height={48}
                     className="h-12 w-12 object-cover rounded-full"

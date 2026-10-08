@@ -168,7 +168,7 @@ export default function BlogPost() {
                 <div className="relative h-64 md:h-80">
                   <CoverImage
                     src="https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_1200,q_auto,f_auto/v1755980906/BhadrachalamTemple-1068x421_heh1o2.png"
-                    alt="Ancient Bhadradri Temple dedicated to Lord Rama"
+                    alt="Bhadradri (Bhadrachalam) Sri Rama temple above the Godavari"
                     className="object-cover"
                     sizes="(max-width: 896px) 100vw, 896px"
                   />
@@ -194,7 +194,7 @@ export default function BlogPost() {
                 <div className="relative h-64 md:h-80">
                   <CoverImage
                     src="https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_1200,q_auto,f_auto/v1755978851/MAREDUMILLI_-_waterfalls_kmuppt.jpg"
-                    alt="Beautiful Maredumilli Waterfalls surrounded by dense forest"
+                    alt="Waterfall surrounded by dense forest at Maredumilli"
                     className="object-cover"
                     sizes="(max-width: 896px) 100vw, 896px"
                   />

@@ -14,6 +14,7 @@ interface Package {
   shortDescription: string
   description: string
   image: string
+  imageAlt: string
   gallery: string[]
   capacity: string
   departure: string
@@ -54,7 +55,7 @@ export default function PackageDetailClient({ packageData, logistics }: PackageD
       <section className="relative h-96 overflow-hidden">
         <CoverImage
           src={packageData.image}
-          alt={packageData.name}
+          alt={packageData.imageAlt}
           className="object-cover"
           priority
           sizes="100vw"
@@ -312,11 +313,23 @@ export default function PackageDetailClient({ packageData, logistics }: PackageD
                   <div className="text-center p-4 bg-primary-50 rounded-lg">
                     {hasVerifiedPrice(logistics) ? (
                       <>
-                        <p className="text-sm text-gray-600">From</p>
-                        <p className="text-2xl font-bold text-primary-700">{formatINR(logistics.fromPrice!)}<span className="text-sm font-normal text-gray-600"> per adult</span></p>
-                        {logistics.childPrice !== null && <p className="text-sm text-gray-600">Child: {formatINR(logistics.childPrice)}</p>}
-                        {logistics.priceNote && <p className="text-sm text-gray-600 mt-1">{logistics.priceNote}</p>}
-                        <p className="text-xs text-gray-500 mt-1">Price checked on {formatCheckedOn(logistics.priceCheckedOn!)}</p>
+                        <p className="text-sm text-gray-600">Starting from</p>
+                        <p className="text-3xl font-bold text-primary-700 tabular-nums">{formatINR(logistics.fromPrice!)}</p>
+                        <p className="text-sm font-medium text-gray-700">per person</p>
+                        {logistics.minMembers !== null && (
+                          <p className="text-sm text-gray-600 mt-1">Minimum {logistics.minMembers} members</p>
+                        )}
+                        {logistics.priceOptions && (
+                          <ul className="mt-3 text-left text-sm divide-y divide-primary-100 border-t border-primary-100">
+                            {logistics.priceOptions.map((option) => (
+                              <li key={option.route} className="flex justify-between gap-3 py-1.5">
+                                <span className="text-gray-700">{option.route.replace(/^.*?: /, '')}</span>
+                                <span className="font-semibold text-gray-900 tabular-nums whitespace-nowrap">{formatINR(option.price)}/person</span>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                        <p className="text-xs text-gray-500 mt-2">Prices updated {formatCheckedOn(logistics.priceCheckedOn!)}</p>
                       </>
                     ) : (
                       <>

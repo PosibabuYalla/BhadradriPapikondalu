@@ -7,13 +7,17 @@ import { pageMetadata, absoluteUrl, breadcrumbSchema, faqSchema } from '../lib/s
 import { packagesData } from '../packages/packagesData'
 import { getPackageSlug } from '../utils/slugs'
 import CoverImage from '../components/CoverImage'
-import { getTourLogistics, hasVerifiedPrice, formatINR, formatCheckedOn } from '../packages/tourLogistics'
+import { getTourLogistics, formatINR, formatCheckedOn } from '../packages/tourLogistics'
+import { getDisplayFares, PRICES_CHECKED_ON, type DisplayFare } from '../lib/fares'
 import { contentUpdated } from '../lib/contentDates'
 
-const description = 'Plan a Papikondalu tour: one day and two day Godavari boat trips from Rajahmundry and Bhadrachalam, timings, how prices work, what to carry and booking.'
+const description = 'Papikondalu boating ticket prices per person, Rajahmundry and Bhadrachalam routes, Papikondalu night stay in cottages, bamboo huts and tents, timings and booking.'
+
+// Re-render daily so the weekly price step (see lib/fares.ts) goes live.
+export const revalidate = 86400
 
 export const metadata: Metadata = pageMetadata({
-  title: 'Papikondalu Tours | Routes, Timings, Price & Booking',
+  title: 'Papikondalu Tours | Boating Ticket Price, Night Stay & Booking',
   description,
   path: '/papikondalu-tours',
   image: 'https://res.cloudinary.com/djmcbqzqt/image/upload/c_fill,w_1200,h_630,q_auto,f_auto/v1755980788/PAPI-KONDALU_wswdud.jpg',
@@ -36,8 +40,6 @@ const tourOptions = [
   { ...pkg(6), heading: 'Sirivaka Night Stay in the Papikondalu Hills', duration: 'Overnight camping' },
 ]
 
-const pricedOptions = tourOptions.filter((option) => hasVerifiedPrice(option.logistics))
-
 const atBooking = 'Confirmed when you book'
 
 // Rajahmundry vs Bhadrachalam, built only from what the package pages state.
@@ -51,7 +53,14 @@ const routeComparison = [
   { label: 'Best for', rajahmundry: 'A first visit, families, anyone short on time', bhadrachalam: 'Pilgrims combining darshan with the cruise, slower two day trips' },
 ]
 
-const faqs = [
+const fareGroups: { key: DisplayFare['group']; title: string }[] = [
+  { key: 'boat', title: 'Papikondalu boating tickets' },
+  { key: 'nightStay', title: 'Papikondalu night stay' },
+  { key: 'combo', title: 'Maredumilli and Mothugudem packages' },
+  { key: 'heritage', title: 'Heritage trips' },
+]
+
+const buildFaqs = (fares: DisplayFare[]) => [
   {
     question: 'Where does the Papikondalu boat tour start?',
     answer: 'Our Papikondalu tours start from Rajahmundry or from Bhadrachalam. Choose Rajahmundry for the one day trip, or Bhadrachalam if you want to combine the boat ride with a Sri Rama temple visit. We confirm the exact boarding point and reporting time when you book.',
@@ -62,10 +71,7 @@ const faqs = [
   },
   {
     question: 'How much does a Papikondalu tour cost?',
-    answer: (pricedOptions.length > 0
-      ? `${pricedOptions.map((o) => `The ${o.heading.toLowerCase()} starts from ${formatINR(o.logistics.fromPrice!)} per adult`).join('. ')} (prices checked on ${formatCheckedOn(pricedOptions[0].logistics.priceCheckedOn!)}). `
-      : '') +
-      `The price depends on the starting point, the package (day trip or overnight), the date and your group size. Call or WhatsApp ${businessInfo.phone} for the current rate for your date.`,
+    answer: `Papikondalu boating tickets start from ${formatINR(Math.min(...fares.filter((f) => f.group === 'boat').map((f) => f.price)))} per person (${fares.filter((f) => f.group === 'boat').map((f) => `${f.route}: ${formatINR(f.price)}`).join('; ')}). A Papikondalu night stay starts from ${formatINR(Math.min(...fares.filter((f) => f.group === 'nightStay').map((f) => f.price)))} per person. Call or WhatsApp ${businessInfo.phone} to book.`,
   },
   {
     question: 'What are the Papikondalu boat timings?',
@@ -82,6 +88,9 @@ const faqs = [
 ]
 
 export default function PapikondaluToursPage() {
+  // Computed per render (not at module load) so each daily revalidation picks up the current week's prices.
+  const fares = getDisplayFares()
+  const faqs = buildFaqs(fares)
   const url = absoluteUrl('/papikondalu-tours')
   const jsonLd = {
     '@graph': [

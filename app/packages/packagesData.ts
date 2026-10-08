@@ -7,6 +7,7 @@ export const packagesData = [
     shortDescription: 'Start at Bhadrachalam temple, then cruise the Godavari through the Papikondalu hills. Guide and temple entry included.',
     description: 'Start with a visit to Bhadrachalam temple, then board the boat and cruise down the Godavari into the Papikondalu hills. A guide travels with you, and temple entry is included.',
     image: 'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_600,q_auto,f_auto/v1755980906/BhadrachalamTemple-1068x421_heh1o2.png',
+    imageAlt: 'Bhadrachalam Sri Rama temple, where the Papikondalu river cruise from Bhadrachalam begins',
     gallery: [
       'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_600,q_auto,f_auto/v1755980906/BhadrachalamTemple-1068x421_heh1o2.png',
       'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_600,q_auto,f_auto/v1755980788/PAPI-KONDALU_wswdud.jpg'
@@ -32,6 +33,7 @@ export const packagesData = [
     shortDescription: 'Two days on the Godavari. Visit Bhadrachalam temple, stay overnight near the Papikondalu hills, and end in Rajahmundry.',
     description: 'Day one starts at Bhadrachalam with darshan at the Sri Rama temple, then the boat heads downriver into the Papikondalu hills for an overnight stay. On day two you continue through the gorge and end the trip in Rajahmundry. Accommodation, all meals, a guide and entry fees are included.',
     image: 'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_scale,w_600,q_auto,f_auto/v1756003757/rajamundry_v2aufm.jpg',
+    imageAlt: 'Godavari Arch Bridge at Rajahmundry, where the Bhadrachalam to Papikondalu boating tour ends',
     gallery: [
       'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_scale,w_600,q_auto,f_auto/v1756003757/rajamundry_v2aufm.jpg',
       'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_600,q_auto,f_auto/v1755980788/PAPI-KONDALU_wswdud.jpg'
@@ -57,6 +59,7 @@ export const packagesData = [
     shortDescription: 'Day trip to Maredumilli waterfalls and forest trails from Rajahmundry. Includes transport, guide and lunch.',
     description: 'A road trip from Rajahmundry into the Maredumilli forest in the Eastern Ghats, visiting its waterfalls and walking the forest trails with a trekking guide. Forest permits and lunch are included.',
     image: 'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_600,q_auto,f_auto/v1755978851/MAREDUMILLI_-_waterfalls_kmuppt.jpg',
+    imageAlt: 'Waterfall in the Maredumilli forest, visited on the Maredumilli tour package from Rajahmundry',
     gallery: [
       'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_600,q_auto,f_auto/v1755978851/MAREDUMILLI_-_waterfalls_kmuppt.jpg'
     ],
@@ -81,6 +84,7 @@ export const packagesData = [
     shortDescription: 'Explore Rampachodavaram with local guides. Includes a Godavari cruise, temple visits, stay and meals.',
     description: 'Discover the tribal culture of Rampachodavaram with local guides. The trip starts from Rajahmundry and includes a Godavari cruise, temple visits, stay and meals.',
     image: 'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_600,q_auto,f_auto/v1755980907/Bhadrachalam_Temple_yg8met.jpg',
+    imageAlt: 'Bhadrachalam Sri Rama temple on the hill above the Godavari',
     gallery: [
       'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_600,q_auto,f_auto/v1755980907/Bhadrachalam_Temple_yg8met.jpg',
       'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_scale,w_600,q_auto,f_auto/v1756003757/rajamundry_v2aufm.jpg'
@@ -106,6 +110,7 @@ export const packagesData = [
     shortDescription: 'Day boat tour from Rajahmundry through the Papikondalu hills, with a stop at Perantalapalli and same-day return.',
     description: 'Board at Rajahmundry and cruise up the Godavari through the Papikondalu hills, with a stop at Perantalapalli before heading back the same evening. This is our most-booked day tour for families and groups who want the Papikondalu boat ride without an overnight stay.',
     image: 'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_scale,w_600,q_auto,f_auto/v1756003757/rajamundry_v2aufm.jpg',
+    imageAlt: 'Godavari Arch Bridge at Rajahmundry, the starting point for Rajahmundry to Papikondalu boating',
     gallery: [
       'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_scale,w_600,q_auto,f_auto/v1756003757/rajamundry_v2aufm.jpg',
       'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_600,q_auto,f_auto/v1755980788/PAPI-KONDALU_wswdud.jpg'
@@ -131,6 +136,7 @@ export const packagesData = [
     shortDescription: 'Overnight camping at Sirivaka in the Papikondalu hills. Includes river transport, campfire, meals and nature walks.',
     description: 'Travel from Rajahmundry by river to Sirivaka in the Papikondalu hills and spend the night at a riverside camp, with a campfire, nature walks and meals, before returning the next morning. Camping gear is provided.',
     image: 'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_scale,w_600,q_auto,f_auto/v1756003855/sirivaka_fdzsuf.avif',
+    imageAlt: 'Riverside tents for the Papikondalu night stay at Sirivaka, below the Papikondalu hills',
     gallery: [
       'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_scale,w_600,q_auto,f_auto/v1756003855/sirivaka_fdzsuf.avif'
     ],
@@ -155,6 +161,7 @@ export const packagesData = [
     shortDescription: 'Guided visit to Parnasala, the Ramayana heritage site near Bhadrachalam. Includes transport and a guide.',
     description: 'Visit Parnasala, near Bhadrachalam, where Lord Rama, Sita and Lakshmana are believed to have lived during their exile. A guide explains the site and its stories.',
     image: 'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_scale,w_600,q_auto,f_auto/v1755979312/dev_parnasala_pfvan7.jpg',
+    imageAlt: 'Statues of Rama, Sita and Lakshmana at Parnasala near Bhadrachalam',
     gallery: [
       'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_scale,w_600,q_auto,f_auto/v1755979312/dev_parnasala_pfvan7.jpg'
     ],
@@ -179,6 +186,7 @@ export const packagesData = [
     shortDescription: 'Visit Gudisa hill station for panoramic Eastern Ghats views. Includes transport, guide and refreshments.',
     description: 'A trip from Rajahmundry up to the Gudisa hill station in the Eastern Ghats for wide grassland viewpoints, cooler air and the sunset, with a guide and refreshments.',
     image: 'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_600,q_auto,f_auto/v1755981754/Camping_in_Mountains_ytwmvi.avif',
+    imageAlt: 'Tent on a hilltop at sunrise',
     gallery: [
       'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_600,q_auto,f_auto/v1755981754/Camping_in_Mountains_ytwmvi.avif'
     ],
@@ -203,6 +211,7 @@ export const packagesData = [
     shortDescription: 'Boat tour to Perantalapalli in the Papikondalu hills. Visit the riverside Shiva temple and explore the forest trails.',
     description: 'A boat trip from Rajahmundry into the Papikondalu hills that spends its time at Perantalapalli: the riverside Shiva temple, the village and the forest paths around it, with lunch and a same-day return.',
     image: 'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_600,q_auto,f_auto/v1755980788/PAPI-KONDALU_wswdud.jpg',
+    imageAlt: 'Papikondalu boating: tourist boat on the Godavari between the Papikondalu hills',
     gallery: [
       'https://res.cloudinary.com/djmcbqzqt/image/upload/c_scale,w_600,q_auto,f_auto/v1755980788/PAPI-KONDALU_wswdud.jpg',
       'https://res.cloudinary.com/dnz1dmnmb/image/upload/c_scale,w_600,q_auto,f_auto/v1756003757/rajamundry_v2aufm.jpg'

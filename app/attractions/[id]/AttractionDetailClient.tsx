@@ -12,6 +12,7 @@ interface Attraction {
   shortDescription: string
   description: string
   image: string
+  imageAlt: string
   gallery: string[]
   highlights: string[]
   bestTime: string
@@ -82,7 +83,7 @@ export default function AttractionDetailClient({ attraction }: AttractionDetailC
       <section className="relative h-96 overflow-hidden">
         <CoverImage
           src={attraction.image}
-          alt={attraction.name}
+          alt={attraction.imageAlt}
           className="object-cover"
           priority
           sizes="100vw"
